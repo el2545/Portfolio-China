@@ -2447,34 +2447,38 @@ function setLang(lang) {
 <script>
 // INTEGRATED SUMO DASHBOARD — real heatmap + real geo-corrected vehicle simulation
 (function(){
-  const EGS_ZONES = {
-    maarif: {
-      label:'Maârif', color:'#FF3355', center:[33.5866,-7.6325], zoom:14,
-      heatmapFile:'data/maarif_heatmap.json', simulationFile:'data/maarif_simulation_geo.json',
-      analysis:'Maârif: central dense fabric. Heatmap highlights concentration; simulation displays vehicles from geo-corrected SUMO FCD outputs.'
-    },
-    hay_hassani: {
-      label:'Hay Hassani', color:'#FFB830', center:[33.5607,-7.6900], zoom:14,
-      heatmapFile:'data/hay_hassani_heatmap.json', simulationFile:'data/hay_hassani_simulation_geo.json',
-      analysis:'Hay Hassani: peripheral flows and transition zones. Useful to detect localized slowdowns and vehicle accumulation.'
-    },
-    ben_msick: {
-      label:"Ben M'Sick", color:'#00E676', center:[33.5500,-7.5800], zoom:14,
-      heatmapFile:'data/ben_msick_heatmap.json', simulationFile:'data/ben_msick_simulation_geo.json',
-      analysis:"Ben M'Sick: dense urban network. The dashboard supports reading conflict points, secondary-road intensity and speed variations."
-    },
-    sidi_maarouf: {
-      label:'Sidi Maârouf', color:'#BF5AF2', center:[33.5250,-7.6500], zoom:14,
-      heatmapFile:'data/sidi_maarouf_heatmap.json', simulationFile:'data/sidi_maarouf_simulation_geo.json',
-      analysis:'Sidi Maârouf: strategic employment and arterial area. Simulation shows flows related to business poles and major roads.'
-    },
-    bd_mohammed_v: {
-      label:'Bd. Mohammed V', color:'#00B4D8', center:[33.5950,-7.6100], zoom:15,
-      heatmapFile:'data/bd_mohammed_v_heatmap.json', simulationFile:'data/bd_mohammed_v_simulation_geo.json',
-      analysis:'Boulevard Mohammed V: major corridor. Heatmap and simulation identify concentration and slowdown segments.'
-    }
-  };
-
+const EGS_ZONES = {
+  maarif: {
+    label:'Maârif', color:'#FF3355', center:[33.5866,-7.6325], zoom:14,
+    heatmapFile:'maarif_heatmap.json',
+    simulationFile:'maarif_simulation_geo.json',
+    analysis:'Maârif: central dense fabric. Heatmap highlights concentration; simulation displays vehicles from geo-corrected SUMO FCD outputs.'
+  },
+  hay_hassani: {
+    label:'Hay Hassani', color:'#FFB830', center:[33.5607,-7.6900], zoom:14,
+    heatmapFile:'hay_hassani_heatmap.json',
+    simulationFile:'hay_hassani_simulation_geo.json',
+    analysis:'Hay Hassani: peripheral flows and transition zones. Useful to detect localized slowdowns and vehicle accumulation.'
+  },
+  ben_msick: {
+    label:"Ben M'Sick", color:'#00E676', center:[33.5500,-7.5800], zoom:14,
+    heatmapFile:'ben_msick_heatmap.json',
+    simulationFile:'ben_msick_simulation_geo.json',
+    analysis:"Ben M'Sick: dense urban network. The dashboard supports reading conflict points, secondary-road intensity and speed variations."
+  },
+  sidi_maarouf: {
+    label:'Sidi Maârouf', color:'#BF5AF2', center:[33.5250,-7.6500], zoom:14,
+    heatmapFile:'sidi_maarouf_heatmap.json',
+    simulationFile:'sidi_maarouf_simulation_geo.json',
+    analysis:'Sidi Maârouf: strategic employment and arterial area. Simulation shows flows related to business poles and major roads.'
+  },
+  bd_mohammed_v: {
+    label:'Bd. Mohammed V', color:'#00B4D8', center:[33.5950,-7.6100], zoom:15,
+    heatmapFile:'bd_mohammed_v_heatmap.json',
+    simulationFile:'bd_mohammed_v_simulation_geo.json',
+    analysis:'Boulevard Mohammed V: major corridor. Heatmap and simulation identify concentration and slowdown segments.'
+  }
+};
   let map=null, heatLayer=null, canvas=null, ctx=null;
   let mode='heatmap', zoneKey='maarif', currentData=null, heatPoints=[], stepIndex=0;
   let playing=true, raf=null, lastFrame=0;
