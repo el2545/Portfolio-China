@@ -1,2739 +1,1332 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="description" content="El Ghali Sany — 清华大学/北京大学 经济学博士申请人作品集。定量经济学 · 财务建模 · 空间模拟 · CSC奖学金申请">
-<meta name="keywords" content="El Ghali Sany, 清华大学, 北京大学, CSC奖学金, 定量经济学, 摩洛哥留学生, 经济学博士">
-<title>萨尼·艾尔加利 | 定量经济学 博士候选人 | 清华/北大 CSC申请</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El Ghali Sany — 萨尼·埃尔·加利 — CSC Scholarship Type B Candidate. Quantitative Economics academic portfolio designed for C9 League admissions." />
+  <meta name="keywords" content="El Ghali Sany, 萨尼·埃尔·加利, CSC Scholarship Type B, Quantitative Economics, Tsinghua University, Peking University, C9 League, SUMO, QGIS, Guanxi, HSK" />
+  <title>萨尼·埃尔·加利 | CSC Type B | Quantitative Economics Portfolio</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700&family=Share+Tech+Mono&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --china-red: #E60000;
+      --deep-red: #9C0000;
+      --soft-red: #FFF0F0;
+      --market-green: #008B3A;
+      --gold: #FFD700;
+      --dark-gold: #B8860B;
+      --ink: #151515;
+      --muted: #555555;
+      --rice: #FFFDF6;
+      --paper: #F7F0E3;
+      --white: #FFFFFF;
+      --border: #CFC3A3;
+      --bamboo: #547D33;
+      --wechat: #07C160;
+      --navy: #11245A;
+      --shadow: 0 2px 0 rgba(0,0,0,0.15);
+      --font-cn: 'PingFang SC', 'Microsoft YaHei', 'Heiti SC', sans-serif;
+    }
 
-<style>
-:root {
-  --red:        #D0021B;
-  --red-deep:   #A50014;
-  --red-light:  #FF1A35;
-  --red-bg:     #FFF5F5;
-  --gold:       #B8860B;
-  --gold-light: #FFD700;
-  --navy:       #003087;
-  --navy-2:     #1A4480;
-  --teal:       #00767A;
-  --green-pos:  #007A40;
-  --white:      #FFFFFF;
-  --off-white:  #F7F7F7;
-  --gray-50:    #FAFAFA;
-  --gray-100:   #F0F0F0;
-  --gray-200:   #E0E0E0;
-  --gray-400:   #999999;
-  --gray-600:   #555555;
-  --gray-800:   #222222;
-  --black:      #111111;
-  --border:     #DDDDDD;
-  --font-zh:    'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Heiti SC', sans-serif;
-  --font-en:    'DM Sans', Arial, sans-serif;
-  --font-mono:  'Share Tech Mono', monospace;
-  --font-serif: 'Noto Serif SC', 'SimSun', serif;
-  --shadow-sm:  0 1px 4px rgba(0,0,0,.10);
-  --shadow-md:  0 3px 10px rgba(0,0,0,.14);
-  --shadow-lg:  0 6px 20px rgba(0,0,0,.18);
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  font-family: var(--font-zh);
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--gray-800);
-  background: var(--off-white);
-  padding-bottom: 60px; /* tab bar */
-}
+    body {
+      font-family: var(--font-cn);
+      background:
+        linear-gradient(90deg, rgba(84,125,51,0.06) 1px, transparent 1px) 0 0 / 18px 18px,
+        linear-gradient(0deg, rgba(84,125,51,0.06) 1px, transparent 1px) 0 0 / 18px 18px,
+        var(--paper);
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.42;
+      padding-bottom: 76px;
+      font-style: normal;
+    }
 
-/* ─── SEARCH BAR ───────────────────────────────── */
-.top-search {
-  background: var(--red);
-  padding: 8px 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.top-search__logo {
-  color: #fff;
-  font-weight: 900;
-  font-size: 16px;
-  white-space: nowrap;
-  letter-spacing: -0.5px;
-  font-family: var(--font-en);
-}
-.top-search__logo span { color: var(--gold-light); }
-.top-search__input {
-  flex: 1;
-  height: 32px;
-  border-radius: 16px;
-  border: none;
-  padding: 0 14px;
-  font-size: 12px;
-  font-family: var(--font-zh);
-  background: rgba(255,255,255,.92);
-  outline: none;
-}
-.top-search__btn {
-  background: var(--gold-light);
-  border: none;
-  border-radius: 4px;
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--red-deep);
-  cursor: pointer;
-  font-family: var(--font-zh);
-  white-space: nowrap;
-}
+    a { color: inherit; text-decoration: none; }
+    strong, b { font-weight: 900; }
+    em, i { font-style: normal; }
 
-/* ─── ANNOUNCE TICKER ──────────────────────────── */
-.ticker-wrap {
-  background: var(--navy);
-  color: #fff;
-  font-size: 11px;
-  overflow: hidden;
-  height: 24px;
-  display: flex;
-  align-items: center;
-}
-.ticker-content {
-  white-space: nowrap;
-  animation: ticker 28s linear infinite;
-  padding-left: 100%;
-  font-family: var(--font-zh);
-}
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }
-}
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 8px;
+      z-index: 9999;
+      background: var(--china-red);
+      color: var(--white);
+      border: 2px solid var(--gold);
+      padding: 8px 12px;
+      font-weight: 900;
+    }
 
-/* ─── CAROUSEL ─────────────────────────────────── */
-.carousel {
-  position: relative;
-  overflow: hidden;
-  height: 200px;
-  background: var(--black);
-}
-.carousel__slides { display: flex; height: 100%; transition: transform .5s ease; }
-.carousel__slide {
-  min-width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 20px 18px;
-}
-.cs-1 { background: linear-gradient(135deg, #8B0000 0%, #D0021B 45%, #FF6B35 100%); }
-.cs-2 { background: linear-gradient(135deg, #003087 0%, #1565C0 50%, #00BCD4 100%); }
-.cs-3 { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #66BB6A 100%); }
+    .skip-link:focus { top: 8px; }
 
-.cs-content { flex: 1; color: #fff; }
-.cs-content__zh {
-  font-size: 18px;
-  font-weight: 900;
-  line-height: 1.3;
-  text-shadow: 0 2px 8px rgba(0,0,0,.4);
-  margin-bottom: 4px;
-}
-.cs-content__en {
-  font-family: var(--font-en);
-  font-size: 11px;
-  opacity: .85;
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-.cs-stat-row { display: flex; gap: 10px; flex-wrap: wrap; }
-.cs-stat {
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.35);
-  border-radius: 4px;
-  padding: 5px 10px;
-  text-align: center;
-}
-.cs-stat__val { font-size: 20px; font-weight: 900; color: var(--gold-light); display: block; font-family: var(--font-mono); }
-.cs-stat__lbl { font-size: 10px; opacity: .9; }
-.cs-badge-col {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  align-items: flex-end;
-  min-width: 90px;
-}
-.cs-badge {
-  background: var(--gold-light);
-  color: var(--red-deep);
-  font-size: 10px;
-  font-weight: 700;
-  border-radius: 3px;
-  padding: 3px 8px;
-  text-align: center;
-  white-space: nowrap;
-}
-.carousel__dots {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 5px;
-}
-.carousel__dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.5);
-  border: none; cursor: pointer;
-  transition: background .3s;
-}
-.carousel__dot.active { background: var(--gold-light); }
-.carousel__prev, .carousel__next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,.35);
-  border: none; color: #fff;
-  font-size: 18px; width: 30px; height: 40px;
-  cursor: pointer; z-index: 5;
-}
-.carousel__prev { left: 0; }
-.carousel__next { right: 0; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: grid;
+      grid-template-columns: 190px minmax(260px, 1fr) 122px;
+      gap: 6px;
+      align-items: center;
+      padding: 7px;
+      background: var(--china-red);
+      border-bottom: 4px solid var(--gold);
+      box-shadow: var(--shadow);
+    }
 
-/* ─── KPI BADGE STRIP ──────────────────────────── */
-.kpi-strip {
-  background: #fff;
-  border-bottom: 2px solid var(--red);
-  padding: 8px 12px;
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.kpi-strip__label {
-  font-size: 10px;
-  color: var(--gray-400);
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-right: 4px;
-  font-family: var(--font-en);
-}
-.kpi-badge {
-  background: var(--red);
-  color: #fff;
-  border-radius: 3px;
-  padding: 4px 10px;
-  font-size: 12px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
-}
-.kpi-badge.gold { background: var(--gold); }
-.kpi-badge.navy { background: var(--navy); }
-.kpi-badge.green { background: var(--green-pos); }
-.kpi-badge__val { font-family: var(--font-mono); font-size: 14px; }
-.kpi-badge__lbl { font-size: 9px; opacity: .85; font-weight: 400; }
+    .brand {
+      color: var(--white);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.4px;
+    }
 
-/* ─── PAGE GRID ────────────────────────────────── */
-.page-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-@media (min-width: 900px) {
-  .page-grid {
-    grid-template-columns: 260px 1fr 240px;
-    gap: 8px;
-    padding: 8px;
-  }
-}
+    .brand small {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      margin-top: 2px;
+    }
 
-/* ─── PANEL BASE ───────────────────────────────── */
-.panel {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 0;
-  margin-bottom: 6px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-@media (min-width: 900px) {
-  .panel { border-radius: 4px; margin-bottom: 0; }
-}
-.panel__head {
-  background: var(--navy);
-  color: #fff;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.panel__head.red { background: var(--red); }
-.panel__head.gold { background: var(--gold); color: #fff; }
-.panel__head.teal { background: var(--teal); }
-.panel__head__zh { font-size: 13px; }
-.panel__head__en {
-  font-size: 9px;
-  opacity: .75;
-  font-family: var(--font-en);
-  font-weight: 400;
-}
-.panel__body { padding: 10px 12px; }
+    .search {
+      display: grid;
+      grid-template-columns: 1fr 78px;
+      gap: 5px;
+    }
 
-/* ─── PROFILE CARD ─────────────────────────────── */
-.profile-card {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-.profile-avatar {
-  width: 60px; height: 60px;
-  border-radius: 50%;
-  border: 3px solid var(--red);
-  background: linear-gradient(135deg, #CC0000, #8B0000);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 900;
-  color: #fff;
-  flex-shrink: 0;
-  font-family: var(--font-en);
-}
-.profile-info__name-zh {
-  font-family: var(--font-serif);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--black);
-}
-.profile-info__name-en {
-  font-family: var(--font-en);
-  font-size: 13px;
-  color: var(--gray-600);
-  margin-bottom: 4px;
-}
-.profile-tag {
-  display: inline-block;
-  background: var(--red-bg);
-  border: 1px solid var(--red);
-  color: var(--red);
-  font-size: 10px;
-  border-radius: 2px;
-  padding: 1px 6px;
-  margin: 1px 2px 1px 0;
-}
-.profile-row {
-  display: flex;
-  gap: 4px;
-  align-items: flex-start;
-  margin-top: 6px;
-  font-size: 11px;
-  color: var(--gray-600);
-  border-top: 1px solid var(--gray-100);
-  padding-top: 6px;
-}
-.profile-row__icon { color: var(--red); font-size: 12px; margin-top: 1px; }
-.profile-row__val { font-size: 11px; }
-strong.red { color: var(--red); }
+    .search input {
+      min-height: 34px;
+      border: 2px solid var(--deep-red);
+      background: #fff;
+      padding: 0 12px;
+      font-family: var(--font-cn);
+      font-weight: 800;
+      outline: none;
+    }
 
-/* ─── STAT GRID ────────────────────────────────── */
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
-}
-.stat-cell {
-  background: var(--red-bg);
-  border: 1px solid #FFCCCC;
-  border-radius: 3px;
-  padding: 8px 6px;
-  text-align: center;
-}
-.stat-cell__val {
-  font-family: var(--font-mono);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--red);
-  display: block;
-}
-.stat-cell__lbl {
-  font-size: 10px;
-  color: var(--gray-600);
-  line-height: 1.3;
-}
-.stat-cell.gold-cell { background: #FFFBE6; border-color: #FFD700; }
-.stat-cell.gold-cell .stat-cell__val { color: var(--gold); }
-.stat-cell.navy-cell { background: #EEF2FF; border-color: #99AADD; }
-.stat-cell.navy-cell .stat-cell__val { color: var(--navy); }
-.stat-cell.green-cell { background: #F0FFF4; border-color: #88CCAA; }
-.stat-cell.green-cell .stat-cell__val { color: var(--green-pos); }
+    .search input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(255,215,0,0.35);
+    }
 
-/* ─── SKILLS GRID ──────────────────────────────── */
-.skill-category { margin-bottom: 8px; }
-.skill-cat__label {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--navy);
-  text-transform: uppercase;
-  font-family: var(--font-en);
-  margin-bottom: 4px;
-  border-left: 3px solid var(--red);
-  padding-left: 6px;
-}
-.skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
-.skill-tag {
-  padding: 2px 8px;
-  border-radius: 2px;
-  font-size: 10px;
-  font-weight: 500;
-  background: var(--gray-100);
-  color: var(--gray-800);
-  border: 1px solid var(--gray-200);
-}
-.skill-tag.highlight { background: var(--navy); color: #fff; border-color: var(--navy); }
-.skill-tag.red-tag { background: var(--red); color: #fff; border-color: var(--red); }
+    .search button,
+    .top-action {
+      min-height: 34px;
+      border: 2px solid var(--deep-red);
+      background: var(--gold);
+      color: var(--deep-red);
+      font-family: var(--font-cn);
+      font-weight: 900;
+      cursor: pointer;
+      text-align: center;
+    }
 
-/* ─── LANGUAGE BARS ────────────────────────────── */
-.lang-item { margin-bottom: 8px; }
-.lang-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
-.lang-name { font-size: 12px; font-weight: 600; }
-.lang-level {
-  font-size: 10px;
-  background: var(--red);
-  color: #fff;
-  padding: 1px 7px;
-  border-radius: 2px;
-  font-family: var(--font-en);
-  font-weight: 700;
-}
-.lang-level.gold { background: var(--gold); }
-.lang-level.green { background: var(--green-pos); }
-.lang-bar-bg { background: var(--gray-200); border-radius: 2px; height: 5px; }
-.lang-bar-fill { height: 5px; border-radius: 2px; background: var(--red); }
-.lang-bar-fill.gold { background: var(--gold); }
-.lang-bar-fill.green { background: var(--green-pos); }
+    .top-action {
+      display: grid;
+      place-items: center;
+      padding: 0 8px;
+      font-size: 12px;
+    }
 
-/* ─── EXPERIENCE ITEMS ─────────────────────────── */
-.exp-item {
-  border-left: 3px solid var(--red);
-  padding: 8px 10px;
-  margin-bottom: 8px;
-  background: var(--gray-50);
-  border-radius: 0 3px 3px 0;
-}
-.exp-item__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 4px;
-  margin-bottom: 3px;
-}
-.exp-item__company {
-  font-weight: 700;
-  font-size: 13px;
-  color: var(--black);
-}
-.exp-item__date {
-  font-size: 10px;
-  color: var(--gray-400);
-  font-family: var(--font-en);
-  text-align: right;
-  flex-shrink: 0;
-}
-.exp-item__role { font-size: 11px; color: var(--navy); font-weight: 600; margin-bottom: 4px; }
-.exp-bullet {
-  font-size: 11px;
-  color: var(--gray-600);
-  padding-left: 12px;
-  position: relative;
-  margin-bottom: 2px;
-  line-height: 1.5;
-}
-.exp-bullet::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: var(--red);
-  font-size: 10px;
-}
-.exp-kpis { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }
-.exp-kpi {
-  background: var(--red);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  border-radius: 2px;
-  padding: 2px 8px;
-  font-family: var(--font-mono);
-}
-.exp-kpi.gold { background: var(--gold); }
-.exp-kpi.navy { background: var(--navy); }
+    .marquee {
+      height: 30px;
+      overflow: hidden;
+      background: #111;
+      color: #fff;
+      border-bottom: 3px solid var(--china-red);
+    }
 
-/* ─── ROI TABLE ────────────────────────────────── */
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 11px;
-  margin: 8px 0;
-}
-.data-table th {
-  background: var(--navy);
-  color: #fff;
-  padding: 5px 7px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 10px;
-}
-.data-table td {
-  padding: 4px 7px;
-  text-align: center;
-  border-bottom: 1px solid var(--gray-100);
-}
-.data-table tr:nth-child(even) td { background: var(--gray-50); }
-.data-table .highlight { color: var(--red); font-weight: 700; font-family: var(--font-mono); }
-.data-table .positive { color: var(--green-pos); font-weight: 700; }
+    .marquee:focus-within { outline: 3px solid var(--gold); outline-offset: -3px; }
 
-/* ─── PROJECT CARDS ────────────────────────────── */
-.proj-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-@media (min-width: 900px) {
-  .proj-grid { grid-template-columns: 1fr 1fr 1fr; }
-}
-.proj-card {
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  overflow: hidden;
-  background: #fff;
-  transition: box-shadow .2s;
-}
-.proj-card:hover { box-shadow: var(--shadow-md); }
-.proj-card__head {
-  background: var(--navy);
-  color: #fff;
-  padding: 6px 8px;
-  font-size: 11px;
-  font-weight: 700;
-}
-.proj-card__head.red { background: var(--red); }
-.proj-card__head.teal { background: var(--teal); }
-.proj-card__body { padding: 7px 8px; }
-.proj-card__desc { font-size: 10px; color: var(--gray-600); margin-bottom: 6px; line-height: 1.5; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 5px; }
-.proj-tag {
-  font-size: 9px;
-  background: var(--gray-100);
-  border: 1px solid var(--gray-200);
-  border-radius: 2px;
-  padding: 1px 5px;
-  font-family: var(--font-mono);
-}
-.proj-result {
-  background: var(--red-bg);
-  border: 1px solid #FFAAAA;
-  border-radius: 2px;
-  padding: 4px 7px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--red);
-  text-align: center;
-  font-family: var(--font-mono);
-}
+    .marquee-track {
+      display: inline-flex;
+      align-items: center;
+      height: 30px;
+      gap: 34px;
+      padding-left: 100%;
+      white-space: nowrap;
+      animation: marqueeMove 34s linear infinite;
+      font-weight: 900;
+      font-size: 12px;
+    }
 
-/* ─── GUANXI SECTION ───────────────────────────── */
-.guanxi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-.guanxi-card {
-  border: 1px solid var(--gold);
-  border-radius: 3px;
-  padding: 8px;
-  background: #FFFBE6;
-}
-.guanxi-card__title {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.guanxi-card__text { font-size: 10px; color: var(--gray-600); line-height: 1.5; }
-.guanxi-icon { font-size: 14px; }
+    .marquee:hover .marquee-track,
+    .marquee:focus-within .marquee-track,
+    .marquee[data-paused="true"] .marquee-track {
+      animation-play-state: paused;
+    }
 
+    @keyframes marqueeMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
 
-/* ─── CONTACT & QR ─────────────────────────────── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-.qr-box {
-  background: #fff;
-  border: 3px solid var(--red);
-  border-radius: 4px;
-  padding: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-.qr-placeholder {
-  width: 100px;
-  height: 100px;
-  background: var(--black);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 4px;
-}
-.qr-grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 1px;
-  width: 90px;
-  height: 90px;
-  padding: 6px;
-}
-.qr-cell {
-  border-radius: 1px;
-}
-.qr-box__label {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--red);
-}
-.qr-box__sub { font-size: 10px; color: var(--gray-400); }
-.contact-links { display: flex; flex-direction: column; gap: 6px; }
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 10px;
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  text-decoration: none;
-  color: var(--gray-800);
-  font-size: 11px;
-  background: var(--gray-50);
-}
-.contact-link:hover { background: var(--red-bg); border-color: var(--red); }
-.contact-link__icon {
-  font-size: 16px;
-  width: 24px;
-  text-align: center;
-}
-.contact-link.wechat { background: #07C160; color: #fff; border-color: #07C160; }
-.contact-link.linkedin { background: #0A66C2; color: #fff; border-color: #0A66C2; }
+    .red-up { color: var(--china-red); font-weight: 900; }
+    .green-down { color: var(--market-green); font-weight: 900; }
+    .gold-text { color: var(--dark-gold); font-weight: 900; }
 
-/* ─── EDUCATION ITEM ───────────────────────────── */
-.edu-item {
-  padding: 7px 10px;
-  margin-bottom: 6px;
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  background: var(--gray-50);
-}
-.edu-item__school {
-  font-weight: 700;
-  font-size: 12px;
-  color: var(--black);
-  margin-bottom: 2px;
-}
-.edu-item__degree { font-size: 11px; color: var(--navy); margin-bottom: 2px; }
-.edu-item__date { font-size: 10px; color: var(--gray-400); font-family: var(--font-en); }
-.edu-item__mention {
-  display: inline-block;
-  background: var(--red);
-  color: #fff;
-  font-size: 9px;
-  font-weight: 700;
-  border-radius: 2px;
-  padding: 1px 6px;
-  margin-top: 3px;
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr) 190px;
+      gap: 7px;
+      padding: 7px;
+      background: linear-gradient(90deg, #FFF9E0, #FFF4F4 55%, #FFFFFF);
+      border-bottom: 3px solid var(--border);
+    }
 
-/* ─── MOTIVATION BLOCK ─────────────────────────── */
-.mot-para {
-  font-size: 11px;
-  color: var(--gray-600);
-  line-height: 1.7;
-  margin-bottom: 8px;
-}
-.mot-para .red-text { color: var(--red); font-weight: 700; }
+    .shufa-seal {
+      background: #2A0A0A;
+      color: var(--gold);
+      border: 4px solid var(--dark-gold);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      min-height: 188px;
+      padding: 10px;
+      box-shadow: inset 0 0 0 3px rgba(255,215,0,0.14);
+    }
 
-/* ─── RESEARCH PROPOSAL CTA ────────────────────── */
-.proposal-cta {
-  display: block;
-  background: linear-gradient(135deg, var(--red), var(--red-deep));
-  color: #fff;
-  text-align: center;
-  padding: 12px 16px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  letter-spacing: .3px;
-}
-.proposal-cta:hover { background: var(--red-deep); }
-.proposal-cta__en {
-  font-size: 10px;
-  opacity: .8;
-  font-family: var(--font-en);
-  font-weight: 400;
-  display: block;
-}
+    .shufa-seal .vertical {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      line-height: 1.1;
+    }
 
-/* ─── BOTTOM TAB BAR ───────────────────────────── */
-.tab-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  border-top: 1px solid var(--gray-200);
-  display: flex;
-  height: 56px;
-  z-index: 999;
-  box-shadow: 0 -2px 10px rgba(0,0,0,.10);
-}
-.tab-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  color: var(--gray-400);
-  font-size: 9px;
-  font-family: var(--font-zh);
-  text-decoration: none;
-  transition: color .2s;
-}
-.tab-item.active { color: var(--red); }
-.tab-item__icon { font-size: 20px; }
-.tab-item__label { font-size: 9px; }
+    .hero-main {
+      border: 3px solid var(--china-red);
+      background: var(--rice);
+      padding: 8px;
+      display: grid;
+      gap: 7px;
+      box-shadow: var(--shadow);
+    }
 
-/* ─── SECTION DIVIDER ──────────────────────────── */
-.section-divider {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 10px 0 6px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--navy);
-}
-.section-divider::before, .section-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--gray-200);
-}
+    .hero-title {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: start;
+      border-bottom: 3px double var(--china-red);
+      padding-bottom: 6px;
+    }
 
-/* ─── UNIVERSITY TARGETS ───────────────────────── */
-.uni-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
-.uni-chip {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  border: 1px solid var(--red);
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--red);
-  background: var(--red-bg);
-}
-.uni-chip.navy { border-color: var(--navy); color: var(--navy); background: #EEF2FF; }
-.uni-chip__dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--red);
-}
-.uni-chip.navy .uni-chip__dot { background: var(--navy); }
+    .hero-title h1 {
+      color: var(--deep-red);
+      font-size: clamp(24px, 3.3vw, 40px);
+      line-height: 1.05;
+      letter-spacing: -0.7px;
+    }
 
-/* ─── LANG TAG ─────────────────────────────────── */
-.lang-tag {
-  display: inline-block;
-  background: var(--navy);
-  color: #fff;
-  font-size: 8px;
-  font-weight: 700;
-  border-radius: 2px;
-  padding: 0px 4px;
-  margin-left: 3px;
-  vertical-align: middle;
-  font-family: var(--font-en);
-}
-.lang-tag.zh { background: var(--red); }
+    .hero-title .hanzi {
+      color: #000;
+      font-size: clamp(20px, 2.6vw, 31px);
+      font-weight: 900;
+      margin-top: 2px;
+    }
 
-/* ─── AWARDS ROW ───────────────────────────────── */
-.awards-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-.award-badge {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 5px 10px;
-  border-radius: 3px;
-  font-size: 10px;
-  font-weight: 700;
-}
-.award-badge.red { background: var(--red); color: #fff; }
-.award-badge.gold { background: var(--gold); color: #fff; }
-.award-badge.navy { background: var(--navy); color: #fff; }
+    .badge-stack {
+      display: grid;
+      gap: 4px;
+      min-width: 210px;
+    }
 
-/* ─── RESPONSIVE HELPERS ───────────────────────── */
-@media (min-width: 900px) {
-  .col-left { grid-column: 1; grid-row: 1; }
-  .col-center { grid-column: 2; grid-row: 1; }
-  .col-right { grid-column: 3; grid-row: 1; }
-  .full-row { grid-column: 1 / -1; }
-}
-.col-left, .col-center, .col-right {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
+    .badge {
+      border: 2px solid var(--gold);
+      background: var(--china-red);
+      color: var(--white);
+      padding: 5px 7px;
+      font-size: 11px;
+      font-weight: 900;
+      text-align: center;
+    }
 
-/* ─── LANG TOGGLE ──────────────────────────────── */
-.lang-toggle {
-  display: flex;
-  background: rgba(255,255,255,.15);
-  border-radius: 20px;
-  padding: 2px;
-  gap: 0;
-  flex-shrink: 0;
-}
-.lang-btn {
-  border: none;
-  background: transparent;
-  color: rgba(255,255,255,.7);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 18px;
-  cursor: pointer;
-  font-family: var(--font-en);
-  transition: all .2s;
-  white-space: nowrap;
-}
-.lang-btn.active {
-  background: #fff;
-  color: var(--red-deep);
-}
-/* hide/show by lang */
-html[lang="zh-CN"] [data-en] { display: none !important; }
-html[lang="en"]    [data-zh] { display: none !important; }
+    .badge.gold {
+      background: var(--gold);
+      color: var(--deep-red);
+      border-color: var(--deep-red);
+    }
 
-/* ─── SUMO DASHBOARD ─────────────────────────── */
-.sumo-tab {
-  flex: 1;
-  background: transparent;
-  border: none;
-  border-right: 1px solid #004400;
-  color: #448844;
-  padding: 6px 8px;
-  font-family: 'Share Tech Mono',monospace;
-  font-size: 10px;
-  cursor: pointer;
-  white-space: nowrap;
-  min-width: 70px;
-  transition: background .15s, color .15s;
-  line-height: 1.3;
-}
-.sumo-tab:hover { background: rgba(0,255,136,.06); color: #00FF88; }
-.sumo-tab-active {
-  background: rgba(0,255,136,.1) !important;
-  color: var(--tc, #00FF88) !important;
-  border-bottom: 2px solid var(--tc, #00FF88);
-}
-.sumo-kpi {
-  padding: 7px 8px;
-  text-align: center;
-}
-.sumo-kpi-label { font-family:monospace; font-size:8px; color:#446644; margin-bottom:2px; }
-.sumo-kpi-val { font-family:'Share Tech Mono',monospace; font-size:18px; font-weight:700; line-height:1; }
-.sumo-kpi-unit { font-family:monospace; font-size:8px; color:#446644; }
+    .confucius {
+      background: #111;
+      color: #fff;
+      border-left: 8px solid var(--gold);
+      padding: 8px 10px;
+      font-weight: 800;
+    }
 
-/* ─── LEAFLET DARK OVERRIDE ────────────────────── */
-.leaflet-container { background: #0A0A0A !important; }
-.leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(0.85) saturate(0.5); }
-.leaflet-control-zoom a { background:#111; color:#00FF88; border-color:#004400; }
-.leaflet-popup-content-wrapper { background:#0A0A0A; color:#E8E8F0; border:1px solid #004400; border-radius:3px; font-family:monospace; font-size:10px; }
-.leaflet-popup-tip { background:#0A0A0A; }
+    .confucius b { color: var(--gold); }
 
-.scroll-top {
-  position: fixed;
-  right: 14px;
-  bottom: 68px;
-  background: var(--red);
-  color: #fff;
-  border: none;
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 998;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-md);
-}
-.scroll-top.visible { display: flex; }
+    .kpi-mosaic {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 4px;
+    }
 
+    .kpi-box {
+      background: var(--soft-red);
+      border: 1px solid var(--china-red);
+      padding: 5px;
+      text-align: center;
+      min-height: 52px;
+    }
 
-/* ─── INTEGRATED SUMO HEATMAP + SIMULATION DASHBOARD ───────────── */
-.egs-sumo-shell {
-  background: #050505;
-  color: #E8FCEE;
-  border: 1px solid #004400;
-  font-family: var(--font-mono);
-}
-.egs-sumo-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 7px;
-  border-bottom: 1px solid #004400;
-  background: #071107;
-}
-.egs-mode-btn,
-.egs-zone-btn,
-.egs-control-btn {
-  border: 1px solid #004400;
-  background: #101b10;
-  color: #75a875;
-  border-radius: 3px;
-  padding: 5px 9px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  cursor: pointer;
-  line-height: 1.15;
-}
-.egs-mode-btn:hover,
-.egs-zone-btn:hover,
-.egs-control-btn:hover { color: #00FF88; border-color: #00AA55; }
-.egs-mode-btn.active,
-.egs-zone-btn.active {
-  background: rgba(0,255,136,.12);
-  color: var(--tc, #00FF88);
-  border-color: var(--tc, #00FF88);
-  box-shadow: inset 0 -2px 0 var(--tc, #00FF88);
-}
-.egs-sumo-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  min-height: 430px;
-}
-.egs-map-wrap { position: relative; min-height: 430px; background: #0A0A0A; }
-#egsSumoMap { position:absolute; inset:0; z-index:1; min-height:430px; }
-#egsTrafficCanvas { position:absolute; inset:0; z-index:500; width:100%; height:100%; pointer-events:none; }
-.egs-map-badge {
-  position: absolute;
-  z-index: 700;
-  top: 10px; left: 10px;
-  max-width: calc(100% - 20px);
-  background: rgba(0, 10, 0, .82);
-  border: 1px solid #004400;
-  border-radius: 3px;
-  padding: 7px 9px;
-  color: #00FF88;
-  pointer-events: none;
-}
-.egs-map-badge strong { display:block; font-size: 11px; margin-bottom:2px; }
-.egs-map-badge span { display:block; font-size: 9px; color:#77aa77; line-height:1.35; }
-.egs-legend {
-  position: absolute;
-  z-index: 700;
-  left: 10px; bottom: 10px;
-  display:flex; gap:8px; flex-wrap:wrap;
-  background: rgba(0, 10, 0, .82);
-  border: 1px solid #004400;
-  border-radius: 3px;
-  padding: 6px 8px;
-  font-size: 9px;
-  color:#77aa77;
-  pointer-events:none;
-}
-.egs-dot { display:inline-block; width:10px; height:10px; border-radius:99px; margin-right:4px; vertical-align:-1px; }
-.egs-dot.green { background:#00FF88; }
-.egs-dot.yellow { background:#FFD700; }
-.egs-dot.red { background:#FF3355; }
-.egs-side {
-  background: #050505;
-  border-left: 1px solid #004400;
-  display:flex;
-  flex-direction:column;
-}
-.egs-kpis { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid #004400; }
-.egs-kpi { padding:8px 7px; border-right:1px solid #004400; border-bottom:1px solid #004400; text-align:center; }
-.egs-kpi:nth-child(2n) { border-right:none; }
-.egs-kpi-label { color:#446644; font-size:8px; margin-bottom:3px; }
-.egs-kpi-val { color:#00FF88; font-size:18px; font-weight:700; line-height:1; }
-.egs-controls { padding:8px; border-bottom:1px solid #004400; }
-.egs-control-row { margin-bottom:8px; }
-.egs-control-row label { display:block; color:#668866; font-size:8px; margin-bottom:3px; }
-.egs-control-row input[type="range"] { width:100%; accent-color:#00FF88; }
-.egs-control-buttons { display:grid; grid-template-columns:1fr 1fr; gap:5px; margin-bottom:8px; }
-.egs-note { padding:8px; color:#668866; font-size:9px; line-height:1.5; overflow-y:auto; }
-.egs-hidden { display:none !important; }
-.egs-link-row { display:flex; gap:5px; flex-wrap:wrap; padding:7px; border-top:1px solid #004400; }
-.egs-small-tag { border:1px solid #004400; color:#668866; padding:2px 6px; border-radius:2px; font-size:8px; }
-@media (max-width: 760px) {
-  .egs-sumo-grid { grid-template-columns: 1fr; }
-  .egs-side { border-left:none; border-top:1px solid #004400; }
-  .egs-map-wrap, #egsSumoMap { min-height: 360px; }
-}
+    .kpi-box b {
+      display: block;
+      color: var(--china-red);
+      font-size: 19px;
+      line-height: 1;
+    }
 
-</style>
+    .kpi-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 800;
+      margin-top: 3px;
+    }
+
+    .bamboo-note {
+      border: 3px solid var(--bamboo);
+      background: #F4FFE8;
+      color: #2D4F18;
+      padding: 8px;
+      font-weight: 900;
+      font-size: 12px;
+      box-shadow: inset 0 0 0 2px rgba(84,125,51,0.16);
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 280px minmax(420px, 1fr) 290px;
+      gap: 7px;
+      padding: 7px;
+      align-items: start;
+    }
+
+    .column { display: grid; gap: 7px; }
+
+    .panel {
+      background: var(--rice);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      background: var(--china-red);
+      color: #fff;
+      border-bottom: 3px solid var(--gold);
+      padding: 6px 8px;
+      font-weight: 900;
+    }
+
+    .panel-head span:last-child {
+      color: var(--gold);
+      font-size: 10px;
+      white-space: nowrap;
+    }
+
+    .panel-head.navy { background: var(--navy); }
+    .panel-head.gold { background: var(--dark-gold); }
+    .panel-head.bamboo { background: var(--bamboo); }
+
+    .panel-body { padding: 7px; }
+
+    .bamboo-divider {
+      height: 12px;
+      margin: 6px 0;
+      background:
+        linear-gradient(90deg, var(--bamboo) 0 12%, transparent 12% 16%, var(--bamboo) 16% 28%, transparent 28% 32%, var(--bamboo) 32% 44%, transparent 44% 48%, var(--bamboo) 48% 60%, transparent 60% 64%, var(--bamboo) 64% 76%, transparent 76% 80%, var(--bamboo) 80% 92%, transparent 92% 100%);
+      opacity: 0.55;
+    }
+
+    .honor-board {
+      display: grid;
+      gap: 5px;
+    }
+
+    .honor-card {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 6px;
+      align-items: center;
+      background: #FFF7C2;
+      border: 2px solid var(--dark-gold);
+      padding: 6px;
+    }
+
+    .honor-medal {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #FFF5A8, var(--gold) 56%, var(--dark-gold));
+      border: 2px solid var(--deep-red);
+      color: var(--deep-red);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    .honor-card h3 {
+      color: var(--deep-red);
+      font-size: 13px;
+    }
+
+    .honor-card p {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .humility {
+      background: #111;
+      color: #fff;
+      border: 2px solid var(--gold);
+      padding: 7px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .humility b { color: var(--gold); }
+
+    .lang-stack { display: grid; gap: 7px; }
+
+    .lang-row { display: grid; gap: 3px; }
+
+    .lang-row label {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    progress {
+      width: 100%;
+      height: 16px;
+      border: 1px solid var(--border);
+      appearance: none;
+    }
+
+    progress::-webkit-progress-bar { background: #E5E5E5; }
+    progress::-webkit-progress-value { background: var(--china-red); }
+    progress::-moz-progress-bar { background: var(--china-red); }
+
+    .hsk-note {
+      border-left: 5px solid var(--china-red);
+      background: var(--soft-red);
+      padding: 6px;
+      color: var(--deep-red);
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    .tag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      border: 1px solid var(--china-red);
+      background: var(--soft-red);
+      color: var(--deep-red);
+      padding: 2px 6px;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .tag.gold { border-color: var(--dark-gold); background: #FFF7BF; color: #6F4A00; }
+    .tag.bamboo { border-color: var(--bamboo); background: #F3FFE5; color: #315319; }
+    .tag.navy { border-color: var(--navy); background: #EEF2FF; color: var(--navy); }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+
+    .table th,
+    .table td {
+      border: 1px solid var(--border);
+      padding: 4px 5px;
+      vertical-align: top;
+    }
+
+    .table th {
+      background: var(--china-red);
+      color: #fff;
+      text-align: left;
+      font-weight: 900;
+    }
+
+    .table tr:nth-child(even) td { background: #FFFFFF; }
+    .table tr:nth-child(odd) td { background: #FFFDF6; }
+
+    .project {
+      display: grid;
+      gap: 7px;
+      border: 3px solid var(--china-red);
+      background: var(--rice);
+      padding: 7px;
+    }
+
+    .project-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 7px;
+      align-items: start;
+      border-bottom: 3px double var(--china-red);
+      padding-bottom: 6px;
+    }
+
+    .project-head h2 {
+      color: var(--deep-red);
+      font-size: 20px;
+      line-height: 1.12;
+    }
+
+    .project-head p {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .project-badge {
+      background: var(--gold);
+      color: var(--deep-red);
+      border: 2px solid var(--deep-red);
+      padding: 5px 7px;
+      font-weight: 900;
+      white-space: nowrap;
+      font-size: 11px;
+    }
+
+    .dense-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 4px;
+    }
+
+    .dense-stat {
+      border: 1px solid var(--china-red);
+      background: var(--soft-red);
+      padding: 5px;
+      text-align: center;
+    }
+
+    .dense-stat b {
+      display: block;
+      color: var(--china-red);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .dense-stat span {
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 9px;
+    }
+
+    .china-application {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 8px;
+      border: 3px solid var(--dark-gold);
+      background: linear-gradient(90deg, #FFF7C2, #FFF1F1);
+      padding: 8px;
+    }
+
+    .city-seal {
+      width: 92px;
+      min-height: 92px;
+      background: var(--china-red);
+      color: var(--gold);
+      border: 3px solid var(--gold);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 900;
+      line-height: 1.08;
+    }
+
+    .china-application h3 {
+      color: var(--deep-red);
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+
+    .china-application p {
+      color: #333;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .guanxi-list {
+      display: grid;
+      gap: 6px;
+    }
+
+    .guanxi-item {
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--china-red);
+      background: #fff;
+      padding: 7px;
+    }
+
+    .guanxi-item h3 {
+      color: var(--deep-red);
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .guanxi-item p {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 11px;
+    }
+
+    .roadmap { display: grid; gap: 5px; }
+
+    .roadmap-step {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 6px;
+      display: grid;
+      grid-template-columns: 35px minmax(0, 1fr);
+      gap: 6px;
+      align-items: start;
+    }
+
+    .roadmap-num {
+      width: 35px;
+      height: 35px;
+      background: var(--china-red);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      border: 2px solid var(--gold);
+    }
+
+    .roadmap-step b { color: var(--deep-red); }
+    .roadmap-step p { color: var(--muted); font-size: 11px; font-weight: 800; }
+
+    .wechat-footer {
+      margin: 0 7px 7px;
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr) 280px;
+      gap: 7px;
+      background: #fff;
+      border: 4px solid var(--china-red);
+      padding: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .qr-panel {
+      border: 4px solid var(--wechat);
+      background: #EEFFF5;
+      display: grid;
+      place-items: center;
+      gap: 6px;
+      padding: 8px;
+    }
+
+    .fake-qr {
+      width: 172px;
+      height: 172px;
+      position: relative;
+      border: 7px solid #000;
+      background:
+        linear-gradient(90deg, #000 8px, transparent 8px) 0 0 / 19px 19px,
+        linear-gradient(#000 8px, transparent 8px) 0 0 / 19px 19px,
+        #fff;
+      image-rendering: pixelated;
+    }
+
+    .fake-qr::before,
+    .fake-qr::after,
+    .qr-third {
+      content: '';
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      background: #fff;
+      border: 10px solid #000;
+      box-shadow: inset 0 0 0 7px #fff, inset 0 0 0 15px #000;
+    }
+
+    .fake-qr::before { left: 8px; top: 8px; }
+    .fake-qr::after { right: 8px; top: 8px; }
+    .qr-third { left: 8px; bottom: 8px; }
+
+    .wechat-id {
+      width: 100%;
+      padding: 7px;
+      border: 2px dashed var(--wechat);
+      background: #fff;
+      color: #006B30;
+      font-weight: 900;
+      text-align: center;
+      user-select: all;
+    }
+
+    .contact-text h2 {
+      color: var(--deep-red);
+      font-size: 22px;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .contact-text p {
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px;
+    }
+
+    .contact-grid div {
+      border: 1px solid var(--border);
+      background: var(--rice);
+      padding: 5px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .doc-links {
+      display: grid;
+      gap: 5px;
+    }
+
+    .doc-links a,
+    .doc-links button {
+      border: 2px solid var(--china-red);
+      background: var(--soft-red);
+      color: var(--deep-red);
+      font-family: var(--font-cn);
+      font-weight: 900;
+      padding: 7px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .doc-links a.primary {
+      background: var(--china-red);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+
+    .tabbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #fff;
+      border-top: 4px solid var(--china-red);
+      box-shadow: 0 -3px 12px rgba(0,0,0,0.18);
+    }
+
+    .tabbar a {
+      min-height: 66px;
+      display: grid;
+      place-items: center;
+      gap: 1px;
+      border-right: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 10px;
+    }
+
+    .tabbar span { font-size: 23px; line-height: 1; }
+    .tabbar a.active,
+    .tabbar a:hover,
+    .tabbar a:focus {
+      color: var(--china-red);
+      background: #FFF7C2;
+      outline: none;
+    }
+
+    .integrity-note {
+      background:
+
+    .wechat-os-badge {
+      border: 2px solid var(--wechat);
+      background: #EFFFF5;
+      color: #006B30;
+      padding: 5px 7px;
+      font-size: 11px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .admin-code-box {
+      border: 3px solid var(--navy);
+      background: #EEF2FF;
+      color: var(--navy);
+      padding: 6px 8px;
+      font-size: 11px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .version-note {
+      background: #111;
+      color: #fff;
+      border: 2px solid var(--gold);
+      padding: 7px;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .pangu-block {
+      border: 3px solid var(--dark-gold);
+      background: linear-gradient(90deg, #FFF7C2, #FFFDF6);
+      color: #3B2700;
+      padding: 8px;
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: inset 0 0 0 2px rgba(184,134,11,0.18);
+    }
+
+    .pangu-block h3 {
+      color: var(--deep-red);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .registry-label {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      border: 2px solid var(--gold);
+      padding: 3px 7px;
+      font-size: 10px;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .registry-table th {
+      background: #000 !important;
+      color: #fff !important;
+    }
+
+    .registry-table td {
+      background: #fff !important;
+      color: #000 !important;
+    }
+
+    @media (max-width: 1120px) {
+      .main-grid { grid-template-columns: 270px minmax(0, 1fr); }
+      .right-column { grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .wechat-footer { grid-template-columns: 230px minmax(0, 1fr); }
+      .doc-links { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .kpi-mosaic { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      body { font-size: 12px; }
+      .topbar { grid-template-columns: 1fr; }
+      .top-action { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .shufa-seal { min-height: auto; }
+      .shufa-seal .vertical { writing-mode: horizontal-tb; font-size: 19px; }
+      .hero-title { grid-template-columns: 1fr; }
+      .badge-stack { min-width: 0; }
+      .main-grid { grid-template-columns: 1fr; }
+      .right-column { grid-template-columns: 1fr; }
+      .dense-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .china-application { grid-template-columns: 1fr; }
+      .city-seal { width: 100%; min-height: 58px; }
+      .wechat-footer { grid-template-columns: 1fr; }
+      .doc-links { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .kpi-mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; font-size: 10px; }
+      .topbar, .marquee, .tabbar { display: none; }
+      .hero, .main-grid, .wechat-footer { display: block; }
+      .panel, .project, .wechat-footer { box-shadow: none; break-inside: avoid; margin-bottom: 6px; }
+    }
+  </style>
 </head>
+
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- ═══════════════════════════════════════════════════════
-     SEARCH BAR
-══════════════════════════════════════════════════════════ -->
-<div class="top-search" role="search">
-  <div class="top-search__logo">EGS<span>•</span>PORTFOLIO</div>
-  <input class="top-search__input" type="search" id="searchInput" placeholder="搜索研究方向、技能、项目… / Search skills, projects…" aria-label="搜索">
-  <button class="top-search__btn" onclick="doSearch()" id="searchBtn"><span data-zh>搜索</span><span data-en>Search</span></button>
-  <div class="lang-toggle" role="group" aria-label="Language">
-    <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')" aria-pressed="true">中文</button>
-    <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-pressed="false">EN</button>
-  </div>
-</div>
+  <header class="topbar" aria-label="WeChat-style portfolio top bar">
+    <div class="brand">
+      EGS · 中国学术名片
+      <small>Optimized for WeChat OS Environment · C9 League Fit</small>
+    </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     TICKER
-══════════════════════════════════════════════════════════ -->
-<div class="ticker-wrap" role="marquee" aria-label="资讯滚动">
-  <div class="ticker-content" id="tickerContent">
-    📌 CSC奖学金申请者 · 定量经济学研究 &nbsp;｜&nbsp;
-    533% ROI · 实证商业案例 &nbsp;｜&nbsp;
-    法语C2认证 TCF 693/699 · 阿拉伯语母语 · 英语专业水平 &nbsp;｜&nbsp;
-    Python · SQL · SUMO · QGIS · Power BI · Excel &nbsp;｜&nbsp;
-    摩洛哥 → 中国 · 定量经济学博士 / MSc · 2026 &nbsp;｜&nbsp;
-    CSC Scholarship Applicant · Quantitative Economics Research &nbsp;｜&nbsp;
-    533% ROI Proven Business Case · 15+ Variables PPI Model · -2h/week Automation
-  </div>
-</div>
+    <form class="search" role="search" onsubmit="return portfolioSearch(event)">
+      <input id="siteSearch" type="search" placeholder="搜索：CSC / 清华 / 北大 / SUMO / 重庆 / 广东 / 关系 / HSK" aria-label="Search portfolio" />
+      <button type="submit">搜索</button>
+    </form>
 
-<!-- ═══════════════════════════════════════════════════════
-     CAROUSEL
-══════════════════════════════════════════════════════════ -->
-<div class="carousel" id="carousel" role="region" aria-label="主要内容轮播">
-  <div class="carousel__slides" id="carouselSlides">
+    <a href="#wechat" class="top-action">微信直连</a>
+  </header>
 
-    <!-- Slide 1: Profile -->
-    <div class="carousel__slide cs-1">
-      <div class="cs-content">
-        <div class="cs-content__zh"><span id="s1name">萨尼·艾尔加利</span><br><span id="s1role">定量经济学 研究员</span></div>
-        <div class="cs-content__en">El Ghali Sany — Quantitative Economics Researcher</div>
-        <div class="cs-stat-row">
-          <div class="cs-stat">
-            <span class="cs-stat__val">533%</span>
-            <div class="cs-stat__lbl" id="s1s1lbl">实证ROI</div>
-          </div>
-          <div class="cs-stat">
-            <span class="cs-stat__val">C2</span>
-            <div class="cs-stat__lbl" id="s1s2lbl">法语认证</div>
-          </div>
-          <div class="cs-stat">
-            <span class="cs-stat__val">3+</span>
-            <div class="cs-stat__lbl" id="s1s3lbl">实习经历</div>
-          </div>
+  <section class="marquee" aria-label="Moving KPI ticker" tabindex="0" data-paused="false">
+    <div class="marquee-track">
+      <span>🔴 中国市场逻辑：红色代表上涨、成功、进步 · Positive performance is marked in red</span>
+      <span>🔴 ROI 533% · Quantitative finance proof</span>
+      <span>🎓 CSC Scholarship Type B Candidate · Quantitative Economics</span>
+      <span>📊 SUMO + QGIS · Urban mobility simulation</span>
+      <span>🏙️ Chongqing multi-level infrastructure perspective</span>
+      <span>🚢 Guangdong logistics and industrial application perspective</span>
+      <span>🈶 HSK Mandarin learning · Cultural integration signal</span>
+      <span>📱 Optimized for WeChat OS Environment · Mini-Program interface logic</span>
+      <span>🧾 UI Architecture based on Asian Holistic Eye-Tracking patterns : Zero white-space policy applied for maximum data density</span>
+    </div>
+  </section>
+
+  <section class="hero" id="profile" aria-labelledby="portfolio-title">
+    <aside class="shufa-seal" aria-label="Shufa-inspired title seal">
+      <div class="vertical">求学<br>修身<br>致用</div>
+    </aside>
+
+    <div class="hero-main">
+      <div class="hero-title">
+        <div>
+          <h1 id="portfolio-title">El Ghali Sany</h1>
+          <div class="hanzi">萨尼·埃尔·加利</div>
+          <p style="font-weight:900;color:var(--muted);margin-top:4px;">Moroccan student in Quantitative Economics · Candidate for Master/PhD in China through CSC Scholarship Type B.</p>
+        </div>
+        <div class="badge-stack">
+          <div class="badge">CSC Scholarship Type B</div>
+          <div class="badge gold">Category: Quantitative Economics</div>
+          <div class="badge">Actively preparing for the China Scholastic Competency Assessment (CSCA)</div>
+          <div class="badge">Target: C9 League · 清华 / 北大</div>
+          <div class="admin-code-box">CSC Application Ready - Target Agency Number: 10001</div>
+          <div class="wechat-os-badge">Optimized for WeChat OS Environment</div>
         </div>
       </div>
-      <div class="cs-badge-col">
-        <div class="cs-badge" id="s1b1">🎓 CSC申请者</div>
-        <div class="cs-badge" id="s1b2">📊 定量分析</div>
-        <div class="cs-badge" id="s1b3">🌏 清华/北大</div>
+
+      <div class="confucius">
+        <b>学而不思则罔，思而不学则殆</b> — Étudier sans réfléchir est vain ; réfléchir sans étudier est périlleux. Référence confucéenne placée ici comme principe directeur : apprendre, réfléchir, puis servir utilement la société.
+      </div>
+
+      <div class="version-note">
+        Version note · UI Architecture based on Asian Holistic Eye-Tracking patterns : Zero white-space policy applied for maximum data density.
+      </div>
+
+      <div class="kpi-mosaic" aria-label="Dense academic indicators">
+        <div class="kpi-box"><b>533%</b><span>ROI · positive red signal</span></div>
+        <div class="kpi-box"><b>Top 10%</b><span>GPA honor board</span></div>
+        <div class="kpi-box"><b>155p</b><span>Thesis output</span></div>
+        <div class="kpi-box"><b>15+</b><span>Model variables</span></div>
+        <div class="kpi-box"><b>HSK 2</b><span>Mandarin target</span></div>
+        <div class="kpi-box"><b>4</b><span>Languages</span></div>
       </div>
     </div>
 
-    <!-- Slide 2: Research -->
-    <div class="carousel__slide cs-2">
-      <div class="cs-content">
-        <div class="cs-content__zh"><span id="s2title">研究方向</span><br><span id="s2sub">空间经济与金融建模</span></div>
-        <div class="cs-content__en">Research: Spatial Economics & Financial Modeling</div>
-        <div class="cs-stat-row">
-          <div class="cs-stat">
-            <span class="cs-stat__val">15+</span>
-            <div class="cs-stat__lbl" id="s2s1lbl">PPI模型变量</div>
-          </div>
-          <div class="cs-stat">
-            <span class="cs-stat__val">SUMO</span>
-            <div class="cs-stat__lbl" id="s2s2lbl">交通模拟</div>
-          </div>
-          <div class="cs-stat">
-            <span class="cs-stat__val">QGIS</span>
-            <div class="cs-stat__lbl" id="s2s3lbl">空间分析</div>
-          </div>
-        </div>
-      </div>
-      <div class="cs-badge-col">
-        <div class="cs-badge" id="s2b1">🏙️ 城市经济</div>
-        <div class="cs-badge" id="s2b2">📈 财务模型</div>
-        <div class="cs-badge" id="s2b3">🤖 AI Workflows</div>
-      </div>
-    </div>
+    <aside class="bamboo-note">
+      <b>竹 · Bamboo signal:</b> resilience, humility and disciplined growth. This portfolio avoids excessive self-celebration: achievements are shown as evidence of continuous learning, not as final superiority.
+    </aside>
+  </section>
 
-    <!-- Slide 3: CSC -->
-    <div class="carousel__slide cs-3">
-      <div class="cs-content">
-        <div class="cs-content__zh"><span id="s3title">中国政府奖学金</span><br><span id="s3sub">CSC · 2026年入学</span></div>
-        <div class="cs-content__en">Chinese Government Scholarship · CSC · Enrollment 2026</div>
-        <div class="cs-stat-row">
-          <div class="cs-stat">
-            <span class="cs-stat__val">Bac+5</span>
-            <div class="cs-stat__lbl" id="s3s1lbl">学历水平</div>
-          </div>
-          <div class="cs-stat">
-            <span class="cs-stat__val" id="s3s2val">优秀</span>
-            <div class="cs-stat__lbl" id="s3s2lbl">成绩：最优</div>
-          </div>
-          <div class="cs-stat">
-            <span class="cs-stat__val" id="s3s3val">4国</span>
-            <div class="cs-stat__lbl" id="s3s3lbl">语言能力</div>
-          </div>
-        </div>
-      </div>
-      <div class="cs-badge-col">
-        <div class="cs-badge" id="s3b1">🌟 奖学金就绪</div>
-        <div class="cs-badge" id="s3b2">📝 研究计划</div>
-        <div class="cs-badge" id="s3b3">🤝 国际背景</div>
-      </div>
-    </div>
-
-  </div>
-  <button class="carousel__prev" onclick="carouselPrev()" aria-label="上一张">‹</button>
-  <button class="carousel__next" onclick="carouselNext()" aria-label="下一张">›</button>
-  <div class="carousel__dots">
-    <button class="carousel__dot active" onclick="carouselGo(0)"></button>
-    <button class="carousel__dot" onclick="carouselGo(1)"></button>
-    <button class="carousel__dot" onclick="carouselGo(2)"></button>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════
-     KPI BADGE STRIP
-══════════════════════════════════════════════════════════ -->
-<div class="kpi-strip" role="region" aria-label="核心业绩指标">
-  <span class="kpi-strip__label" id="kpiLabel">KPIs</span>
-  <div class="kpi-badge">
-    <span class="kpi-badge__val">533%</span>
-    <span class="kpi-badge__lbl" id="kpi1lbl">ROI实证<br>Proven ROI</span>
-  </div>
-  <div class="kpi-badge gold">
-    <span class="kpi-badge__val">15+</span>
-    <span class="kpi-badge__lbl" id="kpi2lbl">模型变量<br>Variables</span>
-  </div>
-  <div class="kpi-badge navy">
-    <span class="kpi-badge__val">-2h</span>
-    <span class="kpi-badge__lbl" id="kpi3lbl">自动化节省<br>Saved/week</span>
-  </div>
-  <div class="kpi-badge green">
-    <span class="kpi-badge__val">C2</span>
-    <span class="kpi-badge__lbl" id="kpi4lbl">法语TCF<br>693/699</span>
-  </div>
-  <div class="kpi-badge" style="background:#6A1B9A;">
-    <span class="kpi-badge__val">Bac+5</span>
-    <span class="kpi-badge__lbl" id="kpi5lbl">学历水平<br>Degree Level</span>
-  </div>
-  <div class="kpi-badge" style="background:#00767A;">
-    <span class="kpi-badge__val">DET110</span>
-    <span class="kpi-badge__lbl">English<br>Duolingo</span>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════
-     MAIN 3-COLUMN GRID
-══════════════════════════════════════════════════════════ -->
-<div class="page-grid">
-
-  <!-- ─── LEFT COLUMN ─────────────────────────── -->
-  <div class="col-left" id="profile">
-
-    <!-- Profile -->
-    <div class="panel">
-      <div class="panel__head red">
-        <span class="panel__head__zh" id="ph_profile">个人简介</span>
-        <span class="panel__head__en">Profile</span>
-      </div>
-      <div class="panel__body">
-        <div class="profile-card">
-          <div class="profile-avatar">EGS</div>
-          <div class="profile-info">
-            <div class="profile-info__name-zh">萨尼·艾尔加利<br><span style="font-size:12px;font-weight:400;color:var(--gray-400);">El Ghali Sany</span></div>
-            <div style="margin-top:4px;">
-              <span class="profile-tag">定量经济学</span>
-              <span class="profile-tag">CSC候选人</span>
-              <span class="profile-tag">供应链分析</span>
-            </div>
+  <main id="main" class="main-grid">
+    <aside class="column left-column" aria-label="Honor board, languages and academic proof">
+      <section class="panel" id="honor">
+        <div class="panel-head"><strong>荣誉榜 · Honor Board</strong><span>Mianzi / Face</span></div>
+        <div class="panel-body honor-board">
+          <article class="honor-card">
+            <div class="honor-medal">10%</div>
+            <div><h3>Top 10% GPA</h3><p>Academic seriousness and consistency signal for selective admissions.</p></div>
+          </article>
+          <article class="honor-card">
+            <div class="honor-medal">533</div>
+            <div><h3>ROI 533%</h3><p>Quantitative finance project result, marked in red as positive performance.</p></div>
+          </article>
+          <article class="honor-card">
+            <div class="honor-medal">155</div>
+            <div><h3>155-page Thesis Excellence</h3><p>Dense research work connecting traffic, economics and financial modeling.</p></div>
+          </article>
+          <div class="humility">
+            <b>Modesty statement:</b> Ces résultats ne sont présentés que comme le fruit d'un apprentissage continu et d'un travail collectif. Le parcours demeure celui d'un étudiant encore en formation, cherchant à perfectionner ses lacunes avec respect pour l'excellence de ses maîtres.
           </div>
         </div>
-        <div class="profile-row">
-          <span class="profile-row__icon">🎓</span>
-          <span class="profile-row__val"><strong class="red" id="pr_school">INSEEC Lyon · MSc采购与供应链</strong><br><span id="pr_schoolSub">Procurement &amp; Supply Chain Mgmt · Bac+5</span></span>
-        </div>
-        <div class="profile-row">
-          <span class="profile-row__icon">💼</span>
-          <span class="profile-row__val"><strong id="pr_job">SAN MAROC · Business Analyst实习</strong><br><span id="pr_jobDate">2026年2月 – 2026年8月</span></span>
-        </div>
-        <div class="profile-row">
-          <span class="profile-row__icon">📍</span>
-          <span class="profile-row__val"><span id="pr_loc">卡萨布兰卡, 摩洛哥</span></span>
-        </div>
-        <div class="profile-row">
-          <span class="profile-row__icon">🎯</span>
-          <span class="profile-row__val"><strong class="red" id="pr_goal">目标: 清华大学 / 北京大学</strong><br><span id="pr_goalSub">经济学 Master/PhD · CSC奖学金 2026</span></span>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- University Targets -->
-    <div class="panel">
-      <div class="panel__head gold">
-        <span class="panel__head__zh" id="ph_targets">目标院校</span>
-        <span class="panel__head__en">Target Universities</span>
-      </div>
-      <div class="panel__body">
-        <div class="uni-chips">
-          <div class="uni-chip"><span class="uni-chip__dot"></span>清华大学</div>
-          <div class="uni-chip navy"><span class="uni-chip__dot"></span>北京大学</div>
-          <div class="uni-chip"><span class="uni-chip__dot"></span>复旦大学</div>
-          <div class="uni-chip navy"><span class="uni-chip__dot"></span>中国人民大学</div>
-        </div>
-        <div style="font-size:10px;color:var(--gray-400);margin-top:4px;">
-          <span id="uni_label">经济学 / 应用经济学 / 数量经济学</span><br>
-          <span style="font-family:var(--font-en);">Economics · Applied Econ. · Quantitative Econ.</span>
-        </div>
-        <div class="awards-row" style="margin-top:8px;">
-          <div class="award-badge red" id="aw1">🏆 优秀毕业生 Mention TB</div>
-          <div class="award-badge gold" id="aw2">⭐ CSC就绪 CSC-Ready</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Key Stats -->
-    <div class="panel">
-      <div class="panel__head red">
-        <span class="panel__head__zh" id="ph_metrics">核心指标</span>
-        <span class="panel__head__en">Key Metrics</span>
-      </div>
-      <div class="panel__body">
-        <div class="stat-grid">
-          <div class="stat-cell">
-            <span class="stat-cell__val">533%</span>
-            <span class="stat-cell__lbl" id="sc1lbl">实证ROI<br>Proven Return</span>
-          </div>
-          <div class="stat-cell gold-cell">
-            <span class="stat-cell__val">15+</span>
-            <span class="stat-cell__lbl" id="sc2lbl">模型变量<br>PPI Variables</span>
-          </div>
-          <div class="stat-cell navy-cell">
-            <span class="stat-cell__val">-2h</span>
-            <span class="stat-cell__lbl" id="sc3lbl">每周节省<br>Saved/week</span>
-          </div>
-          <div class="stat-cell green-cell">
-            <span class="stat-cell__val">C2</span>
-            <span class="stat-cell__lbl" id="sc4lbl">法语水平<br>French Level</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Education -->
-    <div class="panel" id="education">
-      <div class="panel__head">
-        <span class="panel__head__zh" id="ph_edu">教育背景</span>
-        <span class="panel__head__en">Education</span>
-      </div>
-      <div class="panel__body">
-        <div class="edu-item">
-          <div class="edu-item__school" id="edu1school">INSEEC Lyon 🇫🇷</div>
-          <div class="edu-item__degree" id="edu1deg">MSc采购与供应链管理 · Bac+5</div>
-          <div class="edu-item__date" id="edu1date">2025 – 2027 · 里昂, 法国</div>
-          <span class="edu-item__mention" id="edu1badge">在读 In Progress</span>
-        </div>
-        <div class="edu-item">
-          <div class="edu-item__school" id="edu2school">卡萨布兰卡国际大学 (UIC) 🇲🇦</div>
-          <div class="edu-item__degree" id="edu2deg">管理、金融与会计学士</div>
-          <div class="edu-item__date" id="edu2date">2022 – 2025 · 卡萨布兰卡</div>
-          <span class="edu-item__mention" id="edu2badge">🏆 最优成绩 Mention Très Bien</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Languages -->
-    <div class="panel" id="languages">
-      <div class="panel__head teal">
-        <span class="panel__head__zh" id="ph_lang">语言能力</span>
-        <span class="panel__head__en">Languages</span>
-      </div>
-      <div class="panel__body">
-        <div class="lang-item">
+      <section class="panel" id="languages">
+        <div class="panel-head navy"><strong>语言与融入 · Languages</strong><span>HSK / Integration</span></div>
+        <div class="panel-body lang-stack">
           <div class="lang-row">
-            <span class="lang-name" id="l1name">阿拉伯语 Arabic</span>
-            <span class="lang-level" id="l1level">母语 Native</span>
+            <label for="french"><span>French / Français</span><span>100%</span></label>
+            <progress id="french" max="100" value="100">100%</progress>
           </div>
-          <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:100%"></div></div>
-        </div>
-        <div class="lang-item">
           <div class="lang-row">
-            <span class="lang-name" id="l2name">法语 Français</span>
-            <span class="lang-level" id="l2level">C2 · TCF 693/699</span>
+            <label for="english"><span>English</span><span>100%</span></label>
+            <progress id="english" max="100" value="100">100%</progress>
           </div>
-          <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:99%"></div></div>
-        </div>
-        <div class="lang-item">
           <div class="lang-row">
-            <span class="lang-name" id="l3name">英语 English</span>
-            <span class="lang-level green" id="l3level">DET 110/160</span>
+            <label for="arabic"><span>Arabic / العربية</span><span>Native</span></label>
+            <progress id="arabic" max="100" value="100">100%</progress>
           </div>
-          <div class="lang-bar-bg"><div class="lang-bar-fill green" style="width:78%"></div></div>
-        </div>
-        <div class="lang-item">
           <div class="lang-row">
-            <span class="lang-name" id="l4name">普通话 Mandarin</span>
-            <span class="lang-level gold" id="l4level">学习中 Learning</span>
+            <label for="mandarin"><span>Mandarin / 普通话</span><span>HSK 2 in progress</span></label>
+            <progress id="mandarin" max="100" value="30">30%</progress>
           </div>
-          <div class="lang-bar-bg"><div class="lang-bar-fill gold" style="width:20%"></div></div>
+          <div class="hsk-note">Mandarin is being studied actively not as a decorative skill, but as a sign of respect for Chinese academic life, daily communication and Sino-African cultural exchange.</div>
         </div>
-      </div>
-    </div>
+      </section>
 
-  </div><!-- /col-left -->
-
-
-  <!-- ─── CENTER COLUMN ──────────────────────── -->
-  <div class="col-center" id="experience">
-
-    <!-- Experience -->
-    <div class="panel">
-      <div class="panel__head red">
-        <span class="panel__head__zh" id="ph_exp">职业经历</span>
-        <span class="panel__head__en">Professional Experience</span>
-      </div>
-      <div class="panel__body">
-
-        <div class="exp-item">
-          <div class="exp-item__top">
-            <div>
-              <div class="exp-item__company"><span id="exp1co">SAN MAROC</span></div>
-              <div class="exp-item__role" id="exp1role">Business Analyst 实习生</div>
-            </div>
-            <div class="exp-item__date" id="exp1date">2026.02 – 2026.08 · 卡萨布兰卡 · 远程</div>
-          </div>
-          <div class="exp-bullet" id="exp1b1">分析客户组合（欠款、逾期账款、回款），识别绩效缺口 — 97.9亿MAD不良贷款市场</div>
-          <div class="exp-bullet" id="exp1b2">设计Excel决策支持仪表盘，追踪DSO、CEI、回收率等KPIs；VBA自动化<strong>节省2小时/周</strong></div>
-          <div class="exp-bullet" id="exp1b3">按账龄与回收概率对投资组合分段；通过Google Drive远程提交每周验证报告</div>
-          <div class="exp-kpis">
-            <span class="exp-kpi navy">Power BI</span>
-            <span class="exp-kpi navy">Excel VBA</span>
-            <span class="exp-kpi">-2h/周</span>
-            <span class="exp-kpi gold">KPI仪表盘</span>
-          </div>
+      <section class="panel">
+        <div class="panel-head gold"><strong>学术身份 · Academic Identity</strong><span>Profile</span></div>
+        <div class="panel-body">
+          <table class="table" aria-label="Academic identity table">
+            <thead><tr><th>Dimension</th><th>Evidence</th></tr></thead>
+            <tbody>
+              <tr><td>Name</td><td>El Ghali Sany · 萨尼·埃尔·加利</td></tr>
+              <tr><td>Origin</td><td>Morocco · Sino-African bridge perspective</td></tr>
+              <tr><td>Field</td><td>Quantitative Economics, spatial analysis, finance modeling</td></tr>
+              <tr><td>Target</td><td>Master/PhD · China · CSC Type B</td></tr>
+              <tr><td>Administrative readiness</td><td>Actively preparing for the China Scholastic Competency Assessment (CSCA) · applicability to graduate-level routes to verify before formal submission</td></tr>
+            </tbody>
+          </table>
         </div>
+      </section>
 
-        <div class="exp-item">
-          <div class="exp-item__top">
-            <div>
-              <div class="exp-item__company" id="exp2co">2ACOM</div>
-              <div class="exp-item__role" id="exp2role">商业分析实习生</div>
-            </div>
-            <div class="exp-item__date" id="exp2date">2025.05 – 2025.07 · 卡萨布兰卡</div>
+      <section class="panel">
+        <div class="panel-head bamboo"><strong>工具能力 · Analytical Tools</strong><span>Applied Methods</span></div>
+        <div class="panel-body tag-grid">
+          <span class="tag">SUMO</span>
+          <span class="tag">QGIS</span>
+          <span class="tag">Excel VBA</span>
+          <span class="tag">Power BI</span>
+          <span class="tag gold">ROI</span>
+          <span class="tag gold">CAPEX/OPEX</span>
+          <span class="tag gold">TCO</span>
+          <span class="tag bamboo">Urban Flow</span>
+          <span class="tag navy">Applied Economics</span>
+        </div>
+        <div class="pangu-block" style="margin-top:7px;">
+          <h3>盘古数据秩序 · Pangu Data Order</h3>
+          <p>The data-science mission is to order the chaos of massive data into clear models, like Pangu organizing primordial chaos to separate Heaven and Earth. Big Data is treated as raw cosmological material; modeling, segmentation and algorithmic scoring convert it into readable academic order.</p>
+        </div>
+      </section>
+    </aside>
+
+    <section class="column center-column" id="research" aria-label="Research projects and China application">
+      <article class="project">
+        <div class="project-head">
+          <div>
+            <h2>Projets de Recherche · SUMO/QGIS, Mobilité Urbaine et Rentabilité</h2>
+            <p>Traffic simulation, spatial exposure and financial performance modeling designed to serve collective urban decision-making, first through Casablanca and then through Chinese urban and logistics contexts.</p>
           </div>
-          <div class="exp-bullet" id="exp2b1">构建覆盖5个市场区域的KPI管理系统</div>
-          <div class="exp-bullet" id="exp2b2">开发整合<strong>15+变量</strong>的潜在盈利能力指数(PPI)</div>
-          <div class="exp-bullet" id="exp2b3">构建5年期财务模型，整合ROI、CAPEX、OPEX、TCO预测</div>
-          <div class="exp-kpis">
-            <span class="exp-kpi">15+ Variables</span>
-            <span class="exp-kpi">533% ROI</span>
-            <span class="exp-kpi navy">Excel</span>
-            <span class="exp-kpi gold">财务建模</span>
-          </div>
+          <div class="project-badge">CORE RESEARCH</div>
         </div>
 
-        <div class="exp-item">
-          <div class="exp-item__top">
-            <div>
-              <div class="exp-item__company" id="exp3co">MAGHREBAIL</div>
-              <div class="exp-item__role" id="exp3role">金融实习生</div>
-            </div>
-            <div class="exp-item__date" id="exp3date">2024.07 – 2024.08 · 卡萨布兰卡</div>
-          </div>
-          <div class="exp-bullet" id="exp3b1">信贷申请分析，财务文件审核与合规核查</div>
-          <div class="exp-bullet" id="exp3b2">参与金融租赁业务风险评估流程</div>
-          <div class="exp-kpis">
-            <span class="exp-kpi navy">信贷分析</span>
-            <span class="exp-kpi navy">风险评估</span>
-            <span class="exp-kpi gold">金融租赁</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Research Projects -->
-    <div class="panel" id="research">
-      <div class="panel__head">
-        <span class="panel__head__zh" id="ph_research">研究项目 · 毕业论文</span>
-        <span class="panel__head__en">Research Projects · Final Thesis</span>
-      </div>
-      <div class="panel__body">
-
-        <!-- PFE Header -->
-        <div class="section-divider" id="res_div">📄 毕业论文 (PFE) · Université Internationale de Casablanca</div>
-        <div style="background:var(--red-bg);border:1px solid #FFCCCC;border-radius:3px;padding:8px 10px;margin-bottom:8px;">
-          <div style="font-weight:700;font-size:12px;color:var(--black);margin-bottom:3px;" id="res_title">
-            户外广告牌财务盈利能力评估（按道路交通流量）<br>
-            <span style="font-weight:400;font-size:10px;color:var(--gray-400);font-family:var(--font-en);">Évaluation de la rentabilité financière des supports publicitaires en fonction du trafic routier — Cas de Casablanca</span>
-          </div>
-          <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:5px;">
-            <span class="exp-kpi">533% ROI</span>
-            <span class="exp-kpi gold">IRP 13.49</span>
-            <span class="exp-kpi navy">5 zones SUMO</span>
-            <span class="exp-kpi navy">15+ variables</span>
-            <span class="exp-kpi" style="background:#00767A;">Top-10 Ranking</span>
-            <span class="exp-kpi" style="background:#6A1B9A;">Mention TB</span>
-          </div>
+        <div class="dense-stat-grid" aria-label="Research indicators">
+          <div class="dense-stat"><b>533%</b><span>ROI maximum</span></div>
+          <div class="dense-stat"><b>5</b><span>urban zones</span></div>
+          <div class="dense-stat"><b>15+</b><span>PPI variables</span></div>
+          <div class="dense-stat"><b>SUMO</b><span>simulation</span></div>
+          <div class="dense-stat"><b>QGIS</b><span>spatial layer</span></div>
         </div>
 
-        <!-- Methodology pipeline -->
-        <div style="background:#001A00;border-radius:3px;padding:7px 10px;margin-bottom:8px;font-family:monospace;font-size:9px;color:#00FF88;">
-          <div style="color:#448844;margin-bottom:3px;">▶ RESEARCH PIPELINE</div>
-          <div>OSM Export → netconvert → duarouter → SUMO v1.18 sim (3600s, E1 detectors)</div>
-          <div style="color:#446644;">→ XML output → Excel post-processing → QGIS spatial join</div>
-          <div style="color:#448844;">→ IRP model (Traffic 40% · Purchasing Power 30% · ROAS 30%)</div>
-          <div style="color:#446644;">→ 5-year CAPEX/OPEX/TCO/NPV financial model → ROI ranking</div>
-        </div>
+        <div class="bamboo-divider" aria-hidden="true"></div>
 
-        <!-- 5 zones studied -->
-        <div style="font-size:10px;font-weight:700;color:var(--navy);margin-bottom:5px;border-left:3px solid var(--red);padding-left:6px;">
-          5 ZONES SIMULÉES · CASABLANCA
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin-bottom:8px;">
-          <div style="background:var(--red-bg);border:1px solid #FFCCCC;border-radius:2px;padding:4px 3px;text-align:center;">
-            <div style="font-size:9px;font-weight:700;color:var(--red);">Maârif</div>
-            <div style="font-size:8px;color:var(--gray-400);">432 veh/h<br>congestion</div>
-          </div>
-          <div style="background:#EEF2FF;border:1px solid #99AADD;border-radius:2px;padding:4px 3px;text-align:center;">
-            <div style="font-size:9px;font-weight:700;color:var(--navy);">Bd. Moh. V</div>
-            <div style="font-size:8px;color:var(--gray-400);">100 veh/h<br>modéré</div>
-          </div>
-          <div style="background:#F0FFF4;border:1px solid #88CCAA;border-radius:2px;padding:4px 3px;text-align:center;">
-            <div style="font-size:9px;font-weight:700;color:var(--green-pos);">Ben M'Sick</div>
-            <div style="font-size:8px;color:var(--gray-400);">96 veh/h<br>fluide</div>
-          </div>
-          <div style="background:#FFFBE6;border:1px solid #FFD700;border-radius:2px;padding:4px 3px;text-align:center;">
-            <div style="font-size:9px;font-weight:700;color:var(--gold);">Hay Hassani</div>
-            <div style="font-size:8px;color:var(--gray-400);">240 veh/h<br>stable</div>
-          </div>
-          <div style="background:#F5EEF8;border:1px solid #BB8FCC;border-radius:2px;padding:4px 3px;text-align:center;">
-            <div style="font-size:9px;font-weight:700;color:#6A1B9A;">Sidi Maarouf</div>
-            <div style="font-size:8px;color:var(--gray-400);">56 veh/h<br>faible</div>
-          </div>
-        </div>
-
-        <!-- Real sensor data table from PFE -->
-        <div style="font-size:10px;font-weight:700;color:var(--navy);margin-bottom:4px;border-left:3px solid var(--red);padding-left:6px;">
-          DONNÉES CAPTEUR RÉELLES · Maarif Capteur 1 (E1 Detector, Δt=300s)
-        </div>
-        <table class="data-table" style="margin-bottom:8px;">
+        <div class="registry-label">地府账册 · Registre technique SUMO / QGIS</div>
+        <table class="table registry-table" aria-label="Technical registry for SUMO and QGIS evidence">
           <thead>
             <tr>
-              <th>Intervalle</th>
-              <th>Veh.</th>
-              <th>Débit veh/h</th>
-              <th>Occ. %</th>
-              <th>V. moy. km/h</th>
-              <th>État</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>0–300s</td><td>22</td><td>264</td><td>1.66%</td><td>22.2</td><td style="color:var(--green-pos);">✅ Fluide</td></tr>
-            <tr><td>900–1200s</td><td>28</td><td>336</td><td>2.25%</td><td>21.0</td><td style="color:var(--green-pos);">✅ Dense</td></tr>
-            <tr><td>1500–1800s</td><td>36</td><td class="highlight">432</td><td>3.15%</td><td>21.0</td><td style="color:var(--gold);">⚠ Pic</td></tr>
-            <tr><td>2700–3000s</td><td>19</td><td>228</td><td>23.69%</td><td>18.1</td><td style="color:#FF6600;">⚠ Ralenti</td></tr>
-            <tr style="background:var(--red-bg);"><td><strong>3000–3300s</strong></td><td>2</td><td>24</td><td class="highlight"><strong>97.54%</strong></td><td class="highlight"><strong>0.05</strong></td><td style="color:var(--red);">🔴 Blocage</td></tr>
-          </tbody>
-        </table>
-
-        <!-- Financial model OOH vs DOOH -->
-        <div style="font-size:10px;font-weight:700;color:var(--navy);margin-bottom:4px;border-left:3px solid var(--red);padding-left:6px;">
-          MODÈLE FINANCIER 5 ANS · OOH vs DOOH (MAD)
-        </div>
-        <table class="data-table" style="margin-bottom:8px;">
-          <thead>
-            <tr>
-              <th>Scénario</th>
-              <th>CAPEX</th>
-              <th>OPEX/an</th>
-              <th>TCO 5 ans</th>
-              <th>Revenus 5 ans</th>
-              <th>ROI</th>
+              <th>Analytical Layer</th>
+              <th>Method</th>
+              <th>Data Logic</th>
+              <th>Economic Meaning</th>
+              <th>China-Relevant Reading</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>OOH Premium</strong></td>
-              <td>120,000</td>
-              <td>45,000</td>
-              <td>345,000</td>
-              <td class="positive">1,664,000</td>
-              <td class="highlight positive">382%</td>
+              <td>Traffic exposure</td>
+              <td>SUMO microsimulation</td>
+              <td>Vehicle flow, congestion, time interval</td>
+              <td>Balancing the Yin and Yang of urban flows, preserving the smooth circulation of the city's Qi</td>
+              <td>Adaptable to complex urban corridors</td>
             </tr>
             <tr>
-              <td><strong>OOH Secondaire</strong></td>
-              <td>90,000</td>
-              <td>25,000</td>
-              <td>215,000</td>
-              <td class="positive">998,400</td>
-              <td class="highlight positive">364%</td>
+              <td>Spatial economics</td>
+              <td>QGIS mapping</td>
+              <td>Zone ranking and geographic segmentation</td>
+              <td>Location-based profitability</td>
+              <td>Useful for multi-level cities and logistics belts</td>
             </tr>
-            <tr style="background:#EEF2FF;">
-              <td><strong>DOOH Secondaire</strong></td>
-              <td>350,000</td>
-              <td>80,000</td>
-              <td>750,000</td>
-              <td class="positive">3,800,160</td>
-              <td class="highlight positive">407%</td>
+            <tr>
+              <td>Financial model</td>
+              <td>ROI, CAPEX, OPEX, TCO</td>
+              <td>5-year decision horizon</td>
+              <td class="red-up">Positive performance is red</td>
+              <td>Investment prioritization under infrastructure constraints</td>
             </tr>
-            <tr style="background:var(--red-bg);">
-              <td><strong>DOOH Premium ★</strong></td>
-              <td>450,000</td>
-              <td>110,000</td>
-              <td>1,000,000</td>
-              <td class="highlight">6,333,600</td>
-              <td class="highlight"><strong>533%</strong></td>
+            <tr>
+              <td>Decision index</td>
+              <td>PPI · Profit Potential Index</td>
+              <td>15+ variables</td>
+              <td>Ranking of urban opportunities</td>
+              <td>Professor-readable empirical structure</td>
             </tr>
           </tbody>
         </table>
 
-        <!-- IRP + Top-10 ranking -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
-          <!-- IRP Box -->
-          <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:3px;padding:7px;">
-            <div style="font-size:10px;font-weight:700;color:var(--navy);margin-bottom:5px;">IRP (Indice Rentabilité Projet)</div>
-            <div style="display:flex;flex-direction:column;gap:3px;">
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:10px;">
-                <span>OOH</span>
-                <span style="background:var(--navy);color:#fff;padding:1px 8px;border-radius:2px;font-family:monospace;font-weight:700;">18.95</span>
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:10px;">
-                <span>DOOH</span>
-                <span style="background:var(--red);color:#fff;padding:1px 8px;border-radius:2px;font-family:monospace;font-weight:700;">13.49</span>
-              </div>
-              <div style="font-size:9px;color:var(--gray-400);margin-top:3px;">Taux actualisation: 12% · Horizon: 5 ans<br>VAN DOOH = <strong style="color:var(--red);">1,873,780 MAD</strong></div>
-            </div>
+        <aside class="china-application" aria-label="China geographical application">
+          <div class="city-seal">重庆<br>广东<br>应用</div>
+          <div>
+            <h3>Perspectives d'application en Chine</h3>
+            <p>Ces modèles de simulation de trafic pourraient être adaptés à Chongqing, ville célèbre pour son infrastructure en labyrinthe et sur plusieurs niveaux, afin d'étudier la circulation dans des environnements urbains verticaux. Ils pourraient aussi être appliqués au Guangdong, cœur logistique et industriel, pour analyser les flux liés aux chaînes d'approvisionnement, aux corridors portuaires et aux zones de production. La mention selon laquelle le Guangdong produit 10% des biens mondiaux est intégrée ici comme hypothèse de narration fournie par l'utilisateur et doit être vérifiée avant usage académique formel.</p>
           </div>
-          <!-- Top 3 locations -->
-          <div style="background:var(--gray-50);border:1px solid var(--border);border-radius:3px;padding:7px;">
-            <div style="font-size:10px;font-weight:700;color:var(--navy);margin-bottom:5px;">🏆 Top-3 Emplacements</div>
-            <div style="display:flex;flex-direction:column;gap:3px;">
-              <div style="font-size:9px;display:flex;align-items:center;gap:4px;">
-                <span style="background:var(--gold);color:#fff;padding:1px 5px;border-radius:2px;font-weight:700;">#1</span>
-                <span>Façade Morocco Mall</span>
-                <span style="margin-left:auto;color:var(--red);font-weight:700;">9.1/10</span>
-              </div>
-              <div style="font-size:9px;display:flex;align-items:center;gap:4px;">
-                <span style="background:var(--gray-400);color:#fff;padding:1px 5px;border-radius:2px;font-weight:700;">#2</span>
-                <span>Rond-Point des Sports</span>
-                <span style="margin-left:auto;color:var(--red);font-weight:700;">8.7/10</span>
-              </div>
-              <div style="font-size:9px;display:flex;align-items:center;gap:4px;">
-                <span style="background:#B87333;color:#fff;padding:1px 5px;border-radius:2px;font-weight:700;">#3</span>
-                <span>Autoroute A3 Entrée Casa</span>
-                <span style="margin-left:auto;color:var(--red);font-weight:700;">8.5/10</span>
-              </div>
-              <div style="font-size:9px;color:var(--gray-400);margin-top:2px;">Score = Audience 40% · CPM 30% · ROAS 30%</div>
-            </div>
+        </aside>
+
+        <div class="registry-label">天庭地理司 · Registre géographique Chine</div>
+        <table class="table registry-table" aria-label="China geography project transfer registry">
+          <thead>
+            <tr><th>Chinese Geography</th><th>Why It Matters</th><th>Possible Research Adaptation</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Chongqing · 重庆</td><td>Mountainous, multi-level urban infrastructure</td><td>3D traffic stress, vertical accessibility, congestion behavior</td></tr>
+            <tr><td>Guangdong · 广东</td><td>Industrial and logistics heartland</td><td>Port-city corridors, freight intensity, production-network mobility</td></tr>
+            <tr><td>Greater Bay Area</td><td>Innovation, manufacturing and cross-border economic flows</td><td>Spatial productivity and logistics-performance modeling</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="project" id="guanxi-work">
+        <div class="project-head">
+          <div>
+            <h2>Harmonie Communautaire et Guanxi · 关系与集体协作</h2>
+            <p>Experience is not framed as individual heroism, but as contribution to collective reliability, shared decision-making and institutional trust.</p>
           </div>
+          <div class="project-badge">COLLECTIVE VALUE</div>
         </div>
 
-        <!-- Project cards -->
-        <div id="pc1title" style="display:none"></div>
-        <div id="pc2title" style="display:none"></div>
-        <div id="pc3title" style="display:none"></div>
-        <div id="pc1desc" style="display:none"></div>
-        <div id="pc2desc" style="display:none"></div>
-        <div id="pc3desc" style="display:none"></div>
-        <div id="pc3result" style="display:none"></div>
+        <div class="registry-label">人事功过簿 · Registre collectif Guanxi</div>
+        <table class="table registry-table" aria-label="Collective Guanxi experience registry">
+          <thead>
+            <tr><th>Context</th><th>Collective Contribution</th><th>Guanxi / Harmony Reading</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SAN MAROC · Business Analysis</td>
+              <td>Built reporting structures to support managers, finance teams and client portfolio monitoring.</td>
+              <td>Strengthens trust by making shared information clearer and more reliable.</td>
+            </tr>
+            <tr>
+              <td>2ACOM · KPI System</td>
+              <td>Helped transform scattered performance indicators into an organized decision model.</td>
+              <td>Supports collective judgment instead of isolated intuition.</td>
+            </tr>
+            <tr>
+              <td>MAGHREBAIL · Financial Analysis</td>
+              <td>Contributed to risk review and document control with discipline and caution.</td>
+              <td>Shows respect for institutional procedure and long-term trust.</td>
+            </tr>
+            <tr>
+              <td>Leo Club · Community Harmony</td>
+              <td>Service-oriented engagement beyond personal academic ambition.</td>
+              <td>Signals collectivism, public responsibility and intercultural cooperation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
 
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:8px;">
-          <div style="background:#fff;border:1px solid var(--border);border-radius:3px;overflow:hidden;">
-            <div style="background:var(--red);color:#fff;padding:5px 7px;font-size:10px;font-weight:700;">📊 Modélisation financière</div>
-            <div style="padding:6px 7px;font-size:9px;color:var(--gray-600);">CAPEX/OPEX/TCO/NPV · 4 scénarios · Seuil rentabilité 5–6 sem.</div>
-            <div style="display:flex;flex-wrap:wrap;gap:2px;padding:0 7px 6px;">
-              <span class="proj-tag">Excel</span><span class="proj-tag">NPV</span><span class="proj-tag">TCO</span><span class="proj-tag">ROI</span>
-            </div>
+      <article class="project">
+        <div class="project-head">
+          <div>
+            <h2>Research Proposal Logic for C9 League Professors</h2>
+            <p>Academic positioning designed for supervisors in quantitative economics, urban economics, applied economics, logistics and infrastructure development.</p>
           </div>
-          <div style="background:#fff;border:1px solid var(--border);border-radius:3px;overflow:hidden;">
-            <div style="background:var(--teal);color:#fff;padding:5px 7px;font-size:10px;font-weight:700;">🗺️ Simulation SUMO+QGIS</div>
-            <div style="padding:6px 7px;font-size:9px;color:var(--gray-600);">5 quartiers · 15 capteurs E1 · 3600s · netconvert+duarouter</div>
-            <div style="display:flex;flex-wrap:wrap;gap:2px;padding:0 7px 6px;">
-              <span class="proj-tag">SUMO</span><span class="proj-tag">QGIS</span><span class="proj-tag">OSM</span><span class="proj-tag">XML</span>
-            </div>
-          </div>
-          <div style="background:#fff;border:1px solid var(--border);border-radius:3px;overflow:hidden;">
-            <div style="background:var(--navy);color:#fff;padding:5px 7px;font-size:10px;font-weight:700;">📍 IRP · Ranking Top-10</div>
-            <div style="padding:6px 7px;font-size:9px;color:var(--gray-600);">Indice multicritère: trafic + pouvoir d'achat + ROAS. Top-10 Casablanca.</div>
-            <div style="display:flex;flex-wrap:wrap;gap:2px;padding:0 7px 6px;">
-              <span class="proj-tag">MCA</span><span class="proj-tag">RGPH</span><span class="proj-tag">Immo proxy</span>
-            </div>
-          </div>
+          <div class="project-badge">PROFESSOR FIT</div>
         </div>
 
+        <div class="registry-label">天曹录取司 · Registre académique C9</div>
+        <table class="table registry-table" aria-label="C9 professor fit academic registry">
+          <thead>
+            <tr><th>Professor Concern</th><th>Portfolio Answer</th><th>Admission Signal</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Can the student handle empirical work?</td><td>SUMO/QGIS, financial modeling, dense tables, PPI index</td><td class="red-up">Quantitative readiness</td></tr>
+            <tr><td>Does the student understand China?</td><td>Confucius, Mianzi, Guanxi, WeChat, HSK, Chongqing, Guangdong</td><td class="red-up">Cultural seriousness</td></tr>
+            <tr><td>Is the research policy-relevant?</td><td>Urban flows, logistics corridors, infrastructure productivity</td><td class="red-up">Applied economics relevance</td></tr>
+            <tr><td>Can the student integrate respectfully?</td><td>Humility statement, Mandarin study, collectivist framing</td><td class="red-up">Low cultural friction</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
 
-        <!-- Hypotheses confirmed -->
-        <div style="font-size:10px;font-weight:700;color:var(--navy);margin:8px 0 4px;border-left:3px solid var(--red);padding-left:6px;">
-          HYPOTHÈSES DE RECHERCHE · RÉSULTATS
+    <aside class="column right-column" id="guanxi" aria-label="Academic guanxi and CSC roadmap">
+      <section class="panel">
+        <div class="panel-head"><strong>关系网络 · Academic Guanxi</strong><span>Trust</span></div>
+        <div class="panel-body guanxi-list">
+          <article class="guanxi-item">
+            <h3>Respect for Mentorship</h3>
+            <p>The portfolio presents the student as someone seeking guidance from masters, not as someone claiming finished excellence.</p>
+          </article>
+          <article class="guanxi-item">
+            <h3>Supervisor Reference</h3>
+            <p>Asst. Prof. Dr. Zeynep Baysal may be presented as an academic supervision reference where appropriate.</p>
+          </article>
+          <article class="guanxi-item">
+            <h3>Sino-African Bridge</h3>
+            <p>Moroccan background is framed as a bridge for research on infrastructure, urban development and applied economic cooperation.</p>
+          </article>
         </div>
-        <div style="display:flex;flex-direction:column;gap:3px;">
-          <div style="font-size:10px;display:flex;gap:6px;align-items:flex-start;padding:4px 6px;background:var(--gray-50);border-radius:2px;">
-            <span style="color:var(--green-pos);font-weight:700;flex-shrink:0;">✅ H1</span>
-            <span>Zones à fort trafic (Maarif 432 veh/h) → ROI supérieur <strong style="color:var(--red);">confirmé</strong></span>
-          </div>
-          <div style="font-size:10px;display:flex;gap:6px;align-items:flex-start;padding:4px 6px;background:var(--gray-50);border-radius:2px;">
-            <span style="color:var(--green-pos);font-weight:700;flex-shrink:0;">✅ H3</span>
-            <span>DOOH TCO 3× OOH mais ROI 533% vs 382% → rentabilité supérieure à moyen terme <strong style="color:var(--red);">confirmé</strong></span>
-          </div>
-          <div style="font-size:10px;display:flex;gap:6px;align-items:flex-start;padding:4px 6px;background:var(--gray-50);border-radius:2px;">
-            <span style="color:var(--green-pos);font-weight:700;flex-shrink:0;">✅ H5</span>
-            <span>IRP multicritère (trafic + socio-éco + SIG) = outil stratégique fiable <strong style="color:var(--red);">confirmé</strong></span>
-          </div>
-        </div>
+      </section>
 
+      <section class="panel">
+        <div class="panel-head gold"><strong>CSC路线 · Type B Roadmap</strong><span>Admissions</span></div>
+        <div class="panel-body roadmap">
+          <div class="roadmap-step"><div class="roadmap-num">1</div><div><b>Professor Targeting</b><p>Identify C9 supervisors in quantitative economics, urban economics and infrastructure economics.</p></div></div>
+          <div class="roadmap-step"><div class="roadmap-num">2</div><div><b>Research Proposal</b><p>Translate the Casablanca model into China-relevant urban and logistics applications.</p></div></div>
+          <div class="roadmap-step"><div class="roadmap-num">3</div><div><b>CSC Material</b><p>Prepare CV, study plan, recommendation letters, transcripts, language evidence and physical examination file.</p></div></div>
+          <div class="roadmap-step"><div class="roadmap-num">4</div><div><b>Interview Logic</b><p>Defend humility, methods, cultural integration and professor-specific research fit.</p></div></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head bamboo"><strong>文化编码 · Cultural Signals</strong><span>China UX</span></div>
+        <div class="panel-body tag-grid">
+          <span class="tag gold">Confucius</span>
+          <span class="tag">Mianzi</span>
+          <span class="tag">Guanxi</span>
+          <span class="tag bamboo">Bamboo</span>
+          <span class="tag">WeChat-first</span>
+          <span class="tag">No italics</span>
+          <span class="tag navy">C9 League</span>
+          <span class="tag gold">CSC Type B</span>
+          <span class="tag bamboo">Collectivism</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head navy"><strong>学术诚信 · Integrity</strong><span>Safety</span></div>
+        <div class="panel-body">
+          <div class="integrity-note">Admissions-safe note: all figures must be supported by source documents before formal submission. The Guangdong 10% statement is included as user-provided narrative and should be externally verified before academic use. CSCA preparation is included as an administrative-readiness signal; its applicability to Master/PhD applications must be verified for the specific university and intake. Target Agency Number 10001 is included as a Peking University-oriented administrative signal and must be rechecked on the official CSC/university portal before submission.</div>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="wechat-footer" id="wechat" aria-label="WeChat contact section">
+    <section class="qr-panel">
+      <div class="fake-qr" role="img" aria-label="Placeholder WeChat QR code. Replace with real WeChat QR image."><span class="qr-third" aria-hidden="true"></span></div>
+      <div class="wechat-id" id="wechatId">WeChat ID: elghali_sany</div>
+      <strong style="color:var(--wechat);">微信 · Scan to connect directly</strong>
+    </section>
+
+    <section class="contact-text">
+      <h2>微信优先 · WeChat-first Academic Contact</h2>
+      <p>Instead of a western-style contact form, this portfolio uses the Chinese communication logic: immediate QR connection, quick exchange of academic documents and direct professor-facing conversation.</p>
+      <p>Email remains available only as a secondary institutional channel; WeChat is prioritized for speed, relationship-building and cultural alignment.</p>
+      <div class="contact-grid">
+        <div>Name: El Ghali Sany / 萨尼·埃尔·加利</div>
+        <div>Scholarship: CSC Type B</div>
+        <div>Field: Quantitative Economics</div>
+        <div>Target: Master/PhD China</div>
+        <div>Email: elghali.sany@example.com</div>
+        <div>Location: Morocco / France</div>
       </div>
-    </div>
+    </section>
 
+    <nav class="doc-links" aria-label="Academic documents">
+      <a class="primary" href="#">Download Academic CV</a>
+      <a href="#">Research Proposal · China Version</a>
+      <a href="#">Thesis Summary · SUMO/QGIS</a>
+      <button type="button" onclick="copyWechatId()">Copy WeChat ID</button>
+    </nav>
+  </footer>
 
-    <!-- SUMO Integrated Dashboard — Heatmap + Real Vehicle Simulation -->
-    <div class="panel" id="sumo-dashboard">
-      <div class="panel__head" style="background:linear-gradient(90deg,#001A00,#003300);border-bottom:1px solid #004400;">
-        <span class="panel__head__zh" style="color:#00FF88;font-family:'Share Tech Mono',monospace;font-size:11px;">🚗 SUMO 交通模拟 · Heatmap + Simulation</span>
-        <span class="panel__head__en" style="color:#448844;">OpenStreetMap · real FCD outputs · geo-corrected</span>
-      </div>
-      <div class="panel__body egs-sumo-shell" style="padding:0;">
+  <nav class="tabbar" aria-label="Fixed mobile super-app tab bar">
+    <a class="active" href="#profile"><span>👤</span>Profile</a>
+    <a href="#research"><span>📊</span>Research</a>
+    <a href="#guanxi"><span>🤝</span>Guanxi</a>
+    <a href="#wechat"><span>💬</span>WeChat</a>
+  </nav>
 
-        <div class="egs-sumo-toolbar" aria-label="SUMO dashboard modes">
-          <button class="egs-mode-btn active" data-egs-mode="heatmap">HEATMAP</button>
-          <button class="egs-mode-btn" data-egs-mode="simulation">SIMULATION</button>
-        </div>
+  <script>
+    function portfolioSearch(event) {
+      event.preventDefault();
+      const input = document.getElementById('siteSearch');
+      const query = input.value.trim().toLowerCase();
+      if (!query) return false;
 
-        <div class="egs-sumo-toolbar" aria-label="SUMO zones">
-          <button class="egs-zone-btn active" data-egs-zone="maarif" style="--tc:#FF3355;">Maârif</button>
-          <button class="egs-zone-btn" data-egs-zone="hay_hassani" style="--tc:#FFB830;">Hay Hassani</button>
-          <button class="egs-zone-btn" data-egs-zone="ben_msick" style="--tc:#00E676;">Ben M'Sick</button>
-          <button class="egs-zone-btn" data-egs-zone="sidi_maarouf" style="--tc:#BF5AF2;">Sidi Maârouf</button>
-          <button class="egs-zone-btn" data-egs-zone="bd_mohammed_v" style="--tc:#00B4D8;">Bd. Mohammed V</button>
-        </div>
+      const blocks = Array.from(document.querySelectorAll('section, article, aside, footer, .hero-main'));
+      const match = blocks.find((block) => block.innerText.toLowerCase().includes(query));
 
-        <div class="egs-sumo-grid">
-          <div class="egs-map-wrap">
-            <div id="egsSumoMap"></div>
-            <canvas id="egsTrafficCanvas"></canvas>
-
-            <div class="egs-map-badge">
-              <strong id="egsZoneTitle">Maârif</strong>
-              <span id="egsStatusText">Loading SUMO heatmap...</span>
-            </div>
-
-            <div class="egs-legend" id="egsHeatLegend">
-              <div><span class="egs-dot green"></span>Low concentration</div>
-              <div><span class="egs-dot yellow"></span>Medium</div>
-              <div><span class="egs-dot red"></span>High</div>
-            </div>
-
-            <div class="egs-legend egs-hidden" id="egsSimulationLegend">
-              <div><span class="egs-dot red"></span>Slow</div>
-              <div><span class="egs-dot yellow"></span>Medium</div>
-              <div><span class="egs-dot green"></span>Fast</div>
-            </div>
-          </div>
-
-          <div class="egs-side">
-            <div class="egs-kpis">
-              <div class="egs-kpi"><div class="egs-kpi-label" id="egsMainLabel">POINTS</div><div class="egs-kpi-val" id="egsKpiMain">—</div></div>
-              <div class="egs-kpi"><div class="egs-kpi-label">VEHICLES</div><div class="egs-kpi-val" id="egsKpiVehicles">—</div></div>
-              <div class="egs-kpi"><div class="egs-kpi-label">STEPS</div><div class="egs-kpi-val" id="egsKpiSteps">—</div></div>
-              <div class="egs-kpi"><div class="egs-kpi-label">AVG SPEED</div><div class="egs-kpi-val" id="egsKpiSpeed">—</div></div>
-            </div>
-
-            <div class="egs-controls" id="egsHeatControls">
-              <div class="egs-control-row"><label>Heat radius</label><input id="egsRadiusRange" type="range" min="4" max="30" value="10"></div>
-              <div class="egs-control-row"><label>Blur</label><input id="egsBlurRange" type="range" min="3" max="30" value="8"></div>
-              <div class="egs-control-row"><label>Intensity</label><input id="egsIntensityRange" type="range" min="1" max="10" value="3"></div>
-              <button class="egs-control-btn" id="egsResetHeatmapBtn" type="button">Recenter</button>
-            </div>
-
-            <div class="egs-controls egs-hidden" id="egsSimulationControls">
-              <div class="egs-control-buttons">
-                <button class="egs-control-btn" id="egsPlayBtn" type="button">Play</button>
-                <button class="egs-control-btn" id="egsPauseBtn" type="button">Pause</button>
-                <button class="egs-control-btn" id="egsRestartBtn" type="button">Restart</button>
-                <button class="egs-control-btn" id="egsResetSimulationBtn" type="button">Recenter</button>
-              </div>
-              <div class="egs-control-row"><label>Animation speed</label><input id="egsSpeedRange" type="range" min="1" max="12" value="6"></div>
-              <div class="egs-control-row"><label>Vehicle size</label><input id="egsVehicleSizeRange" type="range" min="2" max="10" value="6"></div>
-            </div>
-
-            <div class="egs-note" id="egsAnalysisText">
-              Heatmap based on geo-corrected SUMO FCD outputs. Switch to Simulation to display vehicles step-by-step.
-            </div>
-
-            <div class="egs-link-row">
-              <span class="egs-small-tag">FCD → GPS</span>
-              <span class="egs-small-tag">SUMO .net.xml correction</span>
-              <span class="egs-small-tag">5 Casablanca zones</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Skills -->
-    <div class="panel" id="skills">
-      <div class="panel__head">
-        <span class="panel__head__zh" id="ph_skills">技术能力</span>
-        <span class="panel__head__en">Technical Skills</span>
-      </div>
-      <div class="panel__body">
-        <div class="skill-category">
-          <div class="skill-cat__label">Financial Modeling & Analysis</div>
-          <div class="skill-tags">
-            <span class="skill-tag highlight">ROI / CAPEX / OPEX / TCO</span>
-            <span class="skill-tag highlight">5-Year Financial Modeling</span>
-            <span class="skill-tag">NPV / DCF / Break-even</span>
-            <span class="skill-tag">Multi-scenario Analysis</span>
-            <span class="skill-tag">Portfolio Analysis</span>
-            <span class="skill-tag">DSO · CEI · Recovery Rate</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat__label">Data & BI Tools</div>
-          <div class="skill-tags">
-            <span class="skill-tag highlight">Excel Advanced</span>
-            <span class="skill-tag highlight">VBA Automation</span>
-            <span class="skill-tag highlight">Power BI</span>
-            <span class="skill-tag">Pivot Tables · Macros</span>
-            <span class="skill-tag">KPI Dashboards</span>
-            <span class="skill-tag">Python (Data Processing)</span>
-            <span class="skill-tag">SQL</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat__label">Process Automation & Reporting</div>
-          <div class="skill-tags">
-            <span class="skill-tag red-tag">VBA Reporting Automation</span>
-            <span class="skill-tag red-tag">-2h/cycle Proven</span>
-            <span class="skill-tag">Google Drive Workflows</span>
-            <span class="skill-tag">Remote Deliverable Management</span>
-            <span class="skill-tag">Structured Reporting Cycles</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat__label">Spatial / Simulation (PFE Research)</div>
-          <div class="skill-tags">
-            <span class="skill-tag red-tag">SUMO Traffic Simulation</span>
-            <span class="skill-tag red-tag">QGIS Spatial Analysis</span>
-            <span class="skill-tag">OpenStreetMap / netconvert</span>
-            <span class="skill-tag">duarouter</span>
-            <span class="skill-tag">GIS Spatial Join</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat__label">Supply Chain & Procurement</div>
-          <div class="skill-tags">
-            <span class="skill-tag">SAP (notions)</span>
-            <span class="skill-tag">Procurement Analysis</span>
-            <span class="skill-tag">Demand Planning</span>
-            <span class="skill-tag">Supplier Performance</span>
-            <span class="skill-tag">Inventory Optimization</span>
-          </div>
-        </div>
-        <!-- Language certs prominent -->
-        <div class="skill-category">
-          <div class="skill-cat__label">Languages & Certifications</div>
-          <div class="skill-tags">
-            <span class="skill-tag red-tag">Arabic Native</span>
-            <span class="skill-tag red-tag">French C2 — TCF 693/699</span>
-            <span class="skill-tag highlight">English — DET 110/160</span>
-            <span class="skill-tag">Mandarin — Learning</span>
-          </div>
-        </div>
-        <!-- AI / LLM Applied Skills -->
-        <div class="skill-category" style="border:1px solid var(--red);border-radius:3px;padding:7px 8px;background:var(--red-bg);">
-          <div class="skill-cat__label" style="color:var(--red);">🤖 AI-Augmented Workflows — Applied</div>
-          <div style="font-size:9px;color:var(--gray-400);margin-bottom:5px;font-family:var(--font-en);">
-            Documented applied usage across research, reporting & production pipelines
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag red-tag">Prompt Engineering</span>
-            <span class="skill-tag red-tag">LLM Workflow Design</span>
-            <span class="skill-tag highlight">Claude API / GPT-4o</span>
-            <span class="skill-tag highlight">Context Window Mgmt</span>
-            <span class="skill-tag">Token Optimization</span>
-            <span class="skill-tag">System Prompt Design</span>
-            <span class="skill-tag">Multi-step Agent Chains</span>
-            <span class="skill-tag">AI-assisted Code Gen</span>
-            <span class="skill-tag">ReportLab (Python PDF)</span>
-            <span class="skill-tag">HTML/CSS via LLM</span>
-            <span class="skill-tag">Playwright Automation</span>
-            <span class="skill-tag">Node.js DOCX Gen</span>
-          </div>
-          <!-- Mini evidence cards -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:7px;">
-            <div style="background:#fff;border:1px solid #FFCCCC;border-radius:2px;padding:5px 6px;">
-              <div style="font-size:9px;font-weight:700;color:var(--red);margin-bottom:2px;">📄 CV & Career Assets</div>
-              <div style="font-size:9px;color:var(--gray-600);">FR+EN CVs, LinkedIn carousel PDF, cover letter — all generated via structured LLM prompting pipelines</div>
-            </div>
-            <div style="background:#fff;border:1px solid #FFCCCC;border-radius:2px;padding:5px 6px;">
-              <div style="font-size:9px;font-weight:700;color:var(--red);margin-bottom:2px;">🌐 This Portfolio</div>
-              <div style="font-size:9px;color:var(--gray-600);">Bilingual ZH/EN site — full HTML/CSS/JS engineered via iterative prompt chains, 2000+ lines single-file</div>
-            </div>
-            <div style="background:#fff;border:1px solid #FFCCCC;border-radius:2px;padding:5px 6px;">
-              <div style="font-size:9px;font-weight:700;color:var(--red);margin-bottom:2px;">📊 Reporting Automation</div>
-              <div style="font-size:9px;color:var(--gray-600);">SAN MAROC: AI-assisted VBA script design + Excel dashboard structuring; -2h/cycle reporting loop</div>
-            </div>
-            <div style="background:#fff;border:1px solid #FFCCCC;border-radius:2px;padding:5px 6px;">
-              <div style="font-size:9px;font-weight:700;color:var(--red);margin-bottom:2px;">🔬 Research Acceleration</div>
-              <div style="font-size:9px;color:var(--gray-600);">PFE: LLM-assisted data pipeline design, financial model structuring, SUMO scenario interpretation</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /col-center -->
-
-
-  <!-- ─── RIGHT COLUMN ───────────────────────── -->
-  <div class="col-right" id="contact">
-
-    <!-- Contact & QR -->
-    <div class="panel">
-      <div class="panel__head red">
-        <span class="panel__head__zh" id="ph_contact">联系方式</span>
-        <span class="panel__head__en">Contact</span>
-      </div>
-      <div class="panel__body">
-        <div class="contact-grid">
-          <div class="qr-box">
-            <canvas id="qrCanvas" width="100" height="100"></canvas>
-            <div class="qr-box__label" id="qr_label">WeChat</div>
-            <div class="qr-box__sub" id="qr_sub">扫码添加 / Scan to Add</div>
-          </div>
-          <div class="contact-links">
-            <a class="contact-link wechat" href="#">
-              <span class="contact-link__icon">💬</span>
-              <span><span id="ct_wechat">微信 WeChat</span><br><small style="font-family:var(--font-en);opacity:.8;">@elghali_sany</small></span>
-            </a>
-            <a class="contact-link linkedin" href="https://linkedin.com/in/el-ghali-sany" target="_blank">
-              <span class="contact-link__icon">🔗</span>
-              <span><span id="ct_linkedin">LinkedIn</span><br><small style="font-family:var(--font-en);opacity:.8;">el-ghali-sany</small></span>
-            </a>
-            <a class="contact-link" href="mailto:elghali.sany@email.com">
-              <span class="contact-link__icon">📧</span>
-              <span><span id="ct_email">Email</span><br><small style="font-family:var(--font-en);color:var(--gray-400);">elghali.sany@…</small></span>
-            </a>
-          </div>
-        </div>
-        <a class="proposal-cta" href="#" target="_blank">
-          <span id="cta1">📄 查看研究计划书 </span><span class="proposal-cta__en" id="cta1sub">View Research Proposal / 研究計画書</span>
-        </a>
-        <a class="proposal-cta" href="https://el2545.github.io/portfolio/" target="_blank" style="background:var(--navy);">
-          <span id="cta2">🌐 查看完整作品集 </span><span class="proposal-cta__en" id="cta2sub">Full Portfolio · el2545.github.io</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Guanxi / Social Proof -->
-    <div class="panel" id="guanxi">
-      <div class="panel__head gold">
-        <span class="panel__head__zh" id="ph_guanxi">关系网络 · 社会证明</span>
-        <span class="panel__head__en">Guanxi &amp; Social Proof</span>
-      </div>
-      <div class="panel__body">
-        <div class="guanxi-grid">
-          <div class="guanxi-card">
-            <div class="guanxi-card__title" id="gx1title"><span class="guanxi-icon">🏫</span>● 学术导师</div>
-            <div class="guanxi-card__text" id="gx1text">INSEEC Lyon教授指导<br>UIC卡萨布兰卡推荐信<br>Recommendation Letters Available</div>
-          </div>
-          <div class="guanxi-card">
-            <div class="guanxi-card__title" id="gx2title"><span class="guanxi-icon">🤝</span>● Leo Club</div>
-            <div class="guanxi-card__text" id="gx2text">国际狮子会青年团<br>社区服务 · 领导力培养<br>Community &amp; Leadership</div>
-          </div>
-          <div class="guanxi-card">
-            <div class="guanxi-card__title" id="gx3title"><span class="guanxi-icon">🏢</span>● 实习证明</div>
-            <div class="guanxi-card__text" id="gx3text">SAN MAROC认证<br>2ACOM认证 · MAGHREBAIL<br>Internship Certificates</div>
-          </div>
-          <div class="guanxi-card">
-            <div class="guanxi-card__title" id="gx4title"><span class="guanxi-icon">📜</span>● 语言认证</div>
-            <div class="guanxi-card__text" id="gx4text">TCF 693/699 · C2<br>法国文化协会认证<br>Alliance Française</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Motivation -->
-    <div class="panel" id="motivation">
-      <div class="panel__head">
-        <span class="panel__head__zh" id="ph_motivation">申请动机</span>
-        <span class="panel__head__en">Research Motivation</span>
-      </div>
-      <div class="panel__body">
-        <div class="mot-para" id="mot1">
-          作为来自摩洛哥的定量研究者，我的研究聚焦于<span class="red-text">新兴市场城市经济</span>、资本配置效率与空间信息不对称问题。
-        </div>
-        <div class="mot-para" id="mot2">
-          我的毕业论文将<span class="red-text">SUMO交通模拟</span>与<span class="red-text">QGIS空间分析</span>相结合，对卡萨布兰卡广告展示位的商业价值进行定量评估，ROI实证达533%。
-        </div>
-        <div class="mot-para" id="mot3" style="border-left:3px solid var(--red);padding-left:8px;font-style:normal;background:var(--red-bg);padding:6px 8px;border-radius:0 3px 3px 0;">
-          <em>"My research bridges quantitative urban economics and real-world capital allocation — a natural fit for China's leading institutions in applied economic modeling."</em>
-        </div>
-      </div>
-    </div>
-
-    <!-- CSC Checklist -->
-    <div class="panel">
-      <div class="panel__head teal">
-        <span class="panel__head__zh" id="ph_csc">CSC申请清单</span>
-        <span class="panel__head__en">CSC Application Checklist</span>
-      </div>
-      <div class="panel__body">
-        <div style="display:flex;flex-direction:column;gap:4px;">
-          <div style="display:flex;align-items:center;gap:6px;font-size:11px;">
-            <span style="color:var(--green-pos);font-size:14px;">✅</span>
-            <span id="csc1">研究计划书 Research Proposal</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;font-size:11px;">
-            <span style="color:var(--green-pos);font-size:14px;">✅</span>
-            <span id="csc2">法语C2认证 TCF 693/699</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;font-size:11px;">
-            <span style="color:var(--green-pos);font-size:14px;">✅</span>
-            <span id="csc3">学术成绩最优 Mention TB</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;font-size:11px;">
-            <span style="color:var(--green-pos);font-size:14px;">✅</span>
-            <span id="csc4">推荐信 Recommendation Letters</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;font-size:11px;">
-            <span style="color:var(--green-pos);font-size:14px;">✅</span>
-            <span id="csc5">在线作品集 Online Portfolio</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;font-size:11px;">
-            <span style="color:var(--gold);font-size:14px;">🔄</span>
-            <span id="csc6">英语成绩单 English Certificate</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;font-size:11px;">
-            <span style="color:var(--gold);font-size:14px;">🔄</span>
-            <span id="csc7">HSK汉语水平考试 (学习中)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /col-right -->
-
-</div><!-- /page-grid -->
-
-<!-- ─── BOTTOM TAB BAR ──────────────────────── -->
-<nav class="tab-bar" role="navigation" aria-label="底部导航">
-  <a class="tab-item active" href="#profile">
-    <span class="tab-item__icon">👤</span>
-    <span class="tab-item__label" id="tab1">简介</span>
-  </a>
-  <a class="tab-item" href="#experience">
-    <span class="tab-item__icon">💼</span>
-    <span class="tab-item__label" id="tab2">经历</span>
-  </a>
-  <a class="tab-item" href="#research">
-    <span class="tab-item__icon">🔬</span>
-    <span class="tab-item__label" id="tab3">研究</span>
-  </a>
-  <a class="tab-item" href="#guanxi">
-    <span class="tab-item__icon">🤝</span>
-    <span class="tab-item__label" id="tab4">关系</span>
-  </a>
-  <a class="tab-item" href="#contact">
-    <span class="tab-item__icon">📞</span>
-    <span class="tab-item__label" id="tab5">联系</span>
-  </a>
-</nav>
-
-<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑</button>
-
-<script>
-// ─── CAROUSEL ──────────────────────────────────────
-let carIdx = 0;
-const totalSlides = 3;
-function carouselGo(i) {
-  carIdx = i;
-  document.getElementById('carouselSlides').style.transform = `translateX(-${i * 100}%)`;
-  document.querySelectorAll('.carousel__dot').forEach((d,j) => d.classList.toggle('active', j===i));
-}
-function carouselNext() { carouselGo((carIdx + 1) % totalSlides); }
-function carouselPrev() { carouselGo((carIdx - 1 + totalSlides) % totalSlides); }
-setInterval(() => carouselNext(), 4000);
-
-// Swipe support
-let tsX = 0;
-document.getElementById('carousel').addEventListener('touchstart', e => { tsX = e.touches[0].clientX; }, {passive:true});
-document.getElementById('carousel').addEventListener('touchend', e => {
-  const dx = tsX - e.changedTouches[0].clientX;
-  if (Math.abs(dx) > 40) dx > 0 ? carouselNext() : carouselPrev();
-});
-
-
-// ─── QR CODE (pixel art style) ─────────────────────
-(function() {
-  const c = document.getElementById('qrCanvas');
-  if (!c) return;
-  const ctx = c.getContext('2d');
-  const S = 100, G = 20, cell = S / G;
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(0, 0, S, S);
-  // Seeded pattern
-  const seed = [
-    [1,1,1,1,1,1,1,0,1,0,1,1,0,0,1,1,1,1,1,1],
-    [1,0,0,0,0,0,1,0,0,1,1,0,1,0,1,0,0,0,0,1],
-    [1,0,1,1,1,0,1,0,1,0,0,1,0,1,1,0,1,1,0,1],
-    [1,0,1,1,1,0,1,0,0,1,1,0,1,0,1,0,1,1,0,1],
-    [1,0,1,1,1,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1],
-    [1,0,0,0,0,0,1,0,0,0,1,1,1,0,1,0,0,0,0,1],
-    [1,1,1,1,1,1,1,0,1,0,1,0,1,0,1,1,1,1,1,1],
-    [0,0,0,0,0,0,0,0,1,1,0,1,0,1,0,0,0,0,0,0],
-    [1,0,1,1,0,1,1,1,0,0,1,0,1,1,1,0,1,0,1,1],
-    [0,1,0,0,1,0,0,1,1,0,0,1,0,0,0,1,0,1,0,0],
-    [1,1,0,1,1,0,1,0,1,0,1,1,1,0,1,0,1,1,0,1],
-    [0,0,1,0,0,1,0,1,0,1,0,0,0,1,0,1,0,0,1,0],
-    [1,0,1,1,0,0,1,0,1,1,0,1,1,0,1,0,1,0,1,1],
-    [0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,1,0,0],
-    [1,1,1,1,1,1,1,0,0,1,1,0,1,0,1,0,1,1,0,1],
-    [1,0,0,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,1,0],
-    [1,0,1,1,1,0,1,1,0,0,1,0,1,0,1,0,1,1,0,1],
-    [1,0,1,1,1,0,1,0,1,0,0,1,0,1,0,1,0,0,1,1],
-    [1,0,0,0,0,0,1,0,0,1,1,0,1,0,1,0,1,0,0,0],
-    [1,1,1,1,1,1,1,0,1,0,1,1,0,1,0,1,0,1,1,1],
-  ];
-  ctx.fillStyle = '#111111';
-  for (let r = 0; r < G; r++) {
-    for (let cc = 0; cc < G; cc++) {
-      if (seed[r][cc]) ctx.fillRect(cc*cell, r*cell, cell, cell);
+      if (match) {
+        match.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        match.animate([
+          { outline: '4px solid #FFD700' },
+          { outline: '4px solid transparent' }
+        ], { duration: 1200, iterations: 1 });
+      } else {
+        alert('No match. Try: CSC, HSK, Guanxi, SUMO, Chongqing, Guangdong, WeChat.');
+      }
+      return false;
     }
-  }
-  // Red accent square
-  ctx.fillStyle = '#D0021B';
-  ctx.fillRect(8*cell, 8*cell, 4*cell, 4*cell);
-})();
 
-// ─── SCROLL TOP ────────────────────────────────────
-window.addEventListener('scroll', () => {
-  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
-});
-
-// ─── TAB BAR ACTIVE ────────────────────────────────
-const sections = ['profile','experience','research','guanxi','contact'];
-const tabItems = document.querySelectorAll('.tab-item');
-window.addEventListener('scroll', () => {
-  let current = sections[0];
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && window.scrollY >= el.offsetTop - 120) current = id;
-  });
-  tabItems.forEach((t,i) => t.classList.toggle('active', t.getAttribute('href') === '#' + current));
-});
-
-// ─── SEARCH ────────────────────────────────────────
-function doSearch() {
-  const q = document.querySelector('.top-search__input').value.toLowerCase().trim();
-  if (!q) return;
-  const map = {
-    'roi': '#research', '533': '#research', 'sumo': '#research',
-    'qgis': '#research', 'python': '#skills', 'sql': '#skills',
-    'power bi': '#skills', '联系': '#contact', 'contact': '#contact',
-    '经历': '#experience', 'experience': '#experience',
-    '教育': '#education', 'education': '#education',
-    '语言': '#languages', 'language': '#languages',
-    'wechat': '#contact', '微信': '#contact',
-    'csc': '#guanxi', '关系': '#guanxi',
-  };
-  for (const [k,v] of Object.entries(map)) {
-    if (q.includes(k)) {
-      document.querySelector(v)?.scrollIntoView({behavior:'smooth', block:'start'});
-      return;
-    }
-  }
-  // fallback: scroll to research
-  document.getElementById('research')?.scrollIntoView({behavior:'smooth'});
-}
-document.querySelector('.top-search__input').addEventListener('keydown', e => {
-  if (e.key === 'Enter') doSearch();
-});
-
-// ─── LANGUAGE TOGGLE ───────────────────────────────
-const T = {
-  zh: {
-    // Page title
-    pageTitle: '萨尼·艾尔加利 | 定量经济学 博士候选人 | 清华/北大 CSC申请',
-    // Search
-    searchPlaceholder: '搜索研究方向、技能、项目…',
-    // Ticker
-    ticker: '📌 CSC奖学金申请者 · 定量经济学研究 ｜ 533% ROI · 实证商业案例 ｜ 法语C2认证 TCF 693/699 · 阿拉伯语母语 · 英语专业水平 ｜ Python · SQL · SUMO · QGIS · Power BI · Excel ｜ 摩洛哥 → 中国 · 定量经济学博士 / MSc · 2026',
-    // KPI strip
-    kpiLabel: '核心业绩',
-    kpi1lbl: '实证ROI', kpi2lbl: '模型变量', kpi3lbl: '自动化节省', kpi4lbl: '法语TCF', kpi5lbl: '学历水平',
-    // Slide 1
-    s1name: '萨尼·艾尔加利', s1role: '定量经济学 研究员',
-    s1s1lbl: '实证ROI', s1s2lbl: '法语认证', s1s3lbl: '实习经历',
-    s1b1: '🎓 CSC申请者', s1b2: '📊 定量分析', s1b3: '🌏 清华/北大',
-    // Slide 2
-    s2title: '研究方向', s2sub: '空间经济与金融建模',
-    s2s1lbl: 'PPI模型变量', s2s2lbl: '交通模拟', s2s3lbl: '空间分析',
-    s2b1: '🏙️ 城市经济', s2b2: '📈 财务模型', s2b3: '🤖 AI工作流',
-    // Slide 3
-    s3title: '中国政府奖学金', s3sub: 'CSC · 2026年入学',
-    s3s1lbl: '学历水平', s3s2lbl: '成绩：最优', s3s3lbl: '语言能力',
-    s3s2val: '优秀', s3s3val: '4国',
-    s3b1: '🌟 奖学金就绪', s3b2: '📝 研究计划', s3b3: '🤝 国际背景',
-    // Panel heads
-    ph_profile: '个人简介', ph_targets: '目标院校', ph_metrics: '核心指标',
-    ph_edu: '教育背景', ph_lang: '语言能力', ph_exp: '职业经历',
-    ph_research: '研究项目', ph_skills: '技术能力', ph_contact: '联系方式',
-    ph_guanxi: '关系网络 · 社会证明', ph_motivation: '申请动机', ph_csc: 'CSC申请清单',
-    // Profile
-    pr_tags: ['定量经济学','CSC候选人','供应链分析'],
-    pr_school: 'INSEEC Lyon · MSc采购与供应链', pr_schoolSub: 'Procurement & Supply Chain Mgmt · Bac+5',
-    pr_job: 'SAN MAROC · Business Analyst实习', pr_jobDate: '2026年2月 – 2026年8月',
-    pr_loc: '卡萨布兰卡, 摩洛哥',
-    pr_goal: '目标: 清华大学 / 北京大学', pr_goalSub: '经济学 Master/PhD · CSC奖学金 2026',
-    // Uni chips
-    uni_label: '经济学 / 应用经济学 / 数量经济学',
-    // Awards
-    aw1: '🏆 优秀毕业生 Mention TB', aw2: '⭐ CSC就绪 CSC-Ready',
-    // Stat cells
-    sc1lbl: '实证ROI\nProven Return', sc2lbl: '模型变量\nPPI Variables',
-    sc3lbl: '每周节省\nSaved/week', sc4lbl: '法语水平\nFrench Level',
-    // Education
-    edu1school: 'INSEEC Lyon 🇫🇷', edu1deg: 'MSc采购与供应链管理 · Bac+5',
-    edu1date: '2025 – 2027 · 里昂, 法国', edu1badge: '在读 In Progress',
-    edu2school: '卡萨布兰卡国际大学 (UIC) 🇲🇦', edu2deg: '管理、金融与会计学士',
-    edu2date: '2022 – 2025 · 卡萨布兰卡', edu2badge: '🏆 最优成绩 Mention Très Bien',
-    // Languages
-    l1: '阿拉伯语 Arabic', l1lv: '母语 Native',
-    l2: '法语 Français', l2lv: 'C2 · TCF 693/699',
-    l3: '英语 English', l3lv: 'DET 110/160',
-    l4: '普通话 Mandarin', l4lv: '学习中 Learning',
-    // Experience
-    exp1co: 'SAN MAROC', exp1role: 'Business Analyst 实习生',
-    exp1date: '2026.02 – 2026.08 · 卡萨布兰卡 · 远程',
-    exp1b1: '设计Power BI报告仪表盘，自动化每周运营数据处理流程',
-    exp1b2: '优化Excel VBA报告脚本，<strong>节省2小时/周</strong>人工处理时间',
-    exp1b3: '跨部门KPI数据整合，支持管理层采购决策',
-    exp2co: '2ACOM', exp2role: '商业分析实习生',
-    exp2date: '2025.05 – 2025.07 · 卡萨布兰卡',
-    exp2b1: '构建覆盖5个市场区域的KPI管理系统',
-    exp2b2: '开发整合<strong>15+变量</strong>的潜在盈利能力指数(PPI)',
-    exp2b3: '构建5年期财务模型，整合ROI、CAPEX、OPEX、TCO预测',
-    exp3co: 'MAGHREBAIL', exp3role: '金融实习生',
-    exp3date: '2024.07 – 2024.08 · 卡萨布兰卡',
-    exp3b1: '信贷申请分析，财务文件审核与合规核查',
-    exp3b2: '参与金融租赁业务风险评估流程',
-    // Research
-    res_div: '📄 Final Thesis (PFE) · Université Internationale de Casablanca',
-    res_title: 'Financial Profitability of Outdoor Advertising Structures — Casablanca, Morocco',
-    res_sub: 'Mixed-method research: SUMO traffic simulation · QGIS spatial analysis · 5-year OOH/DOOH financial model · IRP scoring',
-    res_sim_div: '🚗 SUMO Traffic Simulation · Live Demo · 5 Casablanca Zones',
-    // Proj cards
-    pc1title: '财务建模', pc1desc: 'CAPEX·OPEX·TCO·NPV整合Excel模型，4情景ROI对比分析，摩洛哥户外广告市场',
-    pc2title: '空间分析', pc2desc: 'OSM × SUMO交通模拟 × QGIS空间分析，卡萨布兰卡主干道商业吸引力定量评估',
-    pc3title: '多指标分析', pc3desc: '加权多标准指数：受众40% · CPM 30% · ROAS 30%。卡萨布兰卡前10广告地点排名',
-    pc3result: 'Top-10 排名 Ranking',
-    // Sim labels
-    sim_flow: '流量/h Flow', sim_speed: '均速 Speed', sim_veh: '车辆数 Vehicles',
-    // Guanxi
-    gx1title: '学术导师', gx1text: 'INSEEC Lyon教授指导\nUIC卡萨布兰卡推荐信\nRecommendation Letters Available',
-    gx2title: 'Leo Club', gx2text: '国际狮子会青年团\n社区服务 · 领导力培养\nCommunity & Leadership',
-    gx3title: '实习证明', gx3text: 'SAN MAROC认证\n2ACOM认证 · MAGHREBAIL\nInternship Certificates',
-    gx4title: '语言认证', gx4text: 'TCF 693/699 · C2\n法国文化协会认证\nAlliance Française',
-    // Motivation
-    mot1: '作为来自摩洛哥的定量研究者，我的研究聚焦于<span class="red-text">新兴市场城市经济</span>、资本配置效率与空间信息不对称问题。',
-    mot2: '我的毕业论文将<span class="red-text">SUMO交通模拟</span>与<span class="red-text">QGIS空间分析</span>相结合，对卡萨布兰卡广告展示位的商业价值进行定量评估，ROI实证达533%。',
-    mot3: '"My research bridges quantitative urban economics and real-world capital allocation — a natural fit for China\'s leading institutions in applied economic modeling."',
-    // CSC checklist
-    csc1: '研究计划书 Research Proposal', csc2: '法语C2认证 TCF 693/699',
-    csc3: '学术成绩最优 Mention TB', csc4: '推荐信 Recommendation Letters',
-    csc5: '在线作品集 Online Portfolio', csc6: '英语成绩单 English Certificate',
-    csc7: 'HSK汉语水平考试 (学习中)',
-    // Contact
-    qr_label: 'WeChat', qr_sub: '扫码添加 / Scan to Add',
-    ct_wechat: '微信 WeChat', ct_linkedin: 'LinkedIn', ct_email: 'Email',
-    cta1: '📄 查看研究计划书', cta1sub: 'View Research Proposal / 研究計画書',
-    cta2: '🌐 查看完整作品集', cta2sub: 'Full Portfolio · el2545.github.io',
-    // Tabs
-    tab1: '简介', tab2: '经历', tab3: '研究', tab4: '关系', tab5: '联系',
-  },
-  en: {
-    pageTitle: 'El Ghali Sany | Quantitative Economics PhD Candidate | Tsinghua/PKU CSC',
-    searchPlaceholder: 'Search skills, projects, research…',
-    ticker: '📌 CSC Scholarship Applicant · Quantitative Economics Research ｜ 533% Proven ROI ｜ French C2 Certified TCF 693/699 · Arabic Native · Professional English ｜ Python · SQL · SUMO · QGIS · Power BI · Excel ｜ Morocco → China · Economics PhD / MSc · 2026',
-    kpiLabel: 'Key KPIs',
-    kpi1lbl: 'Proven ROI', kpi2lbl: 'Model Vars', kpi3lbl: 'Saved/Week', kpi4lbl: 'French TCF', kpi5lbl: 'Degree',
-    s1name: 'El Ghali Sany', s1role: 'Quantitative Economics Researcher',
-    s1s1lbl: 'Proven ROI', s1s2lbl: 'French Cert.', s1s3lbl: 'Internships',
-    s1b1: '🎓 CSC Applicant', s1b2: '📊 Quant. Analysis', s1b3: '🌏 Tsinghua/PKU',
-    s2title: 'Research Focus', s2sub: 'Spatial Economics & Financial Modeling',
-    s2s1lbl: 'PPI Model Vars', s2s2lbl: 'Traffic Sim.', s2s3lbl: 'GIS Analysis',
-    s2b1: '🏙️ Urban Economics', s2b2: '📈 Financial Model', s2b3: '🤖 AI Workflows',
-    s3title: 'Chinese Gov. Scholarship', s3sub: 'CSC · Enrollment 2026',
-    s3s1lbl: 'Degree Level', s3s2lbl: 'Grade: Highest', s3s3lbl: 'Languages',
-    s3s2val: 'Highest', s3s3val: '4 langs',
-    s3b1: '🌟 Scholarship Ready', s3b2: '📝 Research Proposal', s3b3: '🤝 Intl. Profile',
-    ph_profile: 'Profile', ph_targets: 'Target Universities', ph_metrics: 'Key Metrics',
-    ph_edu: 'Education', ph_lang: 'Languages', ph_exp: 'Professional Experience',
-    ph_research: 'Research Projects', ph_skills: 'Technical Skills', ph_contact: 'Contact',
-    ph_guanxi: 'Guanxi & Social Proof', ph_motivation: 'Research Motivation', ph_csc: 'CSC Application Checklist',
-    pr_tags: ['Quantitative Economics','CSC Candidate','Supply Chain Analytics'],
-    pr_school: 'INSEEC Lyon · MSc Procurement & Supply Chain', pr_schoolSub: 'Bac+5 · Lyon, France',
-    pr_job: 'SAN MAROC · Business Analyst Intern', pr_jobDate: 'Feb. 2026 – Aug. 2026',
-    pr_loc: 'Casablanca, Morocco',
-    pr_goal: 'Target: Tsinghua University / Peking University', pr_goalSub: 'Economics Master/PhD · CSC Scholarship 2026',
-    uni_label: 'Economics / Applied Economics / Quantitative Economics',
-    aw1: '🏆 Highest Honors – Mention TB', aw2: '⭐ CSC-Ready',
-    sc1lbl: 'Proven ROI\nReturn on Invest.', sc2lbl: 'Model Variables\nPPI Model',
-    sc3lbl: 'Per Week Saved\nAutomation', sc4lbl: 'French Level\nTCF 693/699',
-    edu1school: 'INSEEC Lyon 🇫🇷', edu1deg: 'MSc Procurement & Supply Chain Management · Bac+5',
-    edu1date: '2025 – 2027 · Lyon, France', edu1badge: 'In Progress',
-    edu2school: 'Université Internationale de Casablanca (UIC) 🇲🇦', edu2deg: 'Bachelor – Management, Finance & Accounting',
-    edu2date: '2022 – 2025 · Casablanca', edu2badge: '🏆 Mention Très Bien (Highest Honors)',
-    l1: 'Arabic', l1lv: 'Native',
-    l2: 'French / Français', l2lv: 'C2 · TCF 693/699',
-    l3: 'English', l3lv: 'DET 110/160 — Professional',
-    l4: 'Mandarin Chinese', l4lv: 'Learning',
-    exp1co: 'SAN MAROC', exp1role: 'Business Analyst Intern',
-    exp1date: 'Feb.–Aug. 2026 · Casablanca · Remote',
-    exp1b1: 'Analysed client portfolios (outstanding balances, overdue payments, collections) to identify performance gaps — 97.9B MAD NPL market',
-    exp1b2: 'Designed Excel decision-support dashboards tracking DSO, CEI and recovery rate KPIs; VBA automation saving <strong>2h/week</strong>',
-    exp1b3: 'Segmented portfolios by age and recovery probability; remote weekly deliverable validation via Google Drive',
-    exp2co: '2ACOM', exp2role: 'Business Analysis Intern',
-    exp2date: 'May–Jul. 2025 · Casablanca',
-    exp2b1: 'Built a KPI management system covering 5 market zones',
-    exp2b2: 'Developed the Potential Profitability Index (PPI) integrating <strong>15+ variables</strong>',
-    exp2b3: 'Built a 5-year financial model integrating ROI, CAPEX, OPEX & TCO projections',
-    exp3co: 'MAGHREBAIL', exp3role: 'Finance Intern',
-    exp3date: 'Jul.–Aug. 2024 · Casablanca',
-    exp3b1: 'Credit application analysis, financial document review and compliance verification',
-    exp3b2: 'Participated in financial leasing risk assessment processes',
-    res_div: '📊 Final Thesis Project (PFE Research)',
-    res_title: 'Financial Profitability of Outdoor Advertising Displays – Casablanca',
-    res_sub: 'Analyse de la rentabilité financière des panneaux publicitaires · UIC',
-    res_sim_div: '🚗 SUMO Traffic Simulation Demo',
-    pc1title: 'Financial Modeling', pc1desc: 'Excel model integrating CAPEX, OPEX, TCO & NPV. 4-scenario ROI comparative analysis for the Moroccan outdoor advertising market.',
-    pc2title: 'Spatial Analysis', pc2desc: 'OSM × SUMO traffic simulation × QGIS spatial analysis. Quantitative evaluation of commercial attractiveness on Casablanca arterials.',
-    pc3title: 'Multi-Criteria Analysis', pc3desc: 'Weighted MCA index: Audience 40% · CPM 30% · ROAS 30%. Ranked top-10 advertising locations in Casablanca.',
-    pc3result: 'Top-10 Location Ranking',
-    sim_flow: 'Flow/h', sim_speed: 'Avg Speed', sim_veh: 'Vehicles',
-    gx1title: 'Academic Supervisors', gx1text: 'INSEEC Lyon professor supervision\nUIC Casablanca recommendation letters\nAvailable on request',
-    gx2title: 'Leo Club', gx2text: 'International Lions Club Youth Division\nCommunity service & leadership development\nMember since 2022',
-    gx3title: 'Internship Certificates', gx3text: 'SAN MAROC certified\n2ACOM certified · MAGHREBAIL\nAll documentation available',
-    gx4title: 'Language Certification', gx4text: 'TCF 693/699 · C2 Level\nAlliance Française certified\nFrench proficiency proven',
-    mot1: 'As a quantitative researcher from Morocco, my work focuses on <span class="red-text">emerging-market urban economics</span>, capital allocation efficiency, and spatial information asymmetries.',
-    mot2: 'My thesis combined <span class="red-text">SUMO traffic simulation</span> with <span class="red-text">QGIS spatial analysis</span> to quantify the commercial value of advertising sites in Casablanca — yielding a proven peak ROI of 533%.',
-    mot3: '"My research bridges quantitative urban economics and real-world capital allocation — a natural fit for China\'s leading institutions in applied economic modeling."',
-    csc1: 'Research Proposal', csc2: 'French C2 – TCF 693/699',
-    csc3: 'Highest Academic Honors – Mention TB', csc4: 'Recommendation Letters',
-    csc5: 'Online Portfolio', csc6: 'English Proficiency Certificate',
-    csc7: 'HSK Mandarin Test (in progress)',
-    qr_label: 'WeChat', qr_sub: 'Scan to Connect',
-    ct_wechat: 'WeChat', ct_linkedin: 'LinkedIn', ct_email: 'Email',
-    cta1: '📄 View Research Proposal', cta1sub: '查看研究计划书',
-    cta2: '🌐 Full Portfolio', cta2sub: 'el2545.github.io/portfolio/',
-    tab1: 'Profile', tab2: 'Experience', tab3: 'Research', tab4: 'Guanxi', tab5: 'Contact',
-  }
-};
-
-function setLang(lang) {
-  const isZH = lang === 'zh';
-  document.documentElement.lang = isZH ? 'zh-CN' : 'en';
-  document.getElementById('btn-zh').classList.toggle('active', isZH);
-  document.getElementById('btn-en').classList.toggle('active', !isZH);
-  document.getElementById('btn-zh').setAttribute('aria-pressed', isZH);
-  document.getElementById('btn-en').setAttribute('aria-pressed', !isZH);
-
-  const t = isZH ? T.zh : T.en;
-  document.title = t.pageTitle;
-  document.getElementById('searchInput').placeholder = t.searchPlaceholder;
-  document.getElementById('tickerContent').textContent = t.ticker;
-
-  // KPI strip
-  document.getElementById('kpiLabel').textContent = t.kpiLabel;
-  document.getElementById('kpi1lbl').innerHTML = t.kpi1lbl.replace('\n','<br>');
-  document.getElementById('kpi2lbl').innerHTML = t.kpi2lbl.replace('\n','<br>');
-  document.getElementById('kpi3lbl').innerHTML = t.kpi3lbl.replace('\n','<br>');
-  document.getElementById('kpi4lbl').innerHTML = t.kpi4lbl.replace('\n','<br>');
-  document.getElementById('kpi5lbl').innerHTML = t.kpi5lbl.replace('\n','<br>');
-
-  // Slides
-  document.getElementById('s1name').textContent = t.s1name;
-  document.getElementById('s1role').textContent = t.s1role;
-  document.getElementById('s1s1lbl').textContent = t.s1s1lbl;
-  document.getElementById('s1s2lbl').textContent = t.s1s2lbl;
-  document.getElementById('s1s3lbl').textContent = t.s1s3lbl;
-  document.getElementById('s1b1').textContent = t.s1b1;
-  document.getElementById('s1b2').textContent = t.s1b2;
-  document.getElementById('s1b3').textContent = t.s1b3;
-  document.getElementById('s2title').textContent = t.s2title;
-  document.getElementById('s2sub').textContent = t.s2sub;
-  document.getElementById('s2s1lbl').textContent = t.s2s1lbl;
-  document.getElementById('s2s2lbl').textContent = t.s2s2lbl;
-  document.getElementById('s2s3lbl').textContent = t.s2s3lbl;
-  document.getElementById('s2b1').textContent = t.s2b1;
-  document.getElementById('s2b2').textContent = t.s2b2;
-  document.getElementById('s2b3').textContent = t.s2b3;
-  document.getElementById('s3title').textContent = t.s3title;
-  document.getElementById('s3sub').textContent = t.s3sub;
-  document.getElementById('s3s1lbl').textContent = t.s3s1lbl;
-  document.getElementById('s3s2lbl').textContent = t.s3s2lbl;
-  document.getElementById('s3s2val').textContent = t.s3s2val;
-  document.getElementById('s3s3lbl').textContent = t.s3s3lbl;
-  document.getElementById('s3s3val').textContent = t.s3s3val;
-  document.getElementById('s3b1').textContent = t.s3b1;
-  document.getElementById('s3b2').textContent = t.s3b2;
-  document.getElementById('s3b3').textContent = t.s3b3;
-
-  // Panel heads
-  ['profile','targets','metrics','edu','lang','exp','research','skills','contact','guanxi','motivation','csc'].forEach(k => {
-    const el = document.getElementById('ph_' + k);
-    if (el) el.textContent = t['ph_' + k];
-  });
-
-  // Profile card
-  const tags = document.querySelectorAll('.profile-tag');
-  t.pr_tags.forEach((txt,i) => { if(tags[i]) tags[i].textContent = txt; });
-  document.getElementById('pr_school').textContent = t.pr_school;
-  document.getElementById('pr_schoolSub').textContent = t.pr_schoolSub;
-  document.getElementById('pr_job').textContent = t.pr_job;
-  document.getElementById('pr_jobDate').textContent = t.pr_jobDate;
-  document.getElementById('pr_loc').textContent = t.pr_loc;
-  document.getElementById('pr_goal').textContent = t.pr_goal;
-  document.getElementById('pr_goalSub').textContent = t.pr_goalSub;
-  document.getElementById('uni_label').textContent = t.uni_label;
-  document.getElementById('aw1').textContent = t.aw1;
-  document.getElementById('aw2').textContent = t.aw2;
-
-  // Stat cells
-  ['sc1','sc2','sc3','sc4'].forEach(k => {
-    const el = document.getElementById(k + 'lbl');
-    if (el) el.innerHTML = t[k + 'lbl'].replace('\n','<br>');
-  });
-
-  // Education
-  ['edu1school','edu1deg','edu1date','edu1badge','edu2school','edu2deg','edu2date','edu2badge'].forEach(k => {
-    const el = document.getElementById(k);
-    if (el) el.textContent = t[k];
-  });
-
-  // Languages
-  ['l1','l2','l3','l4'].forEach(k => {
-    const nm = document.getElementById(k + 'name');
-    const lv = document.getElementById(k + 'level');
-    if (nm) nm.textContent = t[k];
-    if (lv) lv.textContent = t[k + 'lv'];
-  });
-
-  // Experience
-  ['exp1co','exp1role','exp1date','exp2co','exp2role','exp2date','exp3co','exp3role','exp3date'].forEach(k => {
-    const el = document.getElementById(k);
-    if (el) el.textContent = t[k];
-  });
-  ['exp1b1','exp1b2','exp1b3','exp2b1','exp2b2','exp2b3','exp3b1','exp3b2'].forEach(k => {
-    const el = document.getElementById(k);
-    if (el) el.innerHTML = t[k];
-  });
-
-  // Research
-  document.getElementById('res_div').textContent = t.res_div;
-  document.getElementById('res_title').textContent = t.res_title;
-  const resSub = document.getElementById('res_sub');
-  if (resSub) resSub.textContent = t.res_sub;
-  const resSimDiv = document.getElementById('res_sim_div');
-  if (resSimDiv) resSimDiv.textContent = t.res_sim_div;
-  document.getElementById('pc1title').textContent = t.pc1title;
-  document.getElementById('pc1desc').textContent = t.pc1desc;
-  document.getElementById('pc2title').textContent = t.pc2title;
-  document.getElementById('pc2desc').textContent = t.pc2desc;
-  document.getElementById('pc3title').textContent = t.pc3title;
-  document.getElementById('pc3desc').textContent = t.pc3desc;
-  document.getElementById('pc3result').textContent = t.pc3result;
-  const simFlowLbl = document.getElementById('simFlowLbl');
-  if (simFlowLbl) simFlowLbl.textContent = t.sim_flow;
-  const simSpeedLbl = document.getElementById('simSpeedLbl');
-  if (simSpeedLbl) simSpeedLbl.textContent = t.sim_speed;
-  const simVehLbl = document.getElementById('simVehLbl');
-  if (simVehLbl) simVehLbl.textContent = t.sim_veh;
-
-  // Guanxi
-  ['gx1','gx2','gx3','gx4'].forEach(k => {
-    const title = document.getElementById(k + 'title');
-    const text  = document.getElementById(k + 'text');
-    if (title) title.textContent = '● ' + t[k + 'title'];
-    if (text)  text.innerHTML = t[k + 'text'].replace(/\n/g, '<br>');
-  });
-
-  // Motivation
-  document.getElementById('mot1').innerHTML = t.mot1;
-  document.getElementById('mot2').innerHTML = t.mot2;
-  document.getElementById('mot3').textContent = t.mot3;
-
-  // CSC checklist
-  ['csc1','csc2','csc3','csc4','csc5','csc6','csc7'].forEach(k => {
-    const el = document.getElementById(k);
-    if (el) el.textContent = t[k];
-  });
-
-  // Contact
-  document.getElementById('qr_label').textContent = t.qr_label;
-  document.getElementById('qr_sub').textContent = t.qr_sub;
-  document.getElementById('ct_wechat').textContent = t.ct_wechat;
-  document.getElementById('ct_linkedin').textContent = t.ct_linkedin;
-  document.getElementById('ct_email').textContent = t.ct_email;
-  document.getElementById('cta1').childNodes[0].textContent = t.cta1 + ' ';
-  document.getElementById('cta1sub').textContent = t.cta1sub;
-  document.getElementById('cta2').childNodes[0].textContent = t.cta2 + ' ';
-  document.getElementById('cta2sub').textContent = t.cta2sub;
-
-  // Tab bar
-  document.getElementById('tab1').textContent = t.tab1;
-  document.getElementById('tab2').textContent = t.tab2;
-  document.getElementById('tab3').textContent = t.tab3;
-  document.getElementById('tab4').textContent = t.tab4;
-  document.getElementById('tab5').textContent = t.tab5;
-}
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
-<script>
-// INTEGRATED SUMO DASHBOARD — real heatmap + real geo-corrected vehicle simulation
-(function(){
-const EGS_ZONES = {
-  maarif: {
-    label:'Maârif', color:'#FF3355', center:[33.5866,-7.6325], zoom:14,
-    heatmapFile:'maarif_heatmap.json',
-    simulationFile:'maarif_simulation_geo.json',
-    analysis:'Maârif: central dense fabric. Heatmap highlights concentration; simulation displays vehicles from geo-corrected SUMO FCD outputs.'
-  },
-  hay_hassani: {
-    label:'Hay Hassani', color:'#FFB830', center:[33.5607,-7.6900], zoom:14,
-    heatmapFile:'hay_hassani_heatmap.json',
-    simulationFile:'hay_hassani_simulation_geo.json',
-    analysis:'Hay Hassani: peripheral flows and transition zones. Useful to detect localized slowdowns and vehicle accumulation.'
-  },
-  ben_msick: {
-    label:"Ben M'Sick", color:'#00E676', center:[33.5500,-7.5800], zoom:14,
-    heatmapFile:'ben_msick_heatmap.json',
-    simulationFile:'ben_msick_simulation_geo.json',
-    analysis:"Ben M'Sick: dense urban network. The dashboard supports reading conflict points, secondary-road intensity and speed variations."
-  },
-  sidi_maarouf: {
-    label:'Sidi Maârouf', color:'#BF5AF2', center:[33.5250,-7.6500], zoom:14,
-    heatmapFile:'sidi_maarouf_heatmap.json',
-    simulationFile:'sidi_maarouf_simulation_geo.json',
-    analysis:'Sidi Maârouf: strategic employment and arterial area. Simulation shows flows related to business poles and major roads.'
-  },
-  bd_mohammed_v: {
-    label:'Bd. Mohammed V', color:'#00B4D8', center:[33.5950,-7.6100], zoom:15,
-    heatmapFile:'bd_mohammed_v_heatmap.json',
-    simulationFile:'bd_mohammed_v_simulation_geo.json',
-    analysis:'Boulevard Mohammed V: major corridor. Heatmap and simulation identify concentration and slowdown segments.'
-  }
-};
-  let map=null, heatLayer=null, canvas=null, ctx=null;
-  let mode='heatmap', zoneKey='maarif', currentData=null, heatPoints=[], stepIndex=0;
-  let playing=true, raf=null, lastFrame=0;
-  const MAX_HEAT_POINTS=12000, MAX_VEHICLES_PER_FRAME=1600;
-
-  function $(id){ return document.getElementById(id); }
-  function setText(id,v){ const e=$(id); if(e) e.textContent=v; }
-  async function loadJson(file){ const r=await fetch(file+'?v='+Date.now()); if(!r.ok) throw new Error(file); return r.json(); }
-
-  function initMap(){
-    const z=EGS_ZONES[zoneKey];
-    map=L.map('egsSumoMap',{center:z.center,zoom:z.zoom,zoomControl:true,attributionControl:false,preferCanvas:true});
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19}).addTo(map);
-    canvas=$('egsTrafficCanvas');
-    ctx=canvas.getContext('2d');
-    resizeCanvas();
-    map.on('move zoom resize',()=>{resizeCanvas(); if(mode==='simulation') drawStep();});
-    window.addEventListener('resize',()=>{resizeCanvas(); if(mode==='simulation') drawStep();});
-  }
-
-  function resizeCanvas(){
-    if(!canvas||!ctx) return;
-    const r=canvas.getBoundingClientRect(), d=window.devicePixelRatio||1;
-    canvas.width=r.width*d; canvas.height=r.height*d;
-    ctx.setTransform(d,0,0,d,0,0);
-  }
-
-  function clearCanvas(){
-    if(!ctx||!canvas) return;
-    const r=canvas.getBoundingClientRect();
-    ctx.clearRect(0,0,r.width,r.height);
-  }
-
-  function removeHeat(){
-    if(heatLayer){ map.removeLayer(heatLayer); heatLayer=null; }
-  }
-
-  function updateUI(){
-    const isHeat=mode==='heatmap', z=EGS_ZONES[zoneKey];
-    document.querySelectorAll('.egs-mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.egsMode===mode));
-    document.querySelectorAll('.egs-zone-btn').forEach(b=>b.classList.toggle('active',b.dataset.egsZone===zoneKey));
-    $('egsHeatControls').classList.toggle('egs-hidden',!isHeat);
-    $('egsSimulationControls').classList.toggle('egs-hidden',isHeat);
-    $('egsHeatLegend').classList.toggle('egs-hidden',!isHeat);
-    $('egsSimulationLegend').classList.toggle('egs-hidden',isHeat);
-    setText('egsZoneTitle', z.label);
-    setText('egsAnalysisText', z.analysis);
-    setText('egsMainLabel', isHeat?'POINTS':'VISIBLE');
-    ['egsKpiMain','egsKpiVehicles','egsKpiSteps','egsKpiSpeed'].forEach(id=>setText(id,'—'));
-  }
-
-  async function loadCurrent(){
-    if(!map) return;
-    cancelAnimationFrame(raf);
-    raf=null; playing=false; stepIndex=0;
-    removeHeat(); clearCanvas(); updateUI();
-    const z=EGS_ZONES[zoneKey];
-    map.setView(z.center,z.zoom);
-    if(mode==='heatmap') await loadHeatmap(); else await loadSimulation();
-  }
-
-  async function loadHeatmap(){
-    const z=EGS_ZONES[zoneKey];
-    setText('egsStatusText','Loading SUMO heatmap...');
-    try{
-      currentData=await loadJson(z.heatmapFile);
-      if(!currentData.points) throw new Error('Invalid heatmap format');
-      setText('egsStatusText','Loaded: '+z.heatmapFile);
-      heatPoints=normalizeHeat(currentData.points);
-      drawHeatmap();
-      updateHeatKpis();
-    }catch(e){
-      console.error(e);
-      setText('egsStatusText','Heatmap load error: '+z.heatmapFile);
-    }
-  }
-
-  function normalizeHeat(points){
-    const arr=[];
-    for(const p of points){
-      if(!Array.isArray(p)||p.length<2) continue;
-      const lat=+p[0], lng=+p[1], intensity=+(p[2]||0.4);
-      if(Number.isFinite(lat)&&Number.isFinite(lng)){
-        arr.push([lat,lng,Math.max(.05,Math.min(intensity,1))]);
+    function copyWechatId() {
+      const text = document.getElementById('wechatId').innerText.replace('WeChat ID:', '').trim();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function () {
+          alert('WeChat ID copied: ' + text);
+        });
+      } else {
+        alert('WeChat ID: ' + text);
       }
     }
-    if(arr.length<=MAX_HEAT_POINTS) return arr;
-    const int=Math.ceil(arr.length/MAX_HEAT_POINTS);
-    return arr.filter((_,i)=>i%int===0).slice(0,MAX_HEAT_POINTS);
-  }
 
-  function drawHeatmap(){
-    removeHeat();
-    if(!heatPoints.length||!L.heatLayer) return;
-    const radius=+$('egsRadiusRange').value, blur=+$('egsBlurRange').value, mult=+$('egsIntensityRange').value/12;
-    const pts=heatPoints.map(p=>[p[0],p[1],Math.min(.55,p[2]*mult)]);
-    heatLayer=L.heatLayer(pts,{
-      radius, blur, maxZoom:18, minOpacity:.08, max:1,
-      gradient:{0.15:'#00FF88',0.35:'#FFD700',0.60:'#FF8A00',1:'#FF3355'}
-    }).addTo(map);
-    fitPoints(pts);
-  }
-
-  function updateHeatKpis(){
-    setText('egsKpiMain',heatPoints.length.toLocaleString('fr-FR'));
-    const k=currentData.kpis||{};
-    setText('egsKpiVehicles',Number(k.vehicleRecords||0).toLocaleString('fr-FR'));
-    setText('egsKpiSteps',Number(k.steps||0).toLocaleString('fr-FR'));
-    setText('egsKpiSpeed',Number(k.averageSpeed||0).toFixed(2)+' m/s');
-  }
-
-  async function loadSimulation(){
-    const z=EGS_ZONES[zoneKey];
-    setText('egsStatusText','Loading SUMO geo simulation...');
-    try{
-      currentData=await loadJson(z.simulationFile);
-      if(!currentData.timesteps) throw new Error('Invalid simulation format');
-      setText('egsStatusText','Loaded: '+z.simulationFile);
-      setText('egsKpiSteps',currentData.timesteps.length.toLocaleString('fr-FR'));
-      if(currentData.kpis) setText('egsKpiSpeed',Number(currentData.kpis.averageSpeed||0).toFixed(2)+' m/s');
-      setTimeout(()=>{ resizeCanvas(); fitSimulation(); playing=true; startAnimation(); },250);
-    }catch(e){
-      console.error(e);
-      setText('egsStatusText','Simulation load error: '+z.simulationFile);
-    }
-  }
-
-  function getLL(v){
-    const lat=+(v.lat), lng=+(v.lng);
-    return Number.isFinite(lat)&&Number.isFinite(lng)?[lat,lng]:null;
-  }
-
-  function fitSimulation(){
-    if(!currentData?.timesteps) return;
-    const pts=[];
-    for(const st of currentData.timesteps){
-      for(const v of (st.vehicles||[])){
-        const ll=getLL(v); if(ll) pts.push(ll);
+    const marquee = document.querySelector('.marquee');
+    marquee.addEventListener('keydown', function (event) {
+      if (event.key === ' ' || event.key === 'Enter') {
+        event.preventDefault();
+        const paused = marquee.getAttribute('data-paused') === 'true';
+        marquee.setAttribute('data-paused', String(!paused));
       }
-      if(pts.length>3000) break;
-    }
-    fitPoints(pts);
-    drawStep();
-  }
+    });
 
-  function drawStep(){
-    if(mode!=='simulation'||!currentData?.timesteps) return;
-    const st=currentData.timesteps[stepIndex];
-    if(!st) return;
-    clearCanvas();
-    const vs=sampleVehicles(st.vehicles||[],MAX_VEHICLES_PER_FRAME);
-    let n=0, sum=0;
-    for(const v of vs){
-      const ll=getLL(v); if(!ll) continue;
-      const pt=map.latLngToContainerPoint(ll);
-      const sp=+(v.speed||0), angle=+(v.angle||0);
-      if(!Number.isFinite(pt.x)||!Number.isFinite(pt.y)) continue;
-      drawVehicle(pt.x,pt.y,sp,angle);
-      n++; sum+=sp;
-    }
-    setText('egsKpiMain',n.toLocaleString('fr-FR'));
-    setText('egsKpiVehicles',n.toLocaleString('fr-FR'));
-    setText('egsKpiSpeed',(n?sum/n:0).toFixed(2)+' m/s');
-  }
+    const ids = ['profile', 'research', 'guanxi', 'wechat'];
+    const tabs = Array.from(document.querySelectorAll('.tabbar a'));
 
-  function sampleVehicles(vs,max){
-    if(vs.length<=max) return vs;
-    const int=Math.ceil(vs.length/max);
-    return vs.filter((_,i)=>i%int===0);
-  }
-
-  function colorSpeed(s){ return s<3?'#FF3355':s<8?'#FFD700':'#00FF88'; }
-
-  function drawVehicle(x,y,speed,angle){
-    const size=+$('egsVehicleSizeRange').value||6;
-    const col=colorSpeed(speed);
-    const a=(+(angle||0)-90)*Math.PI/180;
-    ctx.save();
-    ctx.translate(x,y);
-    ctx.rotate(a);
-    ctx.fillStyle=col;
-    ctx.strokeStyle='rgba(255,255,255,.95)';
-    ctx.lineWidth=1.4;
-    ctx.shadowBlur=10;
-    ctx.shadowColor=col;
-    roundRect(-size,-size/2,size*2.4,size*1.15,Math.max(2,size/2));
-    ctx.fill();
-    ctx.stroke();
-    ctx.restore();
-  }
-
-  function roundRect(x,y,w,h,r){
-    ctx.beginPath();
-    ctx.moveTo(x+r,y);
-    ctx.lineTo(x+w-r,y);
-    ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-    ctx.lineTo(x+w,y+h-r);
-    ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-    ctx.lineTo(x+r,y+h);
-    ctx.quadraticCurveTo(x,y+h,x,y+h-r);
-    ctx.lineTo(x,y+r);
-    ctx.quadraticCurveTo(x,y,x+r,y);
-    ctx.closePath();
-  }
-
-  function startAnimation(){
-    cancelAnimationFrame(raf);
-    lastFrame=0;
-    raf=requestAnimationFrame(loop);
-  }
-
-  function loop(t){
-    if(mode!=='simulation') return;
-    const delay=Math.max(20,280-(+$('egsSpeedRange').value||6)*20);
-    if(playing&&t-lastFrame>=delay){
-      drawStep();
-      stepIndex=(stepIndex+1)%currentData.timesteps.length;
-      lastFrame=t;
-    }
-    raf=requestAnimationFrame(loop);
-  }
-
-  function fitPoints(points){
-    if(!points||!points.length) return;
-    const b=L.latLngBounds(points.map(p=>[p[0],p[1]]));
-    if(b.isValid()) map.fitBounds(b,{padding:[30,30],maxZoom:EGS_ZONES[zoneKey].zoom});
-  }
-
-  function bindEvents(){
-    document.querySelectorAll('.egs-mode-btn').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.egsMode; loadCurrent();}));
-    document.querySelectorAll('.egs-zone-btn').forEach(b=>b.addEventListener('click',()=>{zoneKey=b.dataset.egsZone; loadCurrent();}));
-    ['egsRadiusRange','egsBlurRange','egsIntensityRange'].forEach(id=>$(id).addEventListener('input',()=>{ if(mode==='heatmap') drawHeatmap(); }));
-    $('egsResetHeatmapBtn').addEventListener('click',()=>{ if(mode==='heatmap') drawHeatmap(); });
-    $('egsPlayBtn').addEventListener('click',()=>playing=true);
-    $('egsPauseBtn').addEventListener('click',()=>playing=false);
-    $('egsRestartBtn').addEventListener('click',()=>{stepIndex=0; drawStep();});
-    $('egsVehicleSizeRange').addEventListener('input',drawStep);
-    $('egsResetSimulationBtn').addEventListener('click',fitSimulation);
-  }
-
-  document.addEventListener('DOMContentLoaded',()=>{
-    const panel=$('sumo-dashboard');
-    if(!panel) return;
-    bindEvents();
-    const obs=new IntersectionObserver(entries=>{
-      if(entries[0].isIntersecting){
-        if(!map) initMap();
-        loadCurrent();
-        obs.disconnect();
-      }
-    },{threshold:.10});
-    obs.observe(panel);
-  });
-})();
-</script>
-
+    window.addEventListener('scroll', function () {
+      let current = 'profile';
+      ids.forEach(function (id) {
+        const node = document.getElementById(id);
+        if (node && node.getBoundingClientRect().top <= 140) current = id;
+      });
+      tabs.forEach(function (tab) {
+        tab.classList.toggle('active', tab.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+  </script>
 </body>
 </html>
