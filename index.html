@@ -299,54 +299,12 @@ a{color:inherit;text-decoration:none}
 .bl{animation:bl 1.4s infinite}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
 
-/* ═══ SHISHI — Symbolically corrected version ═══ */
-.ssrow{
-  position:relative;
-  display:grid;
-  grid-template-columns:110px minmax(300px, 620px) 110px;
-  justify-content:center;
-  align-items:center;
-  gap:24px;
-  padding:18px 22px;
-  margin:12px 0 14px;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255,215,0,.18), transparent 34%),
-    linear-gradient(135deg,#fffdf2 0%,#fff8dc 54%,#fff3bd 100%);
-  border:1px solid rgba(184,134,11,.38);
-  border-radius:12px;
-  box-shadow:
-    0 3px 10px rgba(184,134,11,.14),
-    inset 0 0 0 1px rgba(255,255,255,.75);
-  overflow:hidden;
-}
-
-.ssrow::before,
-.ssrow::after{
-  content:"";
-  position:absolute;
-  top:50%;
-  width:150px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(184,134,11,.55),transparent);
-}
-
-.ssrow::before{ left:calc(50% - 380px); }
-.ssrow::after{ right:calc(50% - 380px); }
-
-.ssl{
-  position:relative;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
+/* ===== SHISHI FACE FIX ===== */
 
 .lion-badge{
   position:relative;
-  width:62px;
-  height:62px;
+  width:68px;
+  height:68px;
   margin-bottom:8px;
   border-radius:50%;
   background:linear-gradient(135deg,#8b0000,#d0021b);
@@ -354,43 +312,47 @@ a{color:inherit;text-decoration:none}
   box-shadow:
     0 4px 12px rgba(208,2,27,.28),
     0 0 18px rgba(255,215,0,.25);
+  overflow:visible;
 }
 
+/* Main head */
 .lion-face{
   position:absolute;
   left:50%;
-  top:50%;
-  width:28px;
-  height:28px;
-  transform:translate(-50%,-54%);
-  border-radius:50%;
+  top:44%;
+  width:30px;
+  height:32px;
+  transform:translate(-50%,-50%);
+  border-radius:48% 48% 44% 44%;
   background:#f2c27e;
-  box-shadow:0 -12px 0 -8px #f2c27e;
 }
 
+/* Ears */
 .lion-face::before,
 .lion-face::after{
   content:"";
   position:absolute;
-  top:-5px;
-  width:8px;
-  height:8px;
+  top:-6px;
+  width:10px;
+  height:10px;
   border-radius:50%;
   background:#f2c27e;
 }
 
-.lion-face::before{ left:2px; }
-.lion-face::after{ right:2px; }
+.lion-face::before{ left:1px; }
+.lion-face::after{ right:1px; }
 
+/* Mouth area */
 .lion-mouth{
   position:absolute;
   left:50%;
-  top:33px;
   transform:translateX(-50%);
+  z-index:3;
 }
 
 /* Female = closed mouth */
 .female-badge .lion-mouth{
+  top:40px;
   width:12px;
   height:3px;
   border-radius:999px;
@@ -399,6 +361,7 @@ a{color:inherit;text-decoration:none}
 
 /* Male = open mouth */
 .male-badge .lion-mouth{
+  top:38px;
   width:12px;
   height:12px;
   border-radius:50%;
@@ -406,7 +369,7 @@ a{color:inherit;text-decoration:none}
   background:#4a0d0d;
 }
 
-/* Male orb inside mouth */
+/* Orb in male mouth */
 .lion-orb{
   display:none;
 }
@@ -415,34 +378,37 @@ a{color:inherit;text-decoration:none}
   display:block;
   position:absolute;
   left:50%;
-  top:36px;
+  top:42px;
   width:4px;
   height:4px;
   transform:translateX(-50%);
   border-radius:50%;
   background:#f7f4ec;
   box-shadow:0 0 6px rgba(255,255,255,.8);
+  z-index:4;
 }
 
+/* Paw */
 .lion-paw{
   position:absolute;
   left:50%;
-  bottom:9px;
-  width:14px;
-  height:14px;
+  bottom:8px;
+  width:15px;
+  height:15px;
   transform:translateX(-50%);
   border-radius:50%;
   background:#f2c27e;
   border:1px solid rgba(109,40,23,.18);
-  z-index:2;
+  z-index:3;
 }
 
+/* Support element (cub or embroidered ball) */
 .lion-support{
   position:absolute;
   left:50%;
-  bottom:-6px;
+  bottom:-2px;
   transform:translateX(-50%);
-  z-index:1;
+  z-index:2;
 }
 
 /* Female cub */
@@ -482,90 +448,41 @@ a{color:inherit;text-decoration:none}
   box-shadow:0 0 0 1px rgba(255,255,255,.35) inset;
 }
 
-.sslb{
-  font-size:.62rem;
-  color:#7d6210;
-  font-weight:700;
-  line-height:1.2;
-  white-space:nowrap;
-}
-
-.ssm{
-  margin-top:7px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:26px;
-  height:24px;
-  padding:0 7px;
-  border:1px solid rgba(184,134,11,.7);
-  border-radius:6px;
-  background:#fffaf0;
-  color:#b8860b;
-  font-family:var(--ffs);
-  font-size:.72rem;
-  font-weight:800;
-  line-height:1;
-}
-
-.ssc{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  font-family:var(--ffs);
-  font-size:1rem;
-  font-weight:800;
-  color:#8a0000;
-  letter-spacing:.06em;
-  line-height:1.42;
-  padding:0 12px;
-}
-
-.ssc small{
-  display:block;
-  margin-top:6px;
-  font-family:var(--ff);
-  font-size:.64rem;
-  font-weight:500;
-  color:#9a7a18;
-  letter-spacing:.02em;
-}
-
+/* ===== MOBILE ===== */
 @media(max-width:760px){
-  .ssrow{
-    grid-template-columns:72px 1fr 72px;
-    gap:10px;
-    padding:14px 10px;
-  }
-
-  .ssrow::before,
-  .ssrow::after{
-    display:none;
-  }
-
   .lion-badge{
-    width:42px;
-    height:42px;
+    width:46px;
+    height:46px;
   }
 
   .lion-face{
-    width:18px;
-    height:18px;
+    width:20px;
+    height:22px;
+    top:43%;
+  }
+
+  .lion-face::before,
+  .lion-face::after{
+    width:7px;
+    height:7px;
+    top:-4px;
   }
 
   .female-badge .lion-mouth{
-    top:24px;
+    top:27px;
     width:8px;
+    height:2px;
   }
 
   .male-badge .lion-mouth{
-    top:22px;
+    top:26px;
     width:8px;
     height:8px;
+    border-width:1.5px;
   }
 
   .male-badge .lion-orb{
-    top:24px;
+    top:29px;
     width:3px;
     height:3px;
   }
@@ -573,37 +490,17 @@ a{color:inherit;text-decoration:none}
   .lion-paw{
     width:10px;
     height:10px;
-    bottom:7px;
+    bottom:6px;
   }
 
   .lion-support.cub{
-    width:13px;
-    height:10px;
+    width:12px;
+    height:9px;
   }
 
   .lion-support.ball{
-    width:13px;
-    height:13px;
-  }
-
-  .sslb{
-    font-size:.48rem;
-  }
-
-  .ssm{
-    min-width:20px;
-    height:20px;
-    font-size:.56rem;
-  }
-
-  .ssc{
-    font-size:.72rem;
-    letter-spacing:.02em;
-    padding:0 2px;
-  }
-
-  .ssc small{
-    font-size:.48rem;
+    width:12px;
+    height:12px;
   }
 }
 /* ═══ DEPT GRID ═══ */
