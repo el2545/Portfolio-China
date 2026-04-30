@@ -299,13 +299,6 @@ a{color:inherit;text-decoration:none}
 .bl{animation:bl 1.4s infinite}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
 
-/0%);
-  border-radius:50%;
-  background:#f2c27e;
-  border:1px solid rgba(109,40,23,.18);
-  z-index:3;
-}
-
 /* ═══ SHISHI IMAGE BANNER ═══ */
 .shishi-banner{
   position:relative;
@@ -708,6 +701,77 @@ footer{
  .egs-map-wrap, #egsSumoMap { min-height: 360px; }
 }
 
+
+
+/* ═══ FINAL FIX — SHISHI FULL-WIDTH IMAGE BANNER ═══ */
+.shishi-banner{
+  position:relative!important;
+  width:100%!important;
+  height:220px!important;
+  min-height:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+  background:#fffff0!important;
+  background-image:none!important;
+  border-top:1px solid rgba(184,134,11,.35)!important;
+  border-bottom:2px solid var(--red)!important;
+  border-left:0!important;
+  border-right:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  z-index:1!important;
+}
+.shishi-img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  display:block!important;
+  z-index:1!important;
+}
+.shishi-center-text{
+  position:absolute!important;
+  left:50%!important;
+  top:46%!important;
+  transform:translate(-50%,-50%)!important;
+  width:min(620px,42%)!important;
+  text-align:center!important;
+  z-index:2!important;
+  padding:8px 14px!important;
+  pointer-events:none!important;
+  border-radius:0!important;
+}
+.shishi-center-text h3{
+  margin:0 0 5px!important;
+  font-family:var(--ffs)!important;
+  font-size:1rem!important;
+  font-weight:900!important;
+  color:#8a0000!important;
+  letter-spacing:.08em!important;
+  line-height:1.35!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.9)!important;
+}
+.shishi-center-text p{
+  margin:0!important;
+  font-family:var(--ff)!important;
+  font-size:.68rem!important;
+  font-weight:600!important;
+  color:#9a7a18!important;
+  line-height:1.45!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.8)!important;
+}
+.lion-badge,.lion-face,.lion-mouth,.lion-orb,.lion-paw,.lion-support,.female-badge,.male-badge{
+  display:none!important;
+}
+@media(max-width:760px){
+  .shishi-banner{height:130px!important;}
+  .shishi-center-text{width:48%!important;top:46%!important;padding:4px 6px!important;}
+  .shishi-center-text h3{font-size:.52rem!important;letter-spacing:.02em!important;}
+  .shishi-center-text p{font-size:.38rem!important;}
+}
+
 </style>
 </head>
 <body class="zh">
@@ -846,6 +910,24 @@ footer{
  <div class="kpib p"><span class="kpiv">4+</span><span class="kpil" data-zh>工作语言<br>Languages</span><span class="kpil" data-en>Working<br>Languages</span></div>
  <div class="kpib" style="background:#6A1B9A"><span class="kpiv">CSC</span><span class="kpil">Agency 10001<br>PKU · 北大</span></div>
 </div>
+
+
+<!-- SHISHI FULL-WIDTH CEREMONIAL DIVIDER -->
+<section class="shishi-banner" aria-label="Twin Shishi ceremonial divider">
+  <img
+    src="shishi-divider.png"
+    alt="Twin Chinese guardian lions ceremonial divider"
+    class="shishi-img"
+  >
+
+  <div class="shishi-center-text">
+    <h3 data-zh>双狮护法 · 证据之门 · 左雌右雄</h3>
+    <h3 data-en>Twin Shishi · Gate of Evidence · Female Left, Male Right</h3>
+
+    <p data-zh>以严谨、守正与可验证性守护研究材料</p>
+    <p data-en>Guarding the research file through rigour, integrity and verifiability</p>
+  </div>
+</section>
 
 <!-- MAIN 3-COLUMN GRID -->
 <div class="pg" id="main">
@@ -992,16 +1074,6 @@ footer{
  <div class="nm wc">✅ <span data-zh>数据精准</span><span data-en>Data Precision</span></div>
  <div class="nm g"><span class="bl">🌆</span> <span data-zh>重庆/广东就绪</span><span data-en>Chongqing/GD Ready</span></div>
  </div>
-<!-- Shishi ceremonial divider -->
-<section class="shishi-banner" aria-label="Twin Shishi ceremonial divider">
-  <div class="shishi-center-text">
-    <h3 data-zh>双狮护法 · 证据之门 · 左雌右雄</h3>
-    <h3 data-en>Twin Shishi · Gate of Evidence · Female Left, Male Right</h3>
-
-    <p data-zh>以严谨、守正与可验证性守护研究材料</p>
-    <p data-en>Guarding the research file through rigour, integrity and verifiability</p>
-  </div>
-</section>
  <!-- : Yin/Yang Tao -->
  <div class="mb" style="margin-bottom:7px">
  <div class="mwm">阴阳</div>
