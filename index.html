@@ -299,155 +299,89 @@ a{color:inherit;text-decoration:none}
 .bl{animation:bl 1.4s infinite}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
 
-/* ===== SHISHI FACE FIX ===== */
-
-.lion-badge{
-  position:relative;
-  width:68px;
-  height:68px;
-  margin-bottom:8px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#8b0000,#d0021b);
-  border:3px solid rgba(255,215,0,.82);
-  box-shadow:
-    0 4px 12px rgba(208,2,27,.28),
-    0 0 18px rgba(255,215,0,.25);
-  overflow:visible;
-}
-
-/* Main head */
-.lion-face{
-  position:absolute;
-  left:50%;
-  top:44%;
-  width:30px;
-  height:32px;
-  transform:translate(-50%,-50%);
-  border-radius:48% 48% 44% 44%;
-  background:#f2c27e;
-}
-
-/* Ears */
-.lion-face::before,
-.lion-face::after{
-  content:"";
-  position:absolute;
-  top:-6px;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#f2c27e;
-}
-
-.lion-face::before{ left:1px; }
-.lion-face::after{ right:1px; }
-
-/* Mouth area */
-.lion-mouth{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:3;
-}
-
-/* Female = closed mouth */
-.female-badge .lion-mouth{
-  top:40px;
-  width:12px;
-  height:3px;
-  border-radius:999px;
-  background:#6d2817;
-}
-
-/* Male = open mouth */
-.male-badge .lion-mouth{
-  top:38px;
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  border:2px solid #6d2817;
-  background:#4a0d0d;
-}
-
-/* Orb in male mouth */
-.lion-orb{
-  display:none;
-}
-
-.male-badge .lion-orb{
-  display:block;
-  position:absolute;
-  left:50%;
-  top:42px;
-  width:4px;
-  height:4px;
-  transform:translateX(-50%);
-  border-radius:50%;
-  background:#f7f4ec;
-  box-shadow:0 0 6px rgba(255,255,255,.8);
-  z-index:4;
-}
-
-/* Paw */
-.lion-paw{
-  position:absolute;
-  left:50%;
-  bottom:8px;
-  width:15px;
-  height:15px;
-  transform:translateX(-50%);
+/0%);
   border-radius:50%;
   background:#f2c27e;
   border:1px solid rgba(109,40,23,.18);
   z-index:3;
 }
 
-/* Support element (cub or embroidered ball) */
-.lion-support{
+/* ═══ SHISHI IMAGE BANNER ═══ */
+.shishi-banner{
+  position:relative;
+  width:100%;
+  min-height:230px;
+  margin:12px 0 14px;
+  border:1px solid rgba(184,134,11,.38);
+  border-radius:12px;
+  overflow:hidden;
+
+  background-image:url("shishi-divider.png");
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:cover;
+
+  box-shadow:
+    0 3px 10px rgba(184,134,11,.14),
+    inset 0 0 0 1px rgba(255,255,255,.75);
+}
+
+/* Center text overlay */
+.shishi-center-text{
   position:absolute;
   left:50%;
-  bottom:-2px;
-  transform:translateX(-50%);
+  top:43%;
+  transform:translate(-50%,-50%);
+  width:min(620px, 48%);
+  text-align:center;
   z-index:2;
+  padding:10px 18px;
+  border-radius:10px;
 }
 
-/* Female cub */
-.lion-support.cub{
-  width:18px;
-  height:14px;
-  border-radius:10px 10px 8px 8px;
-  background:#f0be78;
-  border:1px solid rgba(109,40,23,.2);
+.shishi-center-text h3{
+  margin:0 0 6px;
+  font-family:var(--ffs);
+  font-size:1.05rem;
+  font-weight:900;
+  color:#8a0000;
+  letter-spacing:.08em;
+  line-height:1.35;
+  text-shadow:0 1px 0 rgba(255,255,255,.75);
 }
 
-.lion-support.cub::before,
-.lion-support.cub::after{
-  content:"";
-  position:absolute;
-  top:-4px;
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#f0be78;
+.shishi-center-text p{
+  margin:0;
+  font-family:var(--ff);
+  font-size:.68rem;
+  font-weight:600;
+  color:#9a7a18;
+  line-height:1.45;
 }
 
-.lion-support.cub::before{ left:2px; }
-.lion-support.cub::after{ right:2px; }
+/* Responsive */
+@media(max-width:760px){
+  .shishi-banner{
+    min-height:150px;
+    background-size:cover;
+    background-position:center center;
+  }
 
-/* Male embroidered ball */
-.lion-support.ball{
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  background:
-    radial-gradient(circle at center, #fff7d6 0 18%, transparent 19%),
-    linear-gradient(45deg, transparent 44%, rgba(184,134,11,.55) 45%, rgba(184,134,11,.55) 55%, transparent 56%),
-    linear-gradient(-45deg, transparent 44%, rgba(184,134,11,.55) 45%, rgba(184,134,11,.55) 55%, transparent 56%),
-    #f3ddb0;
-  border:1px solid rgba(184,134,11,.7);
-  box-shadow:0 0 0 1px rgba(255,255,255,.35) inset;
+  .shishi-center-text{
+    width:52%;
+    top:42%;
+    padding:6px 8px;
+  }
+
+  .shishi-center-text h3{
+    font-size:.62rem;
+    letter-spacing:.03em;
+  }
+
+  .shishi-center-text p{
+    font-size:.46rem;
+  }
 }
-
 /* ===== MOBILE ===== */
 @media(max-width:760px){
   .lion-badge{
@@ -1058,47 +992,16 @@ footer{
  <div class="nm wc">✅ <span data-zh>数据精准</span><span data-en>Data Precision</span></div>
  <div class="nm g"><span class="bl">🌆</span> <span data-zh>重庆/广东就绪</span><span data-en>Chongqing/GD Ready</span></div>
  </div>
+<!-- Shishi ceremonial divider -->
+<section class="shishi-banner" aria-label="Twin Shishi ceremonial divider">
+  <div class="shishi-center-text">
+    <h3 data-zh>双狮护法 · 证据之门 · 左雌右雄</h3>
+    <h3 data-en>Twin Shishi · Gate of Evidence · Female Left, Male Right</h3>
 
-
-<!-- : Shishi -->
-<div class="ssrow" aria-label="Twin Shishi ceremonial divider">
-  <!-- Left = Female -->
-  <div class="ssl female">
-    <div class="lion-badge female-badge" aria-hidden="true">
-      <span class="lion-face"></span>
-      <span class="lion-mouth"></span>
-      <span class="lion-paw"></span>
-      <span class="lion-support cub"></span>
-    </div>
-    <div class="sslb" data-zh>雌狮 · 左护</div>
-    <div class="sslb" data-en>Female · Left Guardian</div>
-    <span class="ssm" data-zh>护幼</span>
-    <span class="ssm" data-en>cub</span>
+    <p data-zh>以严谨、守正与可验证性守护研究材料</p>
+    <p data-en>Guarding the research file through rigour, integrity and verifiability</p>
   </div>
-
-  <!-- Center -->
-  <div class="ssc">
-    <span data-zh>双狮护法 · 证据之门 · 左雌右雄</span>
-    <span data-en>Twin Shishi · Gate of Evidence · Female Left, Male Right</span>
-    <small data-zh>以严谨、守正与可验证性守护研究材料</small>
-    <small data-en>Guarding the research file through rigour, integrity and verifiability</small>
-  </div>
-
-  <!-- Right = Male -->
-  <div class="ssl male">
-    <div class="lion-badge male-badge" aria-hidden="true">
-      <span class="lion-face"></span>
-      <span class="lion-mouth"></span>
-      <span class="lion-orb"></span>
-      <span class="lion-paw"></span>
-      <span class="lion-support ball"></span>
-    </div>
-    <div class="sslb" data-zh>雄狮 · 右护</div>
-    <div class="sslb" data-en>Male · Right Guardian</div>
-    <span class="ssm" data-zh>御球</span>
-    <span class="ssm" data-en>ball</span>
-  </div>
-</div>
+</section>
  <!-- : Yin/Yang Tao -->
  <div class="mb" style="margin-bottom:7px">
  <div class="mwm">阴阳</div>
