@@ -703,78 +703,89 @@ footer{
 
 
 
-/* ═══ FINAL FIX — SHISHI FULL-WIDTH IMAGE BANNER ═══ */
+/* ═══ SHISHI FULL-WIDTH CEREMONIAL DIVIDER — CLEAN FINAL ═══ */
 .shishi-banner{
-  position:relative!important;
-  width:100%!important;
-  height:220px!important;
-  min-height:0!important;
-  margin:0!important;
-  overflow:hidden!important;
-  background:#fffff0!important;
-  background-image:none!important;
-  border-top:1px solid rgba(184,134,11,.35)!important;
-  border-bottom:2px solid var(--red)!important;
-  border-left:0!important;
-  border-right:0!important;
-  border-radius:0!important;
-  box-shadow:none!important;
-  z-index:1!important;
-}
-.shishi-img{
-  position:absolute!important;
-  inset:0!important;
-  width:100%!important;
-  height:100%!important;
-  object-fit:cover!important;
-  object-position:center center!important;
-  display:block!important;
-  z-index:1!important;
-}
-.shishi-center-text{
-  position:absolute!important;
-  left:50%!important;
-  top:46%!important;
-  transform:translate(-50%,-50%)!important;
-  width:min(620px,42%)!important;
-  text-align:center!important;
-  z-index:2!important;
-  padding:8px 14px!important;
-  pointer-events:none!important;
-  border-radius:0!important;
-}
-.shishi-center-text h3{
-  margin:0 0 5px!important;
-  font-family:var(--ffs)!important;
-  font-size:1rem!important;
-  font-weight:900!important;
-  color:#8a0000!important;
-  letter-spacing:.08em!important;
-  line-height:1.35!important;
-  text-shadow:0 1px 0 rgba(255,255,255,.9)!important;
-}
-.shishi-center-text p{
-  margin:0!important;
-  font-family:var(--ff)!important;
-  font-size:.68rem!important;
-  font-weight:600!important;
-  color:#9a7a18!important;
-  line-height:1.45!important;
-  text-shadow:0 1px 0 rgba(255,255,255,.8)!important;
-}
-.lion-badge,.lion-face,.lion-mouth,.lion-orb,.lion-paw,.lion-support,.female-badge,.male-badge{
-  display:none!important;
-}
-@media(max-width:760px){
-  .shishi-banner{height:130px!important;}
-  .shishi-center-text{width:48%!important;top:46%!important;padding:4px 6px!important;}
-  .shishi-center-text h3{font-size:.52rem!important;letter-spacing:.02em!important;}
-  .shishi-center-text p{font-size:.38rem!important;}
+  position:relative;
+  width:100%;
+  height:170px;
+  margin:0;
+  overflow:hidden;
+  background:#fffff0;
+  border-top:1px solid rgba(184,134,11,.35);
+  border-bottom:2px solid var(--red);
+  z-index:1;
 }
 
-</style>
-</head>
-<body class="zh">
+.shishi-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+  display:block;
+  z-index:1;
+  background:#fffff0;
+}
+
+.shishi-center-text{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:min(520px,38%);
+  text-align:center;
+  z-index:2;
+  padding:6px 10px;
+  pointer-events:none;
+}
+
+.shishi-center-text h3{
+  margin:0 0 4px;
+  font-family:var(--ffs);
+  font-size:.86rem;
+  font-weight:900;
+  color:#8a0000;
+  letter-spacing:.06em;
+  line-height:1.3;
+  text-shadow:0 1px 0 rgba(255,255,255,.95);
+}
+
+.shishi-center-text p{
+  margin:0;
+  font-family:var(--ff);
+  font-size:.58rem;
+  font-weight:600;
+  color:#9a7a18;
+  line-height:1.35;
+  text-shadow:0 1px 0 rgba(255,255,255,.9);
+}
+
+@media(max-width:760px){
+  .shishi-banner{
+    height:115px;
+  }
+
+  .shishi-img{
+    object-fit:contain;
+    object-position:center center;
+  }
+
+  .shishi-center-text{
+    width:44%;
+    top:50%;
+    padding:3px 5px;
+  }
+
+  .shishi-center-text h3{
+    font-size:.46rem;
+    letter-spacing:.01em;
+  }
+
+  .shishi-center-text p{
+    font-size:.34rem;
+  }
+}
 
 <!-- : WeChat OS bar -->
 <div class="os-bar">
