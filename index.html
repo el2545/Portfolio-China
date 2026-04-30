@@ -819,6 +819,42 @@ footer{
   .shishi-banner::after{bottom:12px!important;}
 }
 
+
+
+/* ═══ FINAL SHISHI FIX V3 — ONE COLOR-MATCHED WIDE IMAGE ═══ */
+.shishi-banner{
+  position:relative!important; width:100%!important; height:260px!important; margin:0!important; overflow:hidden!important;
+  border-top:1px solid rgba(184,134,11,.28)!important; border-bottom:2px solid var(--red)!important;
+  border-left:none!important; border-right:none!important; border-radius:0!important;
+  background-color:#fffaf0!important; background-image:url("shishi-divider-wide.png")!important;
+  background-repeat:no-repeat!important; background-position:center center!important; background-size:cover!important;
+  box-shadow:none!important;
+}
+.shishi-side{display:none!important;}
+.shishi-banner::after{display:none!important;}
+.shishi-center-text{
+  position:absolute!important; left:50%!important; top:50%!important; transform:translate(-50%,-50%)!important;
+  width:min(540px,34%)!important; min-width:260px!important; text-align:center!important; z-index:3!important;
+  padding:6px 12px!important; background:rgba(255,250,240,.16)!important; border:none!important; border-radius:10px!important;
+  box-shadow:none!important; pointer-events:none!important;
+}
+.shishi-center-text h3{
+  margin:0 0 4px!important; font-family:var(--ffs)!important; font-size:.82rem!important; font-weight:900!important;
+  color:#8a0000!important; letter-spacing:.04em!important; line-height:1.25!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.95),0 0 10px rgba(255,250,230,.95)!important;
+}
+.shishi-center-text p{
+  margin:0!important; font-family:var(--ff)!important; font-size:.50rem!important; font-weight:600!important;
+  color:#9a7a18!important; line-height:1.32!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.95),0 0 8px rgba(255,250,230,.95)!important;
+}
+@media(max-width:760px){
+  .shishi-banner{height:145px!important;background-size:cover!important;}
+  .shishi-center-text{width:42%!important;min-width:140px!important;padding:3px 5px!important;}
+  .shishi-center-text h3{font-size:.42rem!important;letter-spacing:0!important;}
+  .shishi-center-text p{font-size:.30rem!important;}
+}
+
 </style>
 </head>
 <body class="zh">
@@ -959,21 +995,14 @@ footer{
 </div>
 
 
-<!-- SHISHI CEREMONIAL DIVIDER — CORRECTED NO DISTORTION -->
+<!-- SHISHI CEREMONIAL DIVIDER — SINGLE WIDE BACKGROUND, COLOR MATCHED -->
 <section class="shishi-banner" aria-label="Twin Shishi ceremonial divider">
-  <div class="shishi-side shishi-left">
-    <img src="shishi-divider.png" alt="Female Shishi guardian left">
-  </div>
-
   <div class="shishi-center-text">
     <h3 data-zh>双狮护法 · 证据之门 · 左雌右雄</h3>
     <h3 data-en>Twin Shishi · Gate of Evidence · Female Left, Male Right</h3>
+
     <p data-zh>以严谨、守正与可验证性守护研究材料</p>
     <p data-en>Guarding the research file through rigour, integrity and verifiability</p>
-  </div>
-
-  <div class="shishi-side shishi-right">
-    <img src="shishi-divider.png" alt="Male Shishi guardian right">
   </div>
 </section>
 
