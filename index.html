@@ -954,6 +954,72 @@ footer{
   }
 }
 
+
+
+/* =========================================================
+   FINAL OVERRIDE — COMPACT SHISHI DIVIDER
+   Purpose: reduce oversized banner height while keeping the wide image clean.
+   Required file in same folder: shishi-divider-final-v2.png
+   ========================================================= */
+.shishi-banner{
+  width:100% !important;
+  height:clamp(115px, 12vw, 185px) !important;
+  min-height:0 !important;
+  max-height:185px !important;
+  aspect-ratio:auto !important;
+  margin:8px 0 10px !important;
+  background-image:url("shishi-divider-final-v2.png") !important;
+  background-repeat:no-repeat !important;
+  background-position:center center !important;
+  background-size:cover !important;
+  border-top:1px solid rgba(184,134,11,.25) !important;
+  border-bottom:1px solid var(--red) !important;
+}
+
+.shishi-center-text{
+  width:min(440px, 32%) !important;
+  min-width:210px !important;
+  padding:4px 8px !important;
+  background:transparent !important;
+}
+
+.shishi-center-text h3{
+  font-size:clamp(.48rem, .62vw, .72rem) !important;
+  line-height:1.18 !important;
+  margin-bottom:2px !important;
+  letter-spacing:.025em !important;
+}
+
+.shishi-center-text p{
+  font-size:clamp(.30rem, .42vw, .44rem) !important;
+  line-height:1.25 !important;
+}
+
+@media(max-width:760px){
+  .shishi-banner{
+    height:92px !important;
+    max-height:92px !important;
+    margin:6px 0 8px !important;
+    background-size:cover !important;
+  }
+
+  .shishi-center-text{
+    width:38% !important;
+    min-width:112px !important;
+    padding:1px 3px !important;
+  }
+
+  .shishi-center-text h3{
+    font-size:.34rem !important;
+    line-height:1.12 !important;
+  }
+
+  .shishi-center-text p{
+    font-size:.24rem !important;
+    line-height:1.15 !important;
+  }
+}
+
 </style>
 </head>
 <body class="zh">
