@@ -2,61 +2,1187 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="description" content="El Ghali Sany — CSC academic portfolio · quantitative economics · SUMO/QGIS/ROI">
 <title>El Ghali Sany | CSC Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=Noto+Serif+SC:wght@700;900&family=Share+Tech+Mono&family=DM+Sans:wght@700;900&display=swap" rel="stylesheet">
-<style>
-:root{--red:#D0021B;--gold:#B8860B;--gold-y:#FFD700;--navy:#003087;--teal:#00767A;--ivory:#FFFFF0;--off:#f7f7f7;--bdr:#ddd;--g:#666;--ff:'Noto Sans SC',sans-serif;--ffs:'Noto Serif SC',serif;--ffm:'Share Tech Mono',monospace;--sh:0 2px 8px rgba(0,0,0,.12)}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--ff);background:var(--off);color:#222;font-size:13px;padding-bottom:62px}a{text-decoration:none;color:inherit}
-body.en [data-zh]{display:none!important}body.zh [data-en]{display:none!important}
-.os-bar{height:24px;background:#000;color:#07C160;display:flex;justify-content:space-between;align-items:center;padding:0 14px;font-family:var(--ffm);font-size:10px}
-.topbar{position:sticky;top:0;z-index:10;background:var(--red);display:flex;align-items:center;gap:10px;padding:9px 14px;box-shadow:var(--sh)}
-.logo{color:white;font:bold 18px 'DM Sans',sans-serif;white-space:nowrap}.search{flex:1;height:36px;border:0;border-radius:20px;padding:0 16px;font-size:13px}.btn{background:var(--gold-y);color:#950000;border:0;border-radius:6px;padding:8px 16px;font-weight:900}.lang{display:flex;background:rgba(0,0,0,.22);border-radius:20px;padding:3px}.lang button{border:0;background:transparent;color:#fff;padding:4px 10px;border-radius:16px}.lang .act{background:#fff;color:var(--red);font-weight:900}
-.ticker{height:28px;background:var(--navy);color:white;display:flex;align-items:center;overflow:hidden}.ticker div{white-space:nowrap;padding-left:100%;animation:tick 28s linear infinite;font-weight:900}@keyframes tick{to{transform:translateX(-100%)}}
-.hero{height:250px;background:linear-gradient(120deg,#b00014,#d0021b 45%,#ff5a2c);color:white;display:flex;align-items:center;justify-content:space-between;padding:24px}.hero h1{font-family:var(--ffs);font-size:30px;line-height:1.15}.hero p{font-weight:900;margin-top:8px}.hstats{display:flex;gap:12px;margin-top:16px}.hstat{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);border-radius:6px;padding:10px 16px;text-align:center}.hstat b{display:block;color:var(--gold-y);font-family:var(--ffm);font-size:24px}.hbadges{display:flex;flex-direction:column;gap:9px}.hbadge{background:var(--gold-y);color:#8a0000;font-weight:900;border-radius:5px;padding:6px 12px}
-.kpi-strip{background:white;border-bottom:2px solid var(--red);display:flex;gap:7px;flex-wrap:wrap;align-items:center;padding:9px 14px;box-shadow:var(--sh)}.kpi-lbl{color:#999;font-weight:900}.kpib{background:var(--red);color:white;border-radius:4px;min-height:43px;padding:6px 12px;display:flex;align-items:center;gap:6px;font-weight:900}.kpib.g{background:var(--gold)}.kpib.n{background:var(--navy)}.kpib.wc{background:#07C160}.kpib.t{background:var(--teal)}.kpib.p{background:#6A1B9A}.kpiv{font-family:var(--ffm);font-size:19px}.kpil{font-size:10px;line-height:1.15}
 
-/* IMPORTANT: corrected Shishi section */
-.shishi-banner{position:relative;width:100%;height:270px;margin:0;border-top:2px solid var(--red);border-bottom:2px solid var(--red);overflow:hidden;background-color:#FFFFF0;background-image:url("shishi-divider-wide.png");background-repeat:no-repeat;background-position:center center;background-size:100% auto}
-.shishi-center-text{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:420px;max-width:42%;text-align:center;z-index:2;padding:10px 18px;border-radius:8px;background:rgba(255,255,240,.70)}
-.shishi-center-text h3{margin:0 0 5px;font-family:var(--ffs);font-size:15px;font-weight:900;color:#8a0000;letter-spacing:.06em}.shishi-center-text p{margin:0;font-size:9px;font-weight:900;color:#9a7a18}
-.pg{display:grid;grid-template-columns:280px minmax(0,1fr) 265px;gap:10px;padding:10px}.panel{background:white;border:1px solid var(--bdr);border-radius:5px;overflow:hidden;box-shadow:var(--sh);margin-bottom:10px}.ph{background:var(--navy);color:white;padding:8px 12px;font-weight:900;display:flex;justify-content:space-between}.ph.red{background:var(--red)}.ph.gold{background:var(--gold)}.ph.teal{background:var(--teal)}.ph.black{background:#171717}.pb{padding:12px}.ph small{opacity:.75}
-.conf{background:linear-gradient(135deg,var(--navy),#1A4480);color:white;border-radius:5px;padding:13px;margin-bottom:10px}.conf b{display:block;color:var(--gold-y);font-family:var(--ffs);font-size:16px}.pcard{display:flex;gap:12px}.avatar{width:70px;height:70px;border-radius:50%;background:var(--red);color:white;display:flex;align-items:center;justify-content:center;font:bold 25px 'DM Sans';border:4px solid white;box-shadow:0 0 0 2px var(--red)}.name{font-family:var(--ffs);font-size:18px;font-weight:900}.muted{color:var(--g);font-size:11px}.tag{display:inline-block;border:1px solid var(--red);color:var(--red);padding:2px 7px;border-radius:3px;margin:4px 4px 0 0;font-size:11px}.row{border-top:1px solid #eee;margin-top:10px;padding-top:10px;color:var(--g)}
-.mb{border-left:4px solid var(--red);background:#fafafa;border-radius:0 5px 5px 0;padding:12px;margin:10px 0}.mb.g{border-left-color:var(--gold);background:#fffbe6}.mt{font-family:var(--ffs);font-weight:900;color:var(--red);margin-bottom:6px}.mb.g .mt{color:var(--gold)}.mb p{color:#555;line-height:1.65}.chips{display:flex;flex-wrap:wrap;gap:5px}.chip{border:1px solid var(--red);color:var(--red);background:#fff5f5;border-radius:3px;padding:3px 8px;font-weight:900;font-size:11px}.nm{display:inline-block;background:var(--red);color:white;padding:4px 10px;border-radius:3px;font-weight:900;font-size:11px;margin:0 4px 8px 0}.nm.g{background:var(--gold)}.nm.n{background:var(--navy)}.nm.wc{background:#07C160}
-.dt{width:100%;border-collapse:collapse;font-size:12px}.dt th{background:#171717;color:white;padding:7px;text-align:left;border-bottom:2px solid var(--red)}.dt td{padding:7px;border-bottom:1px solid #eee}.dt tr:nth-child(even) td{background:#fafafa}
-.cdash{background:#eef8ff;border:1px solid #99aadd;border-radius:4px;padding:10px}.cdtitle{font-family:var(--ffm);font-size:10px;color:var(--navy);margin-bottom:8px}.cdi{display:flex;justify-content:space-between;border-left:3px solid #07C160;background:rgba(7,193,96,.05);padding:6px;margin-bottom:5px;font-size:11px}.cdi span:last-child{color:#007A40;font-family:var(--ffm);font-weight:900}
-.egs-sumo-shell{background:#050505;color:#E8FCEE;border:1px solid #004400;font-family:var(--ffm)}.egs-sumo-toolbar{display:flex;flex-wrap:wrap;gap:6px;padding:8px;border-bottom:1px solid #004400;background:#071107}.egs-mode-btn,.egs-zone-btn,.egs-control-btn{border:1px solid #004400;background:#101b10;color:#75a875;border-radius:3px;padding:6px 10px;font-family:var(--ffm);font-size:10px;cursor:pointer}.egs-mode-btn.active,.egs-zone-btn.active{background:rgba(0,255,136,.12);color:#00FF88;border-color:#00FF88}.egs-sumo-grid{display:grid;grid-template-columns:minmax(0,1fr) 230px;min-height:420px}.egs-map-wrap{position:relative;min-height:420px;background:#0a0a0a}#egsSumoMap{position:absolute;inset:0;z-index:1;min-height:420px}#egsTrafficCanvas{position:absolute;inset:0;z-index:500;width:100%;height:100%;pointer-events:none}.egs-map-badge{position:absolute;z-index:700;top:10px;left:10px;background:rgba(0,10,0,.82);border:1px solid #004400;border-radius:3px;padding:8px 10px;color:#00FF88}.egs-map-badge span{display:block;color:#77aa77;font-size:9px}.egs-side{background:#050505;border-left:1px solid #004400}.egs-kpis{display:grid;grid-template-columns:1fr 1fr}.egs-kpi{padding:9px;border-right:1px solid #004400;border-bottom:1px solid #004400;text-align:center}.egs-kpi:nth-child(2n){border-right:0}.egs-kpi-label{color:#446644;font-size:8px}.egs-kpi-val{color:#00FF88;font-size:18px;font-weight:900}.egs-controls{padding:9px;border-bottom:1px solid #004400}.egs-control-row{margin-bottom:8px}.egs-control-row label{display:block;color:#668866;font-size:8px}.egs-control-row input{width:100%;accent-color:#00FF88}.egs-control-buttons{display:grid;grid-template-columns:1fr 1fr;gap:5px}.egs-note{padding:9px;color:#668866;font-size:9px}.egs-hidden{display:none!important}
-.tabbar{position:fixed;bottom:0;left:0;right:0;background:white;border-top:2px solid var(--red);display:flex;z-index:20;box-shadow:0 -2px 10px rgba(0,0,0,.1)}.tabt{flex:1;text-align:center;color:#999;padding:7px 4px;font-size:11px}.tabt span{display:block}.tabt.act,.tabt:hover{color:var(--red)}footer{background:white;border-top:1px solid var(--bdr);text-align:center;padding:14px;color:#999}
-@media(max-width:900px){.pg{grid-template-columns:1fr}.hero{height:220px}.hbadges{display:none}.egs-sumo-grid{grid-template-columns:1fr}.egs-side{border-left:0;border-top:1px solid #004400}}
-@media(max-width:760px){.logo{font-size:14px}.btn{display:none}.hero{height:205px;padding:16px}.hero h1{font-size:22px}.hstats{gap:6px}.hstat{padding:7px}.shishi-banner{height:150px;background-size:100% auto}.shishi-center-text{width:54%;max-width:54%;padding:6px 8px}.shishi-center-text h3{font-size:9px}.shishi-center-text p{font-size:6px}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&family=Share+Tech+Mono&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#D0021B;
+  --red-dk:#A50014;
+  --gold:#B8860B;
+  --gold-y:#FFD700;
+  --navy:#003087;
+  --teal:#00767A;
+  --green:#007A40;
+  --white:#fff;
+  --off:#F7F7F7;
+  --cream:#FFF8E8;
+  --g50:#FAFAFA;
+  --g100:#F0F0F0;
+  --g200:#E0E0E0;
+  --g400:#999;
+  --g600:#555;
+  --g800:#222;
+  --blk:#111;
+  --bdr:#DDD;
+  --ff:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --ffs:'Noto Serif SC','PingFang SC',serif;
+  --ffm:'Share Tech Mono',monospace;
+  --ffen:'DM Sans',Arial,sans-serif;
+  --sh1:0 1px 4px rgba(0,0,0,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:13px;scroll-behavior:smooth}
+body{
+  font-family:var(--ff);
+  font-size:13px;
+  line-height:1.5;
+  color:var(--g800);
+  background:var(--off);
+  padding-bottom:62px;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+body.en [data-zh]{display:none!important}
+body.zh [data-en]{display:none!important}
+
+/* OS BAR */
+.os-bar{
+  height:20px;
+  background:#000;
+  color:rgba(255,255,255,.45);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 12px;
+  font-family:var(--ffm);
+  font-size:.62rem;
+}
+.os-live{color:#07C160}
+
+/* TOPBAR */
+.topbar{
+  background:var(--red);
+  padding:8px 12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  position:sticky;
+  top:0;
+  z-index:200;
+  box-shadow:0 2px 8px rgba(208,2,27,.28);
+}
+.tb-logo{
+  color:#fff;
+  font-weight:900;
+  font-size:16px;
+  white-space:nowrap;
+  font-family:var(--ffen);
+}
+.tb-logo span{color:var(--gold-y)}
+.tb-input{
+  flex:1;
+  height:32px;
+  border-radius:18px;
+  border:none;
+  padding:0 14px;
+  font-size:12px;
+  background:rgba(255,255,255,.94);
+  outline:none;
+}
+.tb-btn{
+  background:var(--gold-y);
+  border:none;
+  border-radius:5px;
+  padding:7px 14px;
+  font-size:12px;
+  font-weight:900;
+  color:var(--red-dk);
+  cursor:pointer;
+}
+.lsw{display:flex;gap:2px;background:rgba(0,0,0,.22);border-radius:20px;padding:2px}
+.lb{
+  padding:4px 9px;
+  border:none;
+  cursor:pointer;
+  border-radius:18px;
+  font-size:.68rem;
+  font-weight:700;
+  background:transparent;
+  color:rgba(255,255,255,.65);
+}
+.lb.act{background:#fff;color:var(--red)}
+
+/* TICKER */
+.ticker{
+  background:var(--navy);
+  color:#fff;
+  font-size:11px;
+  overflow:hidden;
+  height:24px;
+  display:flex;
+  align-items:center;
+}
+.ticker-inner{
+  white-space:nowrap;
+  padding-left:100%;
+  animation:tick 30s linear infinite;
+  font-weight:700;
+}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+/* HERO */
+.hero{
+  position:relative;
+  height:250px;
+  overflow:hidden;
+  background:linear-gradient(120deg,#B40010 0%,#D0021B 45%,#FF5733 100%);
+}
+.hero-slide{
+  height:100%;
+  display:none;
+  align-items:center;
+  justify-content:space-between;
+  padding:26px 24px;
+  color:white;
+}
+.hero-slide.act{display:flex}
+.hero h1{
+  font-family:var(--ffs);
+  font-size:26px;
+  line-height:1.25;
+  margin-bottom:8px;
+  text-shadow:0 2px 8px rgba(0,0,0,.35);
+}
+.hero-sub{
+  font-family:var(--ffen);
+  font-size:13px;
+  font-weight:700;
+  opacity:.92;
+}
+.hero-stats{
+  display:flex;
+  gap:10px;
+  margin-top:16px;
+}
+.hero-stat{
+  min-width:84px;
+  padding:8px 12px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.13);
+  border-radius:6px;
+  text-align:center;
+}
+.hero-stat b{
+  display:block;
+  color:var(--gold-y);
+  font-family:var(--ffm);
+  font-size:24px;
+}
+.hero-stat span{font-size:10px;font-weight:700}
+.hero-badges{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+}
+.hero-badge{
+  background:var(--gold-y);
+  color:var(--red-dk);
+  font-weight:900;
+  font-size:12px;
+  padding:5px 10px;
+  border-radius:4px;
+}
+.hero-dots{
+  position:absolute;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:6px;
+}
+.hero-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,.45);
+}
+.hero-dot.act{background:var(--gold-y)}
+.hero-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  border:none;
+  background:rgba(0,0,0,.25);
+  color:#fff;
+  width:32px;
+  height:44px;
+  font-size:24px;
+  cursor:pointer;
+}
+.hero-arrow.left{left:0}
+.hero-arrow.right{right:0}
+
+/* KPI */
+.kpi-strip{
+  background:#fff;
+  border-bottom:2px solid var(--red);
+  padding:8px 12px;
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  align-items:center;
+  box-shadow:var(--sh1);
+}
+.kpi-lbl{
+  font-size:10px;
+  color:var(--g400);
+  font-weight:900;
+  text-transform:uppercase;
+  margin-right:4px;
+}
+.kpib{
+  background:var(--red);
+  color:#fff;
+  border-radius:4px;
+  padding:5px 11px;
+  font-size:12px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  white-space:nowrap;
+}
+.kpib.g{background:var(--gold)}
+.kpib.n{background:var(--navy)}
+.kpib.wc{background:#07C160}
+.kpib.t{background:var(--teal)}
+.kpib.p{background:#6A1B9A}
+.kpiv{font-family:var(--ffm);font-size:15px}
+.kpil{font-size:9px;opacity:.9;font-weight:600;line-height:1.15}
+
+/* SHISHI BANNER — CORRECTED */
+.shishi-banner{
+  position:relative;
+  width:100%;
+  height:260px;
+  margin:0;
+  overflow:hidden;
+  background:#fffaf0;
+  border-top:2px solid var(--red);
+  border-bottom:2px solid var(--red);
+}
+.shishi-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+  z-index:1;
+}
+.shishi-center-text{
+  position:absolute;
+  left:50%;
+  top:42%;
+  transform:translate(-50%,-50%);
+  z-index:2;
+  width:430px;
+  max-width:44%;
+  padding:10px 18px;
+  text-align:center;
+  background:rgba(255,250,240,.76);
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(184,134,11,.08);
+}
+.shishi-center-text h3{
+  margin:0 0 6px;
+  font-family:var(--ffs);
+  font-size:1rem;
+  font-weight:900;
+  color:#8a0000;
+  letter-spacing:.06em;
+  line-height:1.3;
+  text-shadow:0 1px 0 rgba(255,255,255,.7);
+}
+.shishi-center-text p{
+  margin:0;
+  font-size:.62rem;
+  font-weight:800;
+  color:#9a7a18;
+  line-height:1.35;
+}
+
+/* MAIN GRID */
+.pg{display:grid;grid-template-columns:1fr;gap:8px;padding:8px}
+@media(min-width:900px){
+  .pg{grid-template-columns:250px minmax(0,1fr) 230px}
+}
+.panel{
+  background:#fff;
+  border:1px solid var(--bdr);
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:var(--sh1);
+  margin-bottom:8px;
+}
+.ph{
+  padding:7px 12px;
+  font-size:12px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:var(--navy);
+  color:#fff;
+}
+.ph.red{background:var(--red)}
+.ph.gold{background:var(--gold)}
+.ph.teal{background:var(--teal)}
+.ph.blk{background:#1A1A1A}
+.ph-en{font-size:9px;opacity:.72;font-family:var(--ffen);font-weight:500}
+.pb{padding:10px 12px}
+
+/* LEFT PROFILE */
+.conf-block{
+  background:linear-gradient(135deg,var(--navy),#1A4480);
+  color:#fff;
+  padding:10px 12px;
+  margin-bottom:8px;
+  border-radius:4px;
+}
+.conf-q{
+  font-family:var(--ffs);
+  font-size:.95rem;
+  font-weight:900;
+  color:var(--gold-y);
+  line-height:1.4;
+  margin-bottom:3px;
+}
+.conf-src{font-size:.6rem;opacity:.75}
+.pcard{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
+.pavatar{
+  width:58px;height:58px;border-radius:50%;
+  border:3px solid var(--red);
+  flex-shrink:0;
+  background:linear-gradient(135deg,#CC0000,#8B0000);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:900;color:#fff;font-family:var(--ffen);
+}
+.pname{font-family:var(--ffs);font-size:16px;font-weight:900;color:var(--blk);line-height:1.2}
+.pname-en{font-size:11px;color:var(--g600);margin-top:1px;font-family:var(--ffen)}
+.ptag{
+  display:inline-block;
+  background:#FFF5F5;
+  border:1px solid var(--red);
+  color:var(--red);
+  font-size:10px;
+  border-radius:3px;
+  padding:2px 6px;
+  margin:2px 2px 0 0;
+}
+.prow{
+  display:flex;
+  gap:6px;
+  margin-top:6px;
+  font-size:11px;
+  color:var(--g600);
+  border-top:1px solid var(--g100);
+  padding-top:6px;
+}
+.pred{color:var(--red);font-weight:900}
+.sgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:5px}
+.sc{
+  background:#FFF5F5;
+  border:1px solid #FFCCCC;
+  border-radius:4px;
+  padding:8px 6px;
+  text-align:center;
+}
+.sc-v{
+  display:block;
+  font-family:var(--ffm);
+  font-size:22px;
+  font-weight:900;
+  color:var(--red);
+}
+.sc-l{font-size:10px;color:var(--g600);line-height:1.3}
+.sc.sg{background:#FFFBE6;border-color:var(--gold-y)}
+.sc.sg .sc-v{color:var(--gold)}
+.sc.sn{background:#EEF2FF;border-color:#99AADD}
+.sc.sn .sc-v{color:var(--navy)}
+.sc.swc{background:#F0FFF8;border-color:#88DDAA}
+.sc.swc .sc-v{color:#007A40}
+
+/* CONTENT */
+.mb{
+  background:var(--g50);
+  border-left:3px solid var(--red);
+  padding:9px 11px;
+  margin-top:7px;
+  border-radius:0 4px 4px 0;
+}
+.mb.g{border-left-color:var(--gold);background:#FFFBE6}
+.mb.n{border-left-color:var(--navy);background:#EEF2FF}
+.mt{
+  font-family:var(--ffs);
+  font-size:.8rem;
+  font-weight:900;
+  color:var(--red);
+  margin-bottom:4px;
+}
+.mt.g{color:var(--gold)}
+.mt.n{color:var(--navy)}
+.mb p{font-size:.7rem;line-height:1.75;color:var(--g600)}
+.nmr{display:flex;gap:0;margin-bottom:8px;flex-wrap:wrap}
+.nm{
+  padding:4px 10px;
+  font-size:.62rem;
+  font-weight:900;
+  color:#fff;
+  background:var(--red);
+  border-right:1px solid rgba(255,255,255,.15);
+}
+.nm.g{background:var(--gold)}
+.nm.n{background:var(--navy)}
+.nm.wc{background:#07C160}
+.chip-row{display:flex;flex-wrap:wrap;gap:4px;margin:7px 0}
+.chip{
+  padding:2px 8px;
+  font-size:.62rem;
+  font-weight:900;
+  border-radius:3px;
+  border:1px solid;
+}
+.chip-r{border-color:var(--red);color:var(--red);background:#FFF5F5}
+.chip-g{border-color:var(--gold);color:var(--gold);background:#FFFBE6}
+.chip-n{border-color:var(--navy);color:var(--navy);background:#EEF2FF}
+.chip-t{border-color:var(--teal);color:var(--teal);background:#F0FAFA}
+.dt{width:100%;border-collapse:collapse;font-size:.7rem}
+.dt th{
+  background:#1A1A1A;
+  color:#fff;
+  padding:6px 8px;
+  text-align:left;
+  font-family:var(--ffm);
+  font-size:.58rem;
+  border-bottom:2px solid var(--red);
+}
+.dt td{padding:6px 8px;border-bottom:1px solid var(--g100);color:var(--g600)}
+.dt tr:nth-child(even) td{background:var(--g50)}
+.dt td:first-child{color:var(--blk);font-weight:900}
+
+/* CSC DASHBOARD */
+.cdash{
+  background:#EEF2FF;
+  border:1px solid #99AADD;
+  padding:9px;
+  border-radius:4px;
+}
+.cdtitle{
+  font-family:var(--ffm);
+  font-size:.57rem;
+  color:var(--navy);
+  letter-spacing:.09em;
+  margin-bottom:6px;
+}
+.cdi{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:4px 5px;
+  border-left:2px solid #07C160;
+  font-size:.65rem;
+  color:var(--g800);
+  margin-bottom:4px;
+  background:rgba(7,193,96,.05);
+}
+.cdi span:last-child{
+  margin-left:auto;
+  font-family:var(--ffm);
+  font-size:.52rem;
+  color:#007A40;
+  font-weight:900;
+}
+
+/* SUMO */
+.egs-sumo-shell{
+  background:#050505;
+  color:#E8FCEE;
+  border:1px solid #004400;
+  font-family:var(--ffm);
+}
+.egs-sumo-toolbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  padding:7px;
+  border-bottom:1px solid #004400;
+  background:#071107;
+}
+.egs-mode-btn,.egs-zone-btn,.egs-control-btn{
+  border:1px solid #004400;
+  background:#101b10;
+  color:#75a875;
+  border-radius:3px;
+  padding:5px 9px;
+  font-family:var(--ffm);
+  font-size:10px;
+  cursor:pointer;
+}
+.egs-mode-btn.active,.egs-zone-btn.active{
+  background:rgba(0,255,136,.12);
+  color:var(--tc,#00FF88);
+  border-color:var(--tc,#00FF88);
+}
+.egs-sumo-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 220px;
+  min-height:430px;
+}
+.egs-map-wrap{position:relative;min-height:430px;background:#0A0A0A}
+#egsSumoMap{position:absolute;inset:0;z-index:1;min-height:430px}
+#egsTrafficCanvas{position:absolute;inset:0;z-index:500;width:100%;height:100%;pointer-events:none}
+.egs-map-badge,.egs-legend{
+  position:absolute;
+  z-index:700;
+  background:rgba(0,10,0,.82);
+  border:1px solid #004400;
+  border-radius:3px;
+  padding:7px 9px;
+  color:#00FF88;
+  pointer-events:none;
+}
+.egs-map-badge{top:10px;left:10px}
+.egs-map-badge strong{display:block;font-size:11px}
+.egs-map-badge span{display:block;font-size:9px;color:#77aa77;line-height:1.35}
+.egs-legend{
+  left:10px;
+  bottom:10px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  font-size:9px;
+  color:#77aa77;
+}
+.egs-dot{display:inline-block;width:10px;height:10px;border-radius:99px;margin-right:4px;vertical-align:-1px}
+.egs-dot.green{background:#00FF88}
+.egs-dot.yellow{background:#FFD700}
+.egs-dot.red{background:#FF3355}
+.egs-side{background:#050505;border-left:1px solid #004400;display:flex;flex-direction:column}
+.egs-kpis{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #004400}
+.egs-kpi{padding:8px 7px;border-right:1px solid #004400;border-bottom:1px solid #004400;text-align:center}
+.egs-kpi:nth-child(2n){border-right:none}
+.egs-kpi-label{color:#446644;font-size:8px;margin-bottom:3px}
+.egs-kpi-val{color:#00FF88;font-size:18px;font-weight:900;line-height:1}
+.egs-controls{padding:8px;border-bottom:1px solid #004400}
+.egs-control-row{margin-bottom:8px}
+.egs-control-row label{display:block;color:#668866;font-size:8px;margin-bottom:3px}
+.egs-control-row input[type="range"]{width:100%;accent-color:#00FF88}
+.egs-control-buttons{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:8px}
+.egs-note{padding:8px;color:#668866;font-size:9px;line-height:1.5}
+.egs-hidden{display:none!important}
+.egs-link-row{display:flex;gap:5px;flex-wrap:wrap;padding:7px;border-top:1px solid #004400}
+.egs-small-tag{border:1px solid #004400;color:#668866;padding:2px 6px;border-radius:2px;font-size:8px}
+
+/* FOOTER / TABS */
+.tabbar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#fff;
+  border-top:2px solid var(--red);
+  display:flex;
+  z-index:300;
+  box-shadow:0 -2px 10px rgba(0,0,0,.1);
+}
+.tabt{
+  flex:1;
+  padding:7px 4px 8px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2px;
+  color:var(--g400);
+}
+.tabt:hover,.tabt.act{color:var(--red)}
+.tico{font-size:1.05rem}
+.tlbl{font-size:.52rem;letter-spacing:.04em}
+footer{
+  background:#fff;
+  border-top:1px solid var(--bdr);
+  padding:10px 14px 6px;
+  font-size:.62rem;
+  color:var(--g400);
+  text-align:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:760px){
+  .topbar{gap:5px;padding:7px}
+  .tb-logo{font-size:13px}
+  .tb-input{height:30px;font-size:11px}
+  .tb-btn{padding:6px 9px}
+  .hero{height:210px}
+  .hero-slide{padding:20px 14px}
+  .hero h1{font-size:20px}
+  .hero-badges{display:none}
+  .hero-stats{gap:6px}
+  .hero-stat{min-width:66px;padding:6px}
+  .hero-stat b{font-size:18px}
+  .shishi-banner{height:160px}
+  .shishi-center-text{
+    width:58%;
+    max-width:58%;
+    padding:6px 8px;
+  }
+  .shishi-center-text h3{font-size:.58rem;letter-spacing:.02em}
+  .shishi-center-text p{font-size:.42rem}
+  .egs-sumo-grid{grid-template-columns:1fr}
+  .egs-side{border-left:none;border-top:1px solid #004400}
+  .egs-map-wrap,#egsSumoMap{min-height:360px}
+}
 </style>
 </head>
+
 <body class="zh">
-<div class="os-bar"><span>● v9.0</span><span>CSC · TYPE-B · ●LIVE</span></div>
-<header class="topbar" id="top"><div class="logo">EGS•PORTFOLIO</div><input class="search" id="searchInput" placeholder="搜索研究方向、技能、项目··· / Search skills, projects···" oninput="doSearch(this.value)"><button class="btn" onclick="doSearch(document.getElementById('searchInput').value)">搜索</button><div class="lang"><button class="act" id="bZH" onclick="setLang('zh')">中文</button><button id="bEN" onclick="setLang('en')">EN</button></div></header>
-<div class="ticker"><div>📌 CSC奖学金申请者 · 定量经济学研究 ｜ 533% ROI · 实证商业案例 ｜ 法语C2 TCF 693/699 ｜ Python · SQL · SUMO · QGIS · Power BI ｜ 摩洛哥 → 中国 · 清华/北大 2026</div></div>
-<section class="hero"><div><h1>萨尼·埃尔·加利<br>定量经济学研究员</h1><p>El Ghali Sany — MSc INSEEC Lyon · CSC 2026</p><div class="hstats"><div class="hstat"><b>533%</b>实证ROI</div><div class="hstat"><b>C2</b>法语认证</div><div class="hstat"><b>Bac+5</b>学历水平</div></div></div><div class="hbadges"><div class="hbadge">🎓 CSC申请者</div><div class="hbadge">📊 定量分析</div><div class="hbadge">🏛 清华/北大</div></div></section>
-<div class="kpi-strip"><span class="kpi-lbl">KPIs</span><div class="kpib"><span class="kpiv">533%</span><span class="kpil">ROI实证<br>最高场景</span></div><div class="kpib g"><span class="kpiv">155p</span><span class="kpil">PFE研究<br>页数</span></div><div class="kpib n"><span class="kpiv">TCF</span><span class="kpil">693/699<br>C2 法语</span></div><div class="kpib wc"><span class="kpiv">DET</span><span class="kpil">110/160<br>B2 英语</span></div><div class="kpib t"><span class="kpiv">Bac+5</span><span class="kpil">学历水平<br>MSc</span></div><div class="kpib p"><span class="kpiv">4+</span><span class="kpil">工作语言<br>Languages</span></div><div class="kpib p"><span class="kpiv">CSC</span><span class="kpil">Agency 10001<br>PKU · 北大</span></div></div>
+<div class="os-bar">
+  <span>🟢 <span class="os-live">v9.0</span></span>
+  <span>CSC · TYPE-B · <span class="os-live">● LIVE</span></span>
+</div>
 
-<section class="shishi-banner" aria-label="Twin Shishi ceremonial divider"><div class="shishi-center-text"><h3 data-zh>双狮护法 · 证据之门 · 左雌右雄</h3><h3 data-en>Twin Shishi · Gate of Evidence · Female Left, Male Right</h3><p data-zh>以严谨、守正与可验证性守护研究材料</p><p data-en>Guarding the research file through rigour, integrity and verifiability</p></div></section>
+<header class="topbar" id="top">
+  <div class="tb-logo">EGS<span>•</span>PORTFOLIO</div>
+  <input class="tb-input" type="search" id="searchInput" placeholder="搜索研究方向、技能、项目… / Search skills, projects…" oninput="doSearch(this.value)">
+  <button class="tb-btn" onclick="doSearch(document.getElementById('searchInput').value)">
+    <span data-zh>搜索</span><span data-en>Search</span>
+  </button>
+  <div class="lsw">
+    <button class="lb act" id="bZH" onclick="setLang('zh')">中文</button>
+    <button class="lb" id="bEN" onclick="setLang('en')">EN</button>
+  </div>
+</header>
 
-<main class="pg">
-<aside id="profile"><div class="conf"><b>学而不思则罔，思而不学则殆</b><small>— 《论语》子曰 II.15</small></div><div class="panel"><div class="ph red"><span>个人简介</span><small>El Ghali Sany</small></div><div class="pb"><div class="pcard"><div class="avatar">EGS</div><div><div class="name">萨尼·埃尔·加利</div><div class="muted">El Ghali Sany</div><span class="tag">定量经济学</span><span class="tag">CSC候选人</span><span class="tag">供应链分析</span></div></div><div class="row"><b>INSEEC Lyon · MSc Procurement & Supply Chain</b><br>Bac+5 · Lyon, France · 2025–2027</div><div class="row"><b>SAN MAROC · Business Analyst Internship</b><br>Feb 2026 – Aug 2026 · Casablanca</div></div></div><div class="panel"><div class="ph gold">核心指标</div><div class="pb"><table class="dt"><tr><td>Peak ROI</td><td><b>533%</b></td></tr><tr><td>PFE Research</td><td><b>155 pages</b></td></tr><tr><td>French</td><td><b>C2</b></td></tr><tr><td>Tools</td><td><b>SUMO · QGIS</b></td></tr></table></div></div></aside>
-<section id="research"><div class="panel"><div class="ph black"><span>尊敬的收信人</span><small>研究方法论</small></div><div class="pb" style="background:linear-gradient(135deg,#eef2ff,#fffbe6)"><div class="name" style="color:var(--navy)">尊敬的收信人，</div><p>以下是集体学术工作所应用的工程方法与建模能力的证明。<b>数学严谨性优先于商业叙事。</b>所有算法输出与数学模型均有原始文件支撑，可供核验。</p></div></div><div class="panel"><div class="ph red"><span>研究项目 · 城市交通与投资回报</span><small>Core Research</small></div><div class="pb"><span class="nm">🔴 模型已验证！</span><span class="nm">▲ ROI 533%</span><span class="nm g">🏆 集体研究成果</span><span class="nm n">⭐ 5区域覆盖</span><span class="nm wc">✅ 数据精准</span><div class="mb"><div class="mt">☯ 道家视角 · 均衡城市流的阴与阳</div><p>城市流量建模的目标，不只是数据优化，而是均衡城市流的阴与阳。SUMO 仿真追求城市气的流动平衡。</p></div><div class="mb g"><div class="mt">🇨🇳 中国应用 · 重庆迷宫 & 广东引擎</div><p>重庆的多层交通网络适合 SUMO 多层网络建模；广东省的产业密度适合位置价值模型迁移。</p></div><table class="dt"><thead><tr><th>分析层</th><th>方法</th><th>中国迁移场景</th></tr></thead><tbody><tr><td>交通</td><td>SUMO</td><td>重庆立体交通网络</td></tr><tr><td>空间</td><td>QGIS / OSM</td><td>粤港澳大湾区物流</td></tr><tr><td>财务</td><td>ROI / TCO / CAPEX</td><td>基础设施投资评估</td></tr></tbody></table><div class="chips" style="margin-top:8px"><span class="chip">SUMO</span><span class="chip">QGIS</span><span class="chip">ROI</span><span class="chip">TCO</span></div></div></div>
-<div class="panel" id="sumo-dashboard"><div class="ph" style="background:linear-gradient(90deg,#001A00,#003300)"><span style="color:#00FF88;font-family:var(--ffm)">🚗 Traffic Simulation · Heatmap</span></div><div class="pb egs-sumo-shell" style="padding:0"><div class="egs-sumo-toolbar"><button class="egs-mode-btn active" data-egs-mode="heatmap">HEATMAP</button><button class="egs-mode-btn" data-egs-mode="simulation">SIMULATION</button></div><div class="egs-sumo-toolbar"><button class="egs-zone-btn active" data-egs-zone="maarif">Maârif</button><button class="egs-zone-btn" data-egs-zone="hay_hassani">Hay Hassani</button><button class="egs-zone-btn" data-egs-zone="ben_msick">Ben M'Sick</button><button class="egs-zone-btn" data-egs-zone="sidi_maarouf">Sidi Maârouf</button><button class="egs-zone-btn" data-egs-zone="bd_mohammed_v">Bd. Mohammed V</button></div><div class="egs-sumo-grid"><div class="egs-map-wrap"><div id="egsSumoMap"></div><canvas id="egsTrafficCanvas"></canvas><div class="egs-map-badge"><b id="egsZoneTitle">Maârif</b><span id="egsStatusText">Loading SUMO heatmap...</span></div></div><div class="egs-side"><div class="egs-kpis"><div class="egs-kpi"><div class="egs-kpi-label" id="egsMainLabel">POINTS</div><div class="egs-kpi-val" id="egsKpiMain">—</div></div><div class="egs-kpi"><div class="egs-kpi-label">VEHICLES</div><div class="egs-kpi-val" id="egsKpiVehicles">—</div></div><div class="egs-kpi"><div class="egs-kpi-label">STEPS</div><div class="egs-kpi-val" id="egsKpiSteps">—</div></div><div class="egs-kpi"><div class="egs-kpi-label">AVG SPEED</div><div class="egs-kpi-val" id="egsKpiSpeed">—</div></div></div><div class="egs-controls" id="egsHeatControls"><div class="egs-control-row"><label>Heat radius</label><input id="egsRadiusRange" type="range" min="4" max="30" value="10"></div><div class="egs-control-row"><label>Blur</label><input id="egsBlurRange" type="range" min="3" max="30" value="8"></div><div class="egs-control-row"><label>Intensity</label><input id="egsIntensityRange" type="range" min="1" max="10" value="3"></div><button class="egs-control-btn" id="egsResetHeatmapBtn">Recenter</button></div><div class="egs-controls egs-hidden" id="egsSimulationControls"><div class="egs-control-buttons"><button class="egs-control-btn" id="egsPlayBtn">Play</button><button class="egs-control-btn" id="egsPauseBtn">Pause</button><button class="egs-control-btn" id="egsRestartBtn">Restart</button><button class="egs-control-btn" id="egsResetSimulationBtn">Recenter</button></div><div class="egs-control-row"><label>Animation speed</label><input id="egsSpeedRange" type="range" min="1" max="12" value="6"></div><div class="egs-control-row"><label>Vehicle size</label><input id="egsVehicleSizeRange" type="range" min="2" max="10" value="6"></div></div><div class="egs-note" id="egsAnalysisText">Heatmap based on geo-corrected SUMO outputs.</div></div></div></div></div></section>
-<aside id="wechat"><div class="panel"><div class="ph teal"><span>CSC奖学金状态</span><small>申请状态</small></div><div class="pb"><div class="cdash"><div class="cdtitle">● CSC APPLICATION DASHBOARD</div><div class="cdi"><span>✅ Study Plan Approved</span><span>VALIDATED</span></div><div class="cdi"><span>✅ 2 Academic References</span><span>VALIDATED</span></div><div class="cdi"><span>✅ Medical Certificate</span><span>CLEARED</span></div><div class="cdi"><span>✅ Police Clearance</span><span>VALIDATED</span></div></div></div></div><div class="panel"><div class="ph gold">天庭六部</div><div class="pb"><table class="dt"><tr><td>交通算法部</td><td>SUMO · QGIS</td></tr><tr><td>财神金融院</td><td>ROI · TCO</td></tr><tr><td>空间数据局</td><td>Power BI · Python</td></tr></table></div></div><div class="panel"><div class="ph red">文件下载</div><div class="pb chips"><a class="chip" href="CV_ElGhali_SANY_EN.pdf" target="_blank">Download CV</a><a class="chip" href="research_proposal_china.pdf" target="_blank">Research Proposal</a><a class="chip" href="pfe%20Elghali%20sany%20.pdf" target="_blank">PFE PDF</a></div></div></aside></main>
-<footer><b style="color:var(--navy)">EGS · 萨尼·埃尔·加利 · El Ghali Sany</b><br>China-Direction Academic Portfolio · 2026</footer>
-<nav class="tabbar"><a class="tabt act" href="#top" onclick="stab(this)">👤<span>简介</span></a><a class="tabt" href="#research" onclick="stab(this)">📊<span>研究</span></a><a class="tabt" href="#sumo-dashboard" onclick="stab(this)">🗺️<span>SUMO</span></a><a class="tabt" href="#wechat" onclick="stab(this)">💬<span>联系</span></a></nav>
+<div class="ticker">
+  <div class="ticker-inner">
+    📌 CSC奖学金申请者 · 定量经济学研究 ｜ 533% ROI · 实证商业案例 ｜ 法语C2 TCF 693/699 ｜ Python · SQL · SUMO · QGIS · Power BI · Excel VBA ｜ 摩洛哥 → 中国 · 清华/北大 2026
+  </div>
+</div>
+
+<section class="hero" aria-label="Hero carousel">
+  <button class="hero-arrow left" onclick="heroPrev()">‹</button>
+  <div class="hero-slide act">
+    <div>
+      <h1 data-zh>萨尼·埃尔·加利<br>定量经济学研究员</h1>
+      <h1 data-en>El Ghali Sany<br>Quantitative Economics Researcher</h1>
+      <div class="hero-sub">El Ghali Sany — MSc INSEEC Lyon · CSC 2026</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>533%</b><span>实证ROI</span></div>
+        <div class="hero-stat"><b>C2</b><span>法语认证</span></div>
+        <div class="hero-stat"><b>Bac+5</b><span>学历水平</span></div>
+      </div>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge">🎓 CSC申请者</div>
+      <div class="hero-badge">📊 定量分析</div>
+      <div class="hero-badge">🏛 清华/北大</div>
+    </div>
+  </div>
+
+  <div class="hero-slide">
+    <div>
+      <h1>研究方向<br>空间经济与金融建模</h1>
+      <div class="hero-sub">SUMO · QGIS · ROI/TCO/CAPEX Financial Modelling</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>155p</b><span>PFE研究</span></div>
+        <div class="hero-stat"><b>SUMO</b><span>交通仿真</span></div>
+        <div class="hero-stat"><b>QGIS</b><span>空间分析</span></div>
+      </div>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge">🏙️ 城市经济</div>
+      <div class="hero-badge">📈 财务模型</div>
+      <div class="hero-badge">🌆 重庆/广东</div>
+    </div>
+  </div>
+
+  <div class="hero-slide">
+    <div>
+      <h1>中国政府奖学金<br>CSC · 2026年入学</h1>
+      <div class="hero-sub">Agency 10001 · Peking University · CSCA Prep · Mandarin in progress</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>Bac+5</b><span>学历水平</span></div>
+        <div class="hero-stat"><b>优秀</b><span>成绩最优</span></div>
+        <div class="hero-stat"><b>4+</b><span>工作语言</span></div>
+      </div>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge">🌟 Scholarship Ready</div>
+      <div class="hero-badge">📝 Study Plan</div>
+      <div class="hero-badge">✦ CSCA Active</div>
+    </div>
+  </div>
+
+  <button class="hero-arrow right" onclick="heroNext()">›</button>
+  <div class="hero-dots">
+    <button class="hero-dot act" onclick="heroGo(0)"></button>
+    <button class="hero-dot" onclick="heroGo(1)"></button>
+    <button class="hero-dot" onclick="heroGo(2)"></button>
+  </div>
+</section>
+
+<div class="kpi-strip">
+  <span class="kpi-lbl">KPIs</span>
+  <div class="kpib"><span class="kpiv">533%</span><span class="kpil">ROI实证<br>最高场景</span></div>
+  <div class="kpib g"><span class="kpiv">155p</span><span class="kpil">PFE研究<br>页数</span></div>
+  <div class="kpib n"><span class="kpiv">TCF</span><span class="kpil">693/699<br>C2 法语</span></div>
+  <div class="kpib wc"><span class="kpiv">DET</span><span class="kpil">110/160<br>B2 英语</span></div>
+  <div class="kpib t"><span class="kpiv">Bac+5</span><span class="kpil">学历水平<br>MSc</span></div>
+  <div class="kpib p"><span class="kpiv">4+</span><span class="kpil">工作语言<br>Languages</span></div>
+  <div class="kpib p"><span class="kpiv">CSC</span><span class="kpil">Agency 10001<br>PKU · 北大</span></div>
+</div>
+
+<!-- SHISHI CEREMONIAL DIVIDER — USE shishi-divider-wide.png IN SAME GITHUB FOLDER -->
+<section class="shishi-banner" aria-label="Twin Shishi ceremonial divider">
+  <img class="shishi-img" src="shishi-divider-wide.png" alt="Twin Shishi ceremonial divider">
+  <div class="shishi-center-text">
+    <h3 data-zh>双狮护法 · 证据之门 · 左雌右雄</h3>
+    <h3 data-en>Twin Shishi · Gate of Evidence · Female Left, Male Right</h3>
+    <p data-zh>以严谨、守正与可验证性守护研究材料</p>
+    <p data-en>Guarding the research file through rigour, integrity and verifiability</p>
+  </div>
+</section>
+
+<main class="pg" id="main">
+  <aside id="profile">
+    <div class="conf-block">
+      <div class="conf-q">学而不思则罔，思而不学则殆</div>
+      <div class="conf-src">— 《论语》子曰 II.15 · 儒家五经之本 · 中国文官制度基石</div>
+    </div>
+
+    <section class="panel">
+      <div class="ph red"><span>个人简介</span><span class="ph-en">El Ghali Sany · 萨尼</span></div>
+      <div class="pb">
+        <div class="pcard">
+          <div class="pavatar">EGS</div>
+          <div>
+            <div class="pname">萨尼·埃尔·加利<br><span style="font-size:11px;font-weight:400;color:var(--g400)">El Ghali Sany</span></div>
+            <div class="pname-en">Sā Ní · Āi Ěr · Jiā Lì / سني الغالي</div>
+            <span class="ptag">定量经济学</span>
+            <span class="ptag">CSC候选人</span>
+            <span class="ptag">供应链分析</span>
+          </div>
+        </div>
+        <div class="prow">🎓 <span><strong class="pred">INSEEC Lyon · MSc Procurement & SCM</strong><br>Bac+5 · Lyon, France · 2025–2027</span></div>
+        <div class="prow">💼 <span><strong>SAN MAROC · Business Analyst Internship</strong><br>Feb 2026 – Aug 2026 · Casablanca</span></div>
+        <div class="prow">🎯 <span><strong class="pred">Target: Tsinghua University / PKU</strong><br>Economics Master/PhD · CSC Scholarship 2026</span></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="ph gold"><span>核心指标</span><span class="ph-en">KPIs</span></div>
+      <div class="pb">
+        <div class="sgrid">
+          <div class="sc"><span class="sc-v">533%</span><span class="sc-l">Proven ROI<br>Peak Return</span></div>
+          <div class="sc sg"><span class="sc-v">155p</span><span class="sc-l">PFE Research<br>Pages</span></div>
+          <div class="sc sn"><span class="sc-v">5</span><span class="sc-l">Urban Study<br>Zones</span></div>
+          <div class="sc swc"><span class="sc-v">4+</span><span class="sc-l">Working<br>Languages</span></div>
+        </div>
+      </div>
+    </section>
+  </aside>
+
+  <section id="research">
+    <section class="panel">
+      <div class="ph blk"><span>尊敬的收信人</span><span class="ph-en">研究方法论</span></div>
+      <div class="pb" style="background:linear-gradient(135deg,#EEF2FF,#FFFBE6)">
+        <div style="font-family:var(--ffs);font-size:.95rem;font-weight:900;color:var(--navy)">尊敬的收信人，</div>
+        <div style="font-size:.63rem;color:var(--g600);font-family:var(--ffs)">Aux membres respectés du comité d'admission · To the respected members of the admissions committee</div>
+        <div style="font-size:.68rem;color:var(--g800);margin-top:5px;line-height:1.6">
+          以下是集体学术工作所应用的工程方法与建模能力的证明。<strong>数学严谨性优先于商业叙事。</strong>所有算法输出与数学模型均有原始文件支撑，可供核验。
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="ph red"><span>研究项目 · 城市交通与投资回报</span><span class="ph-en">Core Research</span></div>
+      <div class="pb">
+        <div class="nmr">
+          <div class="nm">🔴 模型已验证！</div>
+          <div class="nm">▲ ROI 533%</div>
+          <div class="nm g">🏆 集体研究成果</div>
+          <div class="nm n">⭐ 5区域覆盖</div>
+          <div class="nm wc">✅ 数据精准</div>
+        </div>
+
+        <div class="mb">
+          <div class="mt">☯ 道家视角 · 均衡城市流的阴与阳</div>
+          <p>城市流量建模的目标，不只是数据优化，而是均衡城市流的阴与阳。SUMO 仿真追求城市气的流动平衡，让车流、人流顺势而为，实现整体和谐。</p>
+        </div>
+
+        <div class="mb g">
+          <div class="mt g">🇨🇳 中国应用 · 重庆迷宫 & 广东引擎</div>
+          <p>重庆的多层交通网络可作为 SUMO 多层网络建模场景。广东的产业与物流密度可作为位置价值、可达性与供应链绩效优化的应用场景。</p>
+        </div>
+
+        <div style="overflow-x:auto;margin-top:8px">
+          <table class="dt">
+            <thead><tr><th>分析层</th><th>方法</th><th>中国迁移场景</th></tr></thead>
+            <tbody>
+              <tr><td>交通</td><td>SUMO</td><td>重庆立体交通网络</td></tr>
+              <tr><td>空间</td><td>QGIS/OSM</td><td>粤港澳大湾区物流</td></tr>
+              <tr><td>财务</td><td>ROI/TCO/CAPEX</td><td>基础设施投资评估</td></tr>
+              <tr><td>监管</td><td>合规框架</td><td>数据治理与公共空间</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="chip-row">
+          <span class="chip chip-r">SUMO</span>
+          <span class="chip chip-r">QGIS</span>
+          <span class="chip chip-g">ROI</span>
+          <span class="chip chip-g">TCO</span>
+          <span class="chip chip-g">CAPEX</span>
+          <span class="chip chip-n">Urban Flow</span>
+          <span class="chip chip-t">Spatial Analysis</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="sumo-dashboard">
+      <div class="ph" style="background:linear-gradient(90deg,#001A00,#003300);border-bottom:1px solid #00AA44;">
+        <span style="color:#00FF88;font-family:var(--ffm);font-size:11px;">🚗 交通仿真分析 · 热力图与实时模拟</span>
+        <span class="ph-en" style="color:#448844;">OpenStreetMap · SUMO FCD · 5 Casablanca zones</span>
+      </div>
+      <div class="pb egs-sumo-shell" style="padding:0;">
+        <div class="egs-sumo-toolbar">
+          <button class="egs-mode-btn active" data-egs-mode="heatmap">HEATMAP</button>
+          <button class="egs-mode-btn" data-egs-mode="simulation">SIMULATION</button>
+        </div>
+        <div class="egs-sumo-toolbar">
+          <button class="egs-zone-btn active" data-egs-zone="maarif" style="--tc:#FF3355;">Maârif</button>
+          <button class="egs-zone-btn" data-egs-zone="hay_hassani" style="--tc:#FFB830;">Hay Hassani</button>
+          <button class="egs-zone-btn" data-egs-zone="ben_msick" style="--tc:#00E676;">Ben M'Sick</button>
+          <button class="egs-zone-btn" data-egs-zone="sidi_maarouf" style="--tc:#BF5AF2;">Sidi Maârouf</button>
+          <button class="egs-zone-btn" data-egs-zone="bd_mohammed_v" style="--tc:#00B4D8;">Bd. Mohammed V</button>
+        </div>
+
+        <div class="egs-sumo-grid">
+          <div class="egs-map-wrap">
+            <div id="egsSumoMap"></div>
+            <canvas id="egsTrafficCanvas"></canvas>
+            <div class="egs-map-badge">
+              <strong id="egsZoneTitle">Maârif</strong>
+              <span id="egsStatusText">Loading SUMO heatmap...</span>
+            </div>
+            <div class="egs-legend" id="egsHeatLegend">
+              <div><span class="egs-dot green"></span>Low concentration</div>
+              <div><span class="egs-dot yellow"></span>Medium</div>
+              <div><span class="egs-dot red"></span>High</div>
+            </div>
+            <div class="egs-legend egs-hidden" id="egsSimulationLegend">
+              <div><span class="egs-dot red"></span>Slow</div>
+              <div><span class="egs-dot yellow"></span>Medium</div>
+              <div><span class="egs-dot green"></span>Fast</div>
+            </div>
+          </div>
+
+          <div class="egs-side">
+            <div class="egs-kpis">
+              <div class="egs-kpi"><div class="egs-kpi-label" id="egsMainLabel">POINTS</div><div class="egs-kpi-val" id="egsKpiMain">—</div></div>
+              <div class="egs-kpi"><div class="egs-kpi-label">VEHICLES</div><div class="egs-kpi-val" id="egsKpiVehicles">—</div></div>
+              <div class="egs-kpi"><div class="egs-kpi-label">STEPS</div><div class="egs-kpi-val" id="egsKpiSteps">—</div></div>
+              <div class="egs-kpi"><div class="egs-kpi-label">AVG SPEED</div><div class="egs-kpi-val" id="egsKpiSpeed">—</div></div>
+            </div>
+
+            <div class="egs-controls" id="egsHeatControls">
+              <div class="egs-control-row"><label>Heat radius</label><input id="egsRadiusRange" type="range" min="4" max="30" value="10"></div>
+              <div class="egs-control-row"><label>Blur</label><input id="egsBlurRange" type="range" min="3" max="30" value="8"></div>
+              <div class="egs-control-row"><label>Intensity</label><input id="egsIntensityRange" type="range" min="1" max="10" value="3"></div>
+              <button class="egs-control-btn" id="egsResetHeatmapBtn" type="button">Recenter</button>
+            </div>
+
+            <div class="egs-controls egs-hidden" id="egsSimulationControls">
+              <div class="egs-control-buttons">
+                <button class="egs-control-btn" id="egsPlayBtn" type="button">Play</button>
+                <button class="egs-control-btn" id="egsPauseBtn" type="button">Pause</button>
+                <button class="egs-control-btn" id="egsRestartBtn" type="button">Restart</button>
+                <button class="egs-control-btn" id="egsResetSimulationBtn" type="button">Recenter</button>
+              </div>
+              <div class="egs-control-row"><label>Animation speed</label><input id="egsSpeedRange" type="range" min="1" max="12" value="6"></div>
+              <div class="egs-control-row"><label>Vehicle size</label><input id="egsVehicleSizeRange" type="range" min="2" max="10" value="6"></div>
+            </div>
+
+            <div class="egs-note" id="egsAnalysisText">
+              Heatmap based on geo-corrected SUMO FCD outputs. Switch to Simulation to display vehicles step-by-step.
+            </div>
+            <div class="egs-link-row">
+              <span class="egs-small-tag">FCD → GPS</span>
+              <span class="egs-small-tag">SUMO correction</span>
+              <span class="egs-small-tag">5 Casablanca zones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <aside id="wechat">
+    <section class="panel">
+      <div class="ph teal"><span>CSC奖学金状态</span><span class="ph-en">申请状态</span></div>
+      <div class="pb">
+        <div class="cdash">
+          <div class="cdtitle">● CSC APPLICATION DASHBOARD · 奖学金状态</div>
+          <div class="cdi"><span>✅</span><span>Study Plan Approved</span><span>VALIDATED</span></div>
+          <div class="cdi"><span>✅</span><span>2 Academic References</span><span>VALIDATED</span></div>
+          <div class="cdi"><span>✅</span><span>Medical Certificate</span><span>CLEARED</span></div>
+          <div class="cdi"><span>✅</span><span>Police Clearance</span><span>VALIDATED</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="ph gold"><span>天庭六部</span><span class="ph-en">研究能力体系</span></div>
+      <div class="pb">
+        <div class="chip-row">
+          <span class="chip chip-r">SUMO</span>
+          <span class="chip chip-r">QGIS</span>
+          <span class="chip chip-g">ROI</span>
+          <span class="chip chip-g">TCO</span>
+          <span class="chip chip-t">Power BI</span>
+          <span class="chip chip-n">SCM</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="ph red"><span>文件下载</span><span class="ph-en">Downloads</span></div>
+      <div class="pb">
+        <div class="chip-row">
+          <a class="chip chip-r" href="CV_ElGhali_SANY_EN.pdf" target="_blank">Download CV</a>
+          <a class="chip chip-g" href="research_proposal_china.pdf" target="_blank">Research Proposal</a>
+          <a class="chip chip-n" href="pfe%20Elghali%20sany%20.pdf" target="_blank">PFE PDF</a>
+        </div>
+      </div>
+    </section>
+  </aside>
+</main>
+
+<footer>
+  <strong style="color:var(--navy)">EGS · 萨尼·埃尔·加利 · El Ghali Sany</strong> · China-Direction Academic Portfolio · 2026
+</footer>
+
+<nav class="tabbar">
+  <a class="tabt act" href="#top"><span class="tico">👤</span><span class="tlbl">简介</span></a>
+  <a class="tabt" href="#research"><span class="tico">📊</span><span class="tlbl">研究</span></a>
+  <a class="tabt" href="#sumo-dashboard"><span class="tico">🚗</span><span class="tlbl">SUMO</span></a>
+  <a class="tabt" href="#wechat"><span class="tico">💬</span><span class="tlbl">联系</span></a>
+</nav>
+
 <script>
-function setLang(l){document.body.className=l;document.getElementById('bZH').classList.toggle('act',l==='zh');document.getElementById('bEN').classList.toggle('act',l==='en')}
-function doSearch(q){document.querySelectorAll('.panel,.conf,.mb').forEach(c=>{c.style.outline=q&&c.textContent.toLowerCase().includes(q.toLowerCase())?'2px solid var(--gold-y)':''})}
-function stab(el){document.querySelectorAll('.tabt').forEach(t=>t.classList.remove('act'));setTimeout(()=>el.classList.add('act'),60)}
+let heroIdx=0;
+const heroSlides=[...document.querySelectorAll('.hero-slide')];
+const heroDots=[...document.querySelectorAll('.hero-dot')];
+function heroRender(){
+  heroSlides.forEach((s,i)=>s.classList.toggle('act',i===heroIdx));
+  heroDots.forEach((d,i)=>d.classList.toggle('act',i===heroIdx));
+}
+function heroNext(){heroIdx=(heroIdx+1)%heroSlides.length;heroRender();}
+function heroPrev(){heroIdx=(heroIdx-1+heroSlides.length)%heroSlides.length;heroRender();}
+function heroGo(i){heroIdx=i;heroRender();}
+setInterval(heroNext,4200);
+
+function setLang(l){
+  document.body.className=l;
+  document.getElementById('bZH').classList.toggle('act',l==='zh');
+  document.getElementById('bEN').classList.toggle('act',l==='en');
+}
+function doSearch(q){
+  const cards=document.querySelectorAll('.panel,.conf-block');
+  if(!q||!q.trim()){cards.forEach(c=>c.style.outline='');return;}
+  const kw=q.toLowerCase();
+  cards.forEach(c=>{
+    c.style.outline=c.textContent.toLowerCase().includes(kw)?'2px solid var(--gold-y)':'';
+  });
+}
+document.querySelectorAll('.tabt').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tabt').forEach(x=>x.classList.remove('act'));
+    t.classList.add('act');
+  });
+});
 </script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
 <script>
-(function(){const Z={maarif:{label:'Maârif',center:[33.5866,-7.6325],zoom:14,heatmapFile:'maarif_heatmap.json',simulationFile:'maarif_simulation_geo.json'},hay_hassani:{label:'Hay Hassani',center:[33.5607,-7.6900],zoom:14,heatmapFile:'hay_hassani_heatmap.json',simulationFile:'hay_hassani_simulation_geo.json'},ben_msick:{label:"Ben M'Sick",center:[33.55,-7.58],zoom:14,heatmapFile:'ben_msick_heatmap.json',simulationFile:'ben_msick_simulation_geo.json'},sidi_maarouf:{label:'Sidi Maârouf',center:[33.525,-7.65],zoom:14,heatmapFile:'sidi_maarouf_heatmap.json',simulationFile:'sidi_maarouf_simulation_geo.json'},bd_mohammed_v:{label:'Bd. Mohammed V',center:[33.595,-7.61],zoom:15,heatmapFile:'bd_mohammed_v_heatmap.json',simulationFile:'bd_mohammed_v_simulation_geo.json'}};let map,heat,canvas,ctx,mode='heatmap',zone='maarif',data,pts=[],step=0,play=true,raf;const $=id=>document.getElementById(id),txt=(id,v)=>{let e=$(id);if(e)e.textContent=v};async function js(f){let r=await fetch(f+'?v='+Date.now());if(!r.ok)throw Error(f);return r.json()}function init(){let z=Z[zone];map=L.map('egsSumoMap',{center:z.center,zoom:z.zoom,attributionControl:false,preferCanvas:true});L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19}).addTo(map);canvas=$('egsTrafficCanvas');ctx=canvas.getContext('2d');resize();map.on('move zoom resize',()=>{resize();if(mode==='simulation')draw()});window.addEventListener('resize',resize)}function resize(){if(!canvas)return;let r=canvas.getBoundingClientRect(),d=devicePixelRatio||1;canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0)}function clear(){if(!ctx)return;let r=canvas.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height)}function ui(){let h=mode==='heatmap',z=Z[zone];document.querySelectorAll('.egs-mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.egsMode===mode));document.querySelectorAll('.egs-zone-btn').forEach(b=>b.classList.toggle('active',b.dataset.egsZone===zone));$('egsHeatControls').classList.toggle('egs-hidden',!h);$('egsSimulationControls').classList.toggle('egs-hidden',h);txt('egsZoneTitle',z.label);txt('egsMainLabel',h?'POINTS':'VISIBLE')}async function load(){cancelAnimationFrame(raf);play=false;step=0;if(heat){map.removeLayer(heat);heat=null}clear();ui();let z=Z[zone];map.setView(z.center,z.zoom);try{if(mode==='heatmap'){txt('egsStatusText','Loading '+z.heatmapFile);data=await js(z.heatmapFile);pts=(data.points||[]).filter(p=>p.length>=2).slice(0,12000).map(p=>[+p[0],+p[1],+(p[2]||.4)]);drawHeat();let k=data.kpis||{};txt('egsKpiMain',pts.length.toLocaleString('fr-FR'));txt('egsKpiVehicles',Number(k.vehicleRecords||0).toLocaleString('fr-FR'));txt('egsKpiSteps',Number(k.steps||0).toLocaleString('fr-FR'));txt('egsKpiSpeed',Number(k.averageSpeed||0).toFixed(2)+' m/s')}else{txt('egsStatusText','Loading '+z.simulationFile);data=await js(z.simulationFile);txt('egsKpiSteps',(data.timesteps||[]).length.toLocaleString('fr-FR'));setTimeout(()=>{fitSim();play=true;loop()},200)}}catch(e){txt('egsStatusText','Load error: '+e.message)}}function drawHeat(){if(heat)map.removeLayer(heat);let r=+$('egsRadiusRange').value,b=+$('egsBlurRange').value,m=+$('egsIntensityRange').value/12;let p=pts.map(x=>[x[0],x[1],Math.min(.55,x[2]*m)]);heat=L.heatLayer(p,{radius:r,blur:b,maxZoom:18,minOpacity:.08,gradient:{.15:'#00FF88',.35:'#FFD700',.6:'#FF8A00',1:'#FF3355'}}).addTo(map);fit(p)}function fit(p){if(!p.length)return;let b=L.latLngBounds(p.map(x=>[x[0],x[1]]));if(b.isValid())map.fitBounds(b,{padding:[30,30],maxZoom:Z[zone].zoom})}function ll(v){let a=+v.lat,b=+v.lng;return Number.isFinite(a)&&Number.isFinite(b)?[a,b]:null}function fitSim(){let p=[];(data.timesteps||[]).some(st=>{(st.vehicles||[]).forEach(v=>{let x=ll(v);if(x)p.push(x)});return p.length>3000});fit(p);draw()}function draw(){if(mode!=='simulation'||!data?.timesteps)return;clear();let st=data.timesteps[step];if(!st)return;let vs=(st.vehicles||[]),inc=Math.max(1,Math.ceil(vs.length/1600)),n=0,sum=0;vs.forEach((v,i)=>{if(i%inc)return;let x=ll(v);if(!x)return;let pt=map.latLngToContainerPoint(x),sp=+v.speed||0,ang=((+v.angle||0)-90)*Math.PI/180,s=+$('egsVehicleSizeRange').value||6;ctx.save();ctx.translate(pt.x,pt.y);ctx.rotate(ang);ctx.fillStyle=sp<3?'#FF3355':sp<8?'#FFD700':'#00FF88';ctx.fillRect(-s,-s/2,s*2.3,s);ctx.restore();n++;sum+=sp});txt('egsKpiMain',n.toLocaleString('fr-FR'));txt('egsKpiVehicles',n.toLocaleString('fr-FR'));txt('egsKpiSpeed',(n?sum/n:0).toFixed(2)+' m/s')}function loop(t=0){if(mode!=='simulation')return;if(play){draw();step=(step+1)%data.timesteps.length}raf=requestAnimationFrame(()=>setTimeout(loop,Math.max(20,280-(+$('egsSpeedRange').value||6)*20)))}document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.egs-mode-btn').forEach(b=>b.onclick=()=>{mode=b.dataset.egsMode;load()});document.querySelectorAll('.egs-zone-btn').forEach(b=>b.onclick=()=>{zone=b.dataset.egsZone;load()});['egsRadiusRange','egsBlurRange','egsIntensityRange'].forEach(id=>$(id).oninput=()=>{if(mode==='heatmap')drawHeat()});$('egsResetHeatmapBtn').onclick=drawHeat;$('egsPlayBtn').onclick=()=>play=true;$('egsPauseBtn').onclick=()=>play=false;$('egsRestartBtn').onclick=()=>{step=0;draw()};$('egsResetSimulationBtn').onclick=fitSim;$('egsVehicleSizeRange').oninput=draw;let obs=new IntersectionObserver(e=>{if(e[0].isIntersecting){if(!map)init();load();obs.disconnect()}},{threshold:.1});obs.observe($('sumo-dashboard'))})})();
+(function(){
+const EGS_ZONES = {
+ maarif:{label:'Maârif',color:'#FF3355',center:[33.5866,-7.6325],zoom:14,heatmapFile:'maarif_heatmap.json',simulationFile:'maarif_simulation_geo.json',analysis:'Maârif: central dense fabric. Heatmap highlights concentration; simulation displays vehicles from geo-corrected SUMO FCD outputs.'},
+ hay_hassani:{label:'Hay Hassani',color:'#FFB830',center:[33.5607,-7.6900],zoom:14,heatmapFile:'hay_hassani_heatmap.json',simulationFile:'hay_hassani_simulation_geo.json',analysis:'Hay Hassani: peripheral flows and transition zones.'},
+ ben_msick:{label:"Ben M'Sick",color:'#00E676',center:[33.5500,-7.5800],zoom:14,heatmapFile:'ben_msick_heatmap.json',simulationFile:'ben_msick_simulation_geo.json',analysis:"Ben M'Sick: dense urban network and secondary-road intensity."},
+ sidi_maarouf:{label:'Sidi Maârouf',color:'#BF5AF2',center:[33.5250,-7.6500],zoom:14,heatmapFile:'sidi_maarouf_heatmap.json',simulationFile:'sidi_maarouf_simulation_geo.json',analysis:'Sidi Maârouf: strategic employment and arterial area.'},
+ bd_mohammed_v:{label:'Bd. Mohammed V',color:'#00B4D8',center:[33.5950,-7.6100],zoom:15,heatmapFile:'bd_mohammed_v_heatmap.json',simulationFile:'bd_mohammed_v_simulation_geo.json',analysis:'Boulevard Mohammed V: major corridor.'}
+};
+let map=null,heatLayer=null,canvas=null,ctx=null,mode='heatmap',zoneKey='maarif',currentData=null,heatPoints=[],stepIndex=0,playing=true,raf=null,lastFrame=0;
+const MAX_HEAT_POINTS=12000,MAX_VEHICLES_PER_FRAME=1600;
+function $(id){return document.getElementById(id);}
+function setText(id,v){const e=$(id);if(e)e.textContent=v;}
+async function loadJson(file){const r=await fetch(file+'?v='+Date.now());if(!r.ok)throw new Error(file);return r.json();}
+function initMap(){
+  const z=EGS_ZONES[zoneKey];
+  map=L.map('egsSumoMap',{center:z.center,zoom:z.zoom,zoomControl:true,attributionControl:false,preferCanvas:true});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19}).addTo(map);
+  canvas=$('egsTrafficCanvas');ctx=canvas.getContext('2d');resizeCanvas();
+  map.on('move zoom resize',()=>{resizeCanvas();if(mode==='simulation')drawStep();});
+  window.addEventListener('resize',()=>{resizeCanvas();if(mode==='simulation')drawStep();});
+}
+function resizeCanvas(){
+  if(!canvas||!ctx)return;
+  const r=canvas.getBoundingClientRect(),d=window.devicePixelRatio||1;
+  canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);
+}
+function clearCanvas(){if(!ctx||!canvas)return;const r=canvas.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);}
+function removeHeat(){if(heatLayer){map.removeLayer(heatLayer);heatLayer=null;}}
+function updateUI(){
+  const isHeat=mode==='heatmap',z=EGS_ZONES[zoneKey];
+  document.querySelectorAll('.egs-mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.egsMode===mode));
+  document.querySelectorAll('.egs-zone-btn').forEach(b=>b.classList.toggle('active',b.dataset.egsZone===zoneKey));
+  $('egsHeatControls').classList.toggle('egs-hidden',!isHeat);
+  $('egsSimulationControls').classList.toggle('egs-hidden',isHeat);
+  $('egsHeatLegend').classList.toggle('egs-hidden',!isHeat);
+  $('egsSimulationLegend').classList.toggle('egs-hidden',isHeat);
+  setText('egsZoneTitle',z.label);setText('egsAnalysisText',z.analysis);setText('egsMainLabel',isHeat?'POINTS':'VISIBLE');
+  ['egsKpiMain','egsKpiVehicles','egsKpiSteps','egsKpiSpeed'].forEach(id=>setText(id,'—'));
+}
+async function loadCurrent(){
+  if(!map)return;
+  cancelAnimationFrame(raf);raf=null;playing=false;stepIndex=0;removeHeat();clearCanvas();updateUI();
+  const z=EGS_ZONES[zoneKey];map.setView(z.center,z.zoom);
+  if(mode==='heatmap')await loadHeatmap();else await loadSimulation();
+}
+async function loadHeatmap(){
+  const z=EGS_ZONES[zoneKey];setText('egsStatusText','Loading SUMO heatmap...');
+  try{
+    currentData=await loadJson(z.heatmapFile);
+    if(!currentData.points)throw new Error('Invalid heatmap format');
+    setText('egsStatusText','Loaded: '+z.heatmapFile);
+    heatPoints=normalizeHeat(currentData.points);drawHeatmap();updateHeatKpis();
+  }catch(e){console.error(e);setText('egsStatusText','Heatmap load error: '+z.heatmapFile);}
+}
+function normalizeHeat(points){
+  const arr=[];
+  for(const p of points){
+    if(!Array.isArray(p)||p.length<2)continue;
+    const lat=+p[0],lng=+p[1],intensity=+(p[2]||0.4);
+    if(Number.isFinite(lat)&&Number.isFinite(lng))arr.push([lat,lng,Math.max(.05,Math.min(intensity,1))]);
+  }
+  if(arr.length<=MAX_HEAT_POINTS)return arr;
+  const int=Math.ceil(arr.length/MAX_HEAT_POINTS);
+  return arr.filter((_,i)=>i%int===0).slice(0,MAX_HEAT_POINTS);
+}
+function drawHeatmap(){
+  removeHeat();
+  if(!heatPoints.length||!L.heatLayer)return;
+  const radius=+$('egsRadiusRange').value,blur=+$('egsBlurRange').value,mult=+$('egsIntensityRange').value/12;
+  const pts=heatPoints.map(p=>[p[0],p[1],Math.min(.55,p[2]*mult)]);
+  heatLayer=L.heatLayer(pts,{radius,blur,maxZoom:18,minOpacity:.08,max:1,gradient:{0.15:'#00FF88',0.35:'#FFD700',0.60:'#FF8A00',1:'#FF3355'}}).addTo(map);
+  fitPoints(pts);
+}
+function updateHeatKpis(){
+  setText('egsKpiMain',heatPoints.length.toLocaleString('fr-FR'));
+  const k=currentData.kpis||{};
+  setText('egsKpiVehicles',Number(k.vehicleRecords||0).toLocaleString('fr-FR'));
+  setText('egsKpiSteps',Number(k.steps||0).toLocaleString('fr-FR'));
+  setText('egsKpiSpeed',Number(k.averageSpeed||0).toFixed(2)+' m/s');
+}
+async function loadSimulation(){
+  const z=EGS_ZONES[zoneKey];setText('egsStatusText','Loading SUMO geo simulation...');
+  try{
+    currentData=await loadJson(z.simulationFile);
+    if(!currentData.timesteps)throw new Error('Invalid simulation format');
+    setText('egsStatusText','Loaded: '+z.simulationFile);
+    setText('egsKpiSteps',currentData.timesteps.length.toLocaleString('fr-FR'));
+    if(currentData.kpis)setText('egsKpiSpeed',Number(currentData.kpis.averageSpeed||0).toFixed(2)+' m/s');
+    setTimeout(()=>{resizeCanvas();fitSimulation();playing=true;startAnimation();},250);
+  }catch(e){console.error(e);setText('egsStatusText','Simulation load error: '+z.simulationFile);}
+}
+function getLL(v){const lat=+(v.lat),lng=+(v.lng);return Number.isFinite(lat)&&Number.isFinite(lng)?[lat,lng]:null;}
+function fitSimulation(){
+  if(!currentData?.timesteps)return;
+  const pts=[];
+  for(const st of currentData.timesteps){for(const v of (st.vehicles||[])){const ll=getLL(v);if(ll)pts.push(ll);}if(pts.length>3000)break;}
+  fitPoints(pts);drawStep();
+}
+function drawStep(){
+  if(mode!=='simulation'||!currentData?.timesteps)return;
+  const st=currentData.timesteps[stepIndex];if(!st)return;clearCanvas();
+  const vs=sampleVehicles(st.vehicles||[],MAX_VEHICLES_PER_FRAME);
+  let n=0,sum=0;
+  for(const v of vs){
+    const ll=getLL(v);if(!ll)continue;
+    const pt=map.latLngToContainerPoint(ll),sp=+(v.speed||0),angle=+(v.angle||0);
+    if(!Number.isFinite(pt.x)||!Number.isFinite(pt.y))continue;
+    drawVehicle(pt.x,pt.y,sp,angle);n++;sum+=sp;
+  }
+  setText('egsKpiMain',n.toLocaleString('fr-FR'));setText('egsKpiVehicles',n.toLocaleString('fr-FR'));setText('egsKpiSpeed',(n?sum/n:0).toFixed(2)+' m/s');
+}
+function sampleVehicles(vs,max){if(vs.length<=max)return vs;const int=Math.ceil(vs.length/max);return vs.filter((_,i)=>i%int===0);}
+function colorSpeed(s){return s<3?'#FF3355':s<8?'#FFD700':'#00FF88';}
+function drawVehicle(x,y,speed,angle){
+  const size=+$('egsVehicleSizeRange').value||6,col=colorSpeed(speed),a=(+(angle||0)-90)*Math.PI/180;
+  ctx.save();ctx.translate(x,y);ctx.rotate(a);ctx.fillStyle=col;ctx.strokeStyle='rgba(255,255,255,.95)';ctx.lineWidth=1.4;ctx.shadowBlur=10;ctx.shadowColor=col;
+  roundRect(-size,-size/2,size*2.4,size*1.15,Math.max(2,size/2));ctx.fill();ctx.stroke();ctx.restore();
+}
+function roundRect(x,y,w,h,r){
+  ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+}
+function startAnimation(){cancelAnimationFrame(raf);lastFrame=0;raf=requestAnimationFrame(loop);}
+function loop(t){
+  if(mode!=='simulation')return;
+  const delay=Math.max(20,280-(+$('egsSpeedRange').value||6)*20);
+  if(playing&&t-lastFrame>=delay){drawStep();stepIndex=(stepIndex+1)%currentData.timesteps.length;lastFrame=t;}
+  raf=requestAnimationFrame(loop);
+}
+function fitPoints(points){
+  if(!points||!points.length)return;
+  const b=L.latLngBounds(points.map(p=>[p[0],p[1]]));
+  if(b.isValid())map.fitBounds(b,{padding:[30,30],maxZoom:EGS_ZONES[zoneKey].zoom});
+}
+function bindEvents(){
+  document.querySelectorAll('.egs-mode-btn').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.egsMode;loadCurrent();}));
+  document.querySelectorAll('.egs-zone-btn').forEach(b=>b.addEventListener('click',()=>{zoneKey=b.dataset.egsZone;loadCurrent();}));
+  ['egsRadiusRange','egsBlurRange','egsIntensityRange'].forEach(id=>$(id).addEventListener('input',()=>{if(mode==='heatmap')drawHeatmap();}));
+  $('egsResetHeatmapBtn').addEventListener('click',()=>{if(mode==='heatmap')drawHeatmap();});
+  $('egsPlayBtn').addEventListener('click',()=>playing=true);
+  $('egsPauseBtn').addEventListener('click',()=>playing=false);
+  $('egsRestartBtn').addEventListener('click',()=>{stepIndex=0;drawStep();});
+  $('egsVehicleSizeRange').addEventListener('input',drawStep);
+  $('egsResetSimulationBtn').addEventListener('click',fitSimulation);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const panel=$('sumo-dashboard');if(!panel)return;
+  bindEvents();
+  const obs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      if(!map)initMap();
+      loadCurrent();
+      obs.disconnect();
+    }
+  },{threshold:.10});
+  obs.observe(panel);
+});
+})();
 </script>
 </body>
 </html>
