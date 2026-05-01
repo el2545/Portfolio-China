@@ -1020,6 +1020,97 @@ footer{
   }
 }
 
+
+/* =========================================================
+   FINAL OVERRIDE — SHISHI BANNER ULTRA-COMPACT, NO CROPPING
+   Fix: previous background-size: cover zoomed/cropped the lions.
+   This uses 100% 100% so the full wide image is visible at a compact height.
+   ========================================================= */
+.shishi-banner{
+  position:relative !important;
+  width:100% !important;
+  height:clamp(82px, 7.2vw, 128px) !important;
+  min-height:0 !important;
+  max-height:128px !important;
+  aspect-ratio:auto !important;
+  margin:6px 0 8px !important;
+  overflow:hidden !important;
+  background-color:#fff7e6 !important;
+  background-image:url("shishi-divider-final-v2.png") !important;
+  background-repeat:no-repeat !important;
+  background-position:center center !important;
+  background-size:100% 100% !important;
+  border-top:1px solid rgba(184,134,11,.22) !important;
+  border-bottom:1px solid var(--red) !important;
+  border-left:0 !important;
+  border-right:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+
+.shishi-banner::before,
+.shishi-banner::after,
+.shishi-side,
+.shishi-left,
+.shishi-right{
+  display:none !important;
+  content:none !important;
+}
+
+.shishi-center-text{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-50%) !important;
+  width:min(360px, 28%) !important;
+  min-width:180px !important;
+  padding:2px 6px !important;
+  text-align:center !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  pointer-events:none !important;
+}
+
+.shishi-center-text h3{
+  margin:0 0 2px !important;
+  font-size:clamp(.38rem, .48vw, .58rem) !important;
+  line-height:1.12 !important;
+  letter-spacing:.015em !important;
+}
+
+.shishi-center-text p{
+  margin:0 !important;
+  font-size:clamp(.22rem, .32vw, .34rem) !important;
+  line-height:1.12 !important;
+}
+
+@media(max-width:760px){
+  .shishi-banner{
+    height:68px !important;
+    max-height:68px !important;
+    margin:4px 0 6px !important;
+    background-size:100% 100% !important;
+  }
+
+  .shishi-center-text{
+    width:34% !important;
+    min-width:96px !important;
+    padding:0 2px !important;
+  }
+
+  .shishi-center-text h3{
+    font-size:.26rem !important;
+    line-height:1.05 !important;
+  }
+
+  .shishi-center-text p{
+    font-size:.18rem !important;
+    line-height:1.05 !important;
+  }
+}
+
 </style>
 </head>
 <body class="zh">
