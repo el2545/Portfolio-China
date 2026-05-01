@@ -957,246 +957,98 @@ footer{
 
 
 /* =========================================================
-   FINAL OVERRIDE — COMPACT SHISHI DIVIDER
-   Purpose: reduce oversized banner height while keeping the wide image clean.
-   Required file in same folder: shishi-divider-final-v2.png
+   REAL FINAL FIX — SHISHI COMPACT SIDE-CROP, NO STRETCH
    ========================================================= */
 .shishi-banner{
-  width:100% !important;
-  height:clamp(115px, 12vw, 185px) !important;
-  min-height:0 !important;
-  max-height:185px !important;
-  aspect-ratio:auto !important;
-  margin:8px 0 10px !important;
-  background-image:url("shishi-divider-final-v2.png") !important;
-  background-repeat:no-repeat !important;
-  background-position:center center !important;
-  background-size:cover !important;
-  border-top:1px solid rgba(184,134,11,.25) !important;
-  border-bottom:1px solid var(--red) !important;
-}
-
-.shishi-center-text{
-  width:min(440px, 32%) !important;
-  min-width:210px !important;
-  padding:4px 8px !important;
-  background:transparent !important;
-}
-
-.shishi-center-text h3{
-  font-size:clamp(.48rem, .62vw, .72rem) !important;
-  line-height:1.18 !important;
-  margin-bottom:2px !important;
-  letter-spacing:.025em !important;
-}
-
-.shishi-center-text p{
-  font-size:clamp(.30rem, .42vw, .44rem) !important;
-  line-height:1.25 !important;
-}
-
-@media(max-width:760px){
-  .shishi-banner{
-    height:92px !important;
-    max-height:92px !important;
-    margin:6px 0 8px !important;
-    background-size:cover !important;
-  }
-
-  .shishi-center-text{
-    width:38% !important;
-    min-width:112px !important;
-    padding:1px 3px !important;
-  }
-
-  .shishi-center-text h3{
-    font-size:.34rem !important;
-    line-height:1.12 !important;
-  }
-
-  .shishi-center-text p{
-    font-size:.24rem !important;
-    line-height:1.15 !important;
-  }
-}
-
-
-/* =========================================================
-   FINAL OVERRIDE — SHISHI BANNER ULTRA-COMPACT, NO CROPPING
-   Fix: previous background-size: cover zoomed/cropped the lions.
-   This uses 100% 100% so the full wide image is visible at a compact height.
-   ========================================================= */
-.shishi-banner{
-  position:relative !important;
-  width:100% !important;
-  height:clamp(82px, 7.2vw, 128px) !important;
-  min-height:0 !important;
-  max-height:128px !important;
-  aspect-ratio:auto !important;
-  margin:6px 0 8px !important;
-  overflow:hidden !important;
-  background-color:#fff7e6 !important;
-  background-image:url("shishi-divider-final-v2.png") !important;
-  background-repeat:no-repeat !important;
-  background-position:center center !important;
-  background-size:100% 100% !important;
-  border-top:1px solid rgba(184,134,11,.22) !important;
-  border-bottom:1px solid var(--red) !important;
-  border-left:0 !important;
-  border-right:0 !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-}
-
-.shishi-banner::before,
-.shishi-banner::after,
-.shishi-side,
-.shishi-left,
-.shishi-right{
-  display:none !important;
-  content:none !important;
-}
-
-.shishi-center-text{
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  transform:translate(-50%,-50%) !important;
-  width:min(360px, 28%) !important;
-  min-width:180px !important;
-  padding:2px 6px !important;
-  text-align:center !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
-  backdrop-filter:none !important;
-  pointer-events:none !important;
-}
-
-.shishi-center-text h3{
-  margin:0 0 2px !important;
-  font-size:clamp(.38rem, .48vw, .58rem) !important;
-  line-height:1.12 !important;
-  letter-spacing:.015em !important;
-}
-
-.shishi-center-text p{
-  margin:0 !important;
-  font-size:clamp(.22rem, .32vw, .34rem) !important;
-  line-height:1.12 !important;
-}
-
-@media(max-width:760px){
-  .shishi-banner{
-    height:68px !important;
-    max-height:68px !important;
-    margin:4px 0 6px !important;
-    background-size:100% 100% !important;
-  }
-
-  .shishi-center-text{
-    width:34% !important;
-    min-width:96px !important;
-    padding:0 2px !important;
-  }
-
-  .shishi-center-text h3{
-    font-size:.26rem !important;
-    line-height:1.05 !important;
-  }
-
-  .shishi-center-text p{
-    font-size:.18rem !important;
-    line-height:1.05 !important;
-  }
-}
-
-
-/* =========================================================
-   FINAL OVERRIDE — SHISHI BANNER NATURAL SCALE, NO DISTORTION
-   ========================================================= */
-.shishi-banner{
-  position:relative !important;
-  width:100% !important;
-  height:clamp(118px, 8.6vw, 165px) !important;
-  min-height:0 !important;
-  max-height:165px !important;
-  aspect-ratio:auto !important;
-  margin:6px 0 8px !important;
-  overflow:hidden !important;
-  background-image:linear-gradient(90deg, rgba(255,247,230,.96), rgba(255,252,241,1) 30%, rgba(255,252,241,1) 70%, rgba(255,247,230,.96)) !important;
-  background-color:#fff9ec !important;
-  background-repeat:no-repeat !important;
-  background-size:auto !important;
-  background-position:center center !important;
-  border-top:1px solid rgba(184,134,11,.22) !important;
-  border-bottom:1px solid var(--red) !important;
-  border-left:0 !important;
-  border-right:0 !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
+  position:relative!important;
+  width:100%!important;
+  height:clamp(120px, 8.2vw, 165px)!important;
+  min-height:0!important;
+  max-height:165px!important;
+  aspect-ratio:auto!important;
+  margin:0!important;
+  overflow:hidden!important;
+  border-top:1px solid rgba(208,2,27,.75)!important;
+  border-bottom:1px solid rgba(208,2,27,.75)!important;
+  border-left:0!important;
+  border-right:0!important;
+  border-radius:0!important;
+  background:linear-gradient(90deg,rgba(255,247,230,.96) 0%,rgba(255,252,242,1) 24%,rgba(255,252,242,1) 76%,rgba(255,247,230,.96) 100%)!important;
+  background-image:none!important;
+  box-shadow:none!important;
 }
 .shishi-banner::before,
 .shishi-banner::after{
-  content:"" !important;
-  display:block !important;
-  position:absolute !important;
-  top:0 !important;
-  bottom:0 !important;
-  width:min(34vw, 540px) !important;
-  background-image:url("shishi-divider-final-v2.png") !important;
-  background-repeat:no-repeat !important;
-  background-size:auto 100% !important;
-  opacity:.96 !important;
-  z-index:1 !important;
-  pointer-events:none !important;
+  content:""!important;
+  position:absolute!important;
+  top:0!important;
+  bottom:0!important;
+  width:clamp(210px, 18vw, 335px)!important;
+  background-image:url("shishi-divider-final-v2.png")!important;
+  background-repeat:no-repeat!important;
+  background-size:auto 100%!important;
+  opacity:.98!important;
+  z-index:1!important;
+  pointer-events:none!important;
 }
-.shishi-banner::before{left:0 !important;background-position:left center !important;}
-.shishi-banner::after{right:0 !important;background-position:right center !important;}
-.shishi-side,.shishi-left,.shishi-right{display:none !important;}
+.shishi-banner::before{left:0!important;background-position:left center!important;}
+.shishi-banner::after{right:0!important;background-position:right center!important;}
+.shishi-side,.shishi-left,.shishi-right,.lion-badge,.lion-face,.lion-mouth,.lion-orb,.lion-paw,.lion-support,.female-badge,.male-badge{display:none!important;}
 .shishi-center-text{
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  transform:translate(-50%,-50%) !important;
-  width:min(420px, 32%) !important;
-  min-width:210px !important;
-  z-index:3 !important;
-  padding:2px 8px !important;
-  text-align:center !important;
-  background:transparent !important;
-  border:0 !important;
-  box-shadow:none !important;
-  backdrop-filter:none !important;
-  pointer-events:none !important;
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  width:min(500px, 38vw)!important;
+  min-width:260px!important;
+  z-index:5!important;
+  padding:4px 8px!important;
+  text-align:center!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  pointer-events:none!important;
+}
+.shishi-center-text::before{
+  content:""!important;
+  position:absolute!important;
+  left:50%!important;
+  bottom:-22px!important;
+  transform:translateX(-50%)!important;
+  width:min(420px, 44vw)!important;
+  height:1px!important;
+  background:linear-gradient(90deg,transparent,rgba(184,134,11,.55),transparent)!important;
+  z-index:-1!important;
 }
 .shishi-center-text h3{
-  margin:0 0 3px !important;
-  font-family:var(--ffs) !important;
-  font-size:clamp(.46rem, .58vw, .70rem) !important;
-  font-weight:900 !important;
-  color:#8a0000 !important;
-  letter-spacing:.025em !important;
-  line-height:1.15 !important;
-  text-shadow:0 1px 0 rgba(255,255,255,.98), 0 0 9px rgba(255,250,230,.98) !important;
+  margin:0 0 3px!important;
+  font-family:var(--ffs)!important;
+  font-size:.72rem!important;
+  font-weight:900!important;
+  color:#8a0000!important;
+  letter-spacing:.035em!important;
+  line-height:1.2!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.96),0 0 10px rgba(255,250,230,.96)!important;
 }
 .shishi-center-text p{
-  margin:0 !important;
-  font-family:var(--ff) !important;
-  font-size:clamp(.26rem, .36vw, .40rem) !important;
-  font-weight:700 !important;
-  color:#9a7a18 !important;
-  line-height:1.15 !important;
-  text-shadow:0 1px 0 rgba(255,255,255,.98), 0 0 8px rgba(255,250,230,.98) !important;
+  margin:0!important;
+  font-family:var(--ff)!important;
+  font-size:.43rem!important;
+  font-weight:700!important;
+  color:#9a7a18!important;
+  line-height:1.25!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.96),0 0 8px rgba(255,250,230,.96)!important;
 }
 @media(max-width:760px){
-  .shishi-banner{height:82px !important;max-height:82px !important;margin:4px 0 6px !important;}
-  .shishi-banner::before,.shishi-banner::after{width:42vw !important;background-size:auto 100% !important;}
-  .shishi-center-text{width:36% !important;min-width:112px !important;padding:0 2px !important;}
-  .shishi-center-text h3{font-size:.30rem !important;line-height:1.05 !important;letter-spacing:0 !important;}
-  .shishi-center-text p{font-size:.20rem !important;line-height:1.05 !important;}
+  .shishi-banner{height:96px!important;max-height:96px!important;}
+  .shishi-banner::before,.shishi-banner::after{width:clamp(120px, 35vw, 165px)!important;}
+  .shishi-center-text{width:44%!important;min-width:130px!important;padding:2px 4px!important;}
+  .shishi-center-text h3{font-size:.34rem!important;letter-spacing:0!important;}
+  .shishi-center-text p{font-size:.24rem!important;}
+  .shishi-center-text::before{bottom:-12px!important;width:38vw!important;}
 }
-
 </style>
 </head>
 <body class="zh">
