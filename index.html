@@ -718,7 +718,7 @@ footer{
  line-height:1.45;
 }
 .pfe-hypo strong{color:var(--red-dk)}
-.pfe-mini-table{width:100%;border-collapse:collapse;font-size:.61rem;margin-top:8px;position:relative;z-index:2}
+.pfe-mini-table{width:100%;border-collapse:collapse;font-size:.61rem;margin-top:8px;position:relative;z-index:2;table-layout:fixed;min-width:640px}
 .pfe-mini-table th{background:var(--red);color:#fff;padding:5px 6px;text-align:left;font-family:var(--ffm);font-size:.51rem;letter-spacing:.05em}
 .pfe-mini-table td{background:rgba(255,255,255,.80);border-bottom:1px solid var(--g200);padding:5px 6px;color:var(--g600);vertical-align:top}
 .pfe-transfer-note{
@@ -1378,11 +1378,6 @@ footer{
 <body class="zh">
 
 <!-- : WeChat OS bar -->
-<div class="os-bar">
- <span>🟢 <span class="os-live">v9.0</span></span>
- <span>CSC · TYPE-B · <span class="os-live">●LIVE</span></span>
-</div>
-
 <!-- : Eye-tracking -->
 <div class="et-bar" style="display:none"></div>
 
@@ -1403,11 +1398,11 @@ footer{
 <div class="ticker" aria-hidden="true">
  <div class="ticker-inner" id="tickerEl">
  📌 <span data-zh>CSC奖学金申请者 · 定量经济学研究</span><span data-en>CSC Scholarship Applicant · Quantitative Economics Research</span> &nbsp;｜&nbsp;
- 533% ROI · <span data-zh>实证商业案例</span><span data-en>Proven Business Case</span> &nbsp;｜&nbsp;
+ 533% ROI · <span data-zh>毕业项目案例</span><span data-en>Applied PFE Case</span> &nbsp;｜&nbsp;
  <span data-zh>法语C2 TCF 693/699 · 阿拉伯语母语 · 英语专业水平</span><span data-en>French C2 TCF 693/699 · Arabic Native · English Professional</span> &nbsp;｜&nbsp;
  Python · SQL · SUMO · QGIS · Power BI · Excel VBA &nbsp;｜&nbsp;
  PFE Casablanca · IRP · DOOH Revenue Model &nbsp;｜&nbsp;
- AI-MCDM · XGBoost · AROMAN · Carbon/GPR Risk &nbsp;｜&nbsp;
+ AI-MCDM · XGBoost · AROMAN · Carbon Risk &nbsp;｜&nbsp;
  <span data-zh>摩洛哥 → 中国 · 清华/北大 硕士/博士 2026</span><span data-en>Morocco → China · Tsinghua/PKU Master/PhD 2026</span> &nbsp;｜&nbsp;
  <span data-zh>CSC Agency 10001 · 北京大学 · CSCA备考中</span><span data-en>CSC Agency 10001 · PKU · CSCA Preparation Active</span>
  </div>
@@ -1484,7 +1479,7 @@ footer{
  </div>
  <div class="cs-badges">
  <div class="cs-badge" data-zh>🌟 奖学金就绪</div>
- <div class="cs-badge" data-en>🌟 Scholarship Ready</div>
+ <div class="cs-badge" data-en>🌟 Scholarship Focus</div>
  <div class="cs-badge" data-zh>📝 研究计划</div>
  <div class="cs-badge" data-en>📝 Study Plan</div>
  <div class="cs-badge" data-zh>✦ CSCA备考</div>
@@ -1497,7 +1492,7 @@ footer{
  <div class="cs-content">
  <div class="cs-zh">
  <span data-zh>AI-MCDM 智慧城市投资评分<br>碳、能源与地缘经济风险</span>
- <span data-en>AI-MCDM Smart City Investment Scoring<br>Carbon, Energy & Geoeconomic Risk</span>
+ <span data-en>AI-MCDM Smart-City Scoring<br>Testing Projects Under Carbon & Energy Risk</span>
  </div>
  <div class="cs-en" data-zh>XGBoost · DNPV · Real Options · Fuzzy-AHP/MEREC · AROMAN</div>
  <div class="cs-en" data-en>XGBoost · DNPV · Real Options · Fuzzy-AHP/MEREC · AROMAN</div>
@@ -1513,7 +1508,7 @@ footer{
  <div class="cs-badge" data-zh>🏙️ 智慧城市</div>
  <div class="cs-badge" data-en>🏙️ Smart Cities</div>
  <div class="cs-badge" data-zh>📉 风险评分</div>
- <div class="cs-badge" data-en>📉 Risk Scoring</div>
+ <div class="cs-badge" data-en>📉 Risk Check</div>
  </div>
  </div>
 
@@ -1558,10 +1553,10 @@ footer{
 <!-- KPI BADGE STRIP -->
 <div class="kpi-strip" role="region" aria-label="核心KPI">
  <span class="kpi-lbl">KPIs</span>
- <div class="kpib"><span class="kpiv">533%</span><span class="kpil" data-zh>ROI实证<br>最高场景</span><span class="kpil" data-en>Proven ROI<br>Peak Scenario</span></div>
+ <div class="kpib"><span class="kpiv">533%</span><span class="kpil" data-zh>ROI实证<br>最高场景</span><span class="kpil" data-en>ROI Case<br>Best Scenario</span></div>
  <div class="kpib g"><span class="kpiv">155p</span><span class="kpil" data-zh>PFE研究<br>页数</span><span class="kpil" data-en>PFE Research<br>Pages</span></div>
  <div class="kpib g"><span class="kpiv">5</span><span class="kpil" data-zh>Casablanca<br>ROI区域</span><span class="kpil" data-en>Casablanca<br>ROI Zones</span></div>
- <div class="kpib n"><span class="kpiv">45.8%</span><span class="kpil" data-zh>AI预测<br>MAE降低</span><span class="kpil" data-en>AI Forecast<br>MAE Reduction</span></div>
+ <div class="kpib n"><span class="kpiv">45.8%</span><span class="kpil" data-zh>AI预测<br>MAE降低</span><span class="kpil" data-en>Forecast<br>MAE Drop</span></div>
  <div class="kpib n"><span class="kpiv">TCF</span><span class="kpil">693/699<br>C2 法语</span></div>
  <div class="kpib wc"><span class="kpiv">DET</span><span class="kpil">110/160<br>B2 英语</span></div>
  <div class="kpib t"><span class="kpiv">Bac+5</span><span class="kpil" data-zh>学历水平<br>MSc</span><span class="kpil" data-en>Degree Level<br>MSc</span></div>
@@ -1574,10 +1569,10 @@ footer{
 <section class="shishi-banner" aria-label="Twin Shishi ceremonial divider">
   <div class="shishi-center-text">
     <h3 data-zh>双狮护法 · 证据之门 · 左雌右雄</h3>
-    <h3 data-en>Twin Shishi · Gate of Evidence · Female Left, Male Right</h3>
+    <h3 data-en>Twin Shishi · Research Gate</h3>
 
     <p data-zh>以严谨、守正与可验证性守护研究材料</p>
-    <p data-en>Guarding the research file through rigour, integrity and verifiability</p>
+    <p data-en>A visual nod to discipline, evidence and careful work</p>
   </div>
 </section>
 
@@ -1707,7 +1702,7 @@ footer{
  <div style="font-size:.63rem;color:var(--g600);font-family:var(--ffs)" data-zh>（Aux membres respectés du comité d'admission · To the respected members of the admissions committee）</div>
  <div style="font-size:.63rem;color:var(--g600);font-family:var(--ffs)" data-en>（致录取委员会尊敬的成员们 · 尊敬的收信人）</div>
  <div style="font-size:.68rem;color:var(--g800);margin-top:5px;line-height:1.6" data-zh>以下是集体学术工作所应用的工程方法与建模能力的证明。<strong>数学严谨性优先于商业叙事。</strong>所有算法输出与数学模型均有原始文件支撑，可供核验。</div>
- <div style="font-size:.68rem;color:var(--g800);margin-top:5px;line-height:1.6" data-en>The following demonstrates engineering methodology and modelling capabilities developed through collective academic work. <strong>Mathematical rigour takes precedence over commercial narrative.</strong> All outputs are supported by verifiable source documents.</div>
+ <div style="font-size:.68rem;color:var(--g800);margin-top:5px;line-height:1.6" data-en>This portfolio is built around the work I can actually show: a Casablanca traffic-and-ROI project, applied modelling, and a newer smart-city investment scoring paper. I keep the claims tied to files, models and results rather than presentation language.</div>
  </div>
  </div>
 
@@ -1720,19 +1715,19 @@ footer{
  </div>
  <div class="pb">
  <div class="nmr">
- <div class="nm"><span class="bl">🔴</span> <span data-zh>模型已验证！</span><span data-en>Model Validated!</span></div>
+ <div class="nm"><span class="bl">🔴</span> <span data-zh>模型已测试</span><span data-en>Model Tested</span></div>
  <div class="nm">▲ ROI 533%</div>
  <div class="nm g">🏆 <span data-zh>集体研究成果</span><span data-en>Collective Research</span></div>
  <div class="nm n"><span class="bl">⭐</span> <span data-zh>5区域覆盖</span><span data-en>5-Zone Coverage</span></div>
- <div class="nm wc">✅ <span data-zh>数据精准</span><span data-en>Data Precision</span></div>
- <div class="nm g"><span class="bl">🌆</span> <span data-zh>重庆/广东就绪</span><span data-en>Chongqing/GD Ready</span></div>
+ <div class="nm wc">✅ <span data-zh>数据驱动</span><span data-en>Data-Driven</span></div>
+ <div class="nm g"><span class="bl">🌆</span> <span data-zh>重庆/广东方向</span><span data-en>Chongqing/GD Angle</span></div>
  </div>
  <!-- : Yin/Yang Tao -->
  <div class="mb" style="margin-bottom:7px">
  <div class="mwm">阴阳</div>
  <div class="mt">☯ <span data-zh>道家视角 · 均衡城市流的阴与阳</span><span data-en>Taoist View · Balancing Yin &amp; Yang of Urban Flow</span></div>
  <p data-zh>城市流量建模的目标，不只是数据优化——而是<strong>均衡城市流的阴与阳</strong>：过度拥堵为"阴滞"，流动顺畅为"阳通"。SUMO 仿真追求城市<strong>气（Qi）</strong>的流动平衡，让车流、人流顺势而为，实现整体和谐。</p>
- <p data-en>Urban flow modelling aims not merely at data optimisation — but at <strong>balancing the Yin and Yang of urban flux</strong>: excessive congestion is "Yin stagnation"; fluid circulation is "Yang flow". SUMO simulation seeks balance of the city's <strong>Qi (氣)</strong> — achieving collective harmony.</p>
+ <p data-en>I kept this Chinese reference as a design metaphor, not as a scientific claim. In practical terms, the project studies where movement slows, where visibility increases, and how that changes the financial value of an urban location.</p>
  </div>
 
  <!-- EGG Geography: Chongqing + Guangdong -->
@@ -1740,12 +1735,12 @@ footer{
  <div class="mwm g">中国</div>
  <div class="mt g">🇨🇳 <span data-zh>中国应用 · 重庆迷宫 &amp; 广东引擎</span><span data-en>China Application · Chongqing Labyrinth &amp; Guangdong Engine</span></div>
  <p data-zh><strong>重庆</strong>——立体迷宫式基础设施（多层高架、轨道穿楼而过）是 SUMO 多层网络建模的完美真实场景。<strong>广东省</strong>——生产全球逾10%的货物，OOH 位置价值模型可直接转化为产业园区可达性分析与供应链绩效优化。</p>
- <p data-en><strong>Chongqing</strong> — labyrinthine multi-level infrastructure is the perfect real scenario for SUMO multi-layer network modelling. <strong>Guangdong Province</strong> — producing over 10% of global goods, the OOH location-value model translates directly into industrial park accessibility and supply chain optimisation.</p>
+ <p data-en><strong>Chongqing</strong> interests me because its multi-level roads make traffic modelling genuinely difficult. <strong>Guangdong</strong> interests me because logistics, industrial parks and urban accessibility are directly linked to investment decisions. These are directions I would like to study further, not finished claims.</p>
  </div>
 
  <!-- Registre tables -->
  <div class="rlbl" data-zh>研究方法登记册 · Registre I</div>
- <div class="rlbl" data-en>Research Methods Register · Vol. I · Celestial Record</div>
+ <div class="rlbl" data-en>Research Methods Register · Vol. I</div>
  <div style="overflow-x:auto">
  <table class="dt">
  <thead><tr>
@@ -1758,7 +1753,7 @@ footer{
  <tr><td data-zh>空间</td><td data-en>Spatial</td><td>QGIS/OSM</td><td data-zh>粤港澳大湾区物流</td><td data-en>Greater Bay Area logistics</td></tr>
  <tr><td data-zh>财务</td><td data-en>Financial</td><td>ROI/TCO/CAPEX</td><td data-zh>基础设施投资评估</td><td data-en>Infrastructure investment ROI</td></tr>
  <tr><td data-zh>AI-MCDM</td><td data-en>AI-MCDM</td><td>XGBoost/DNPV/AROMAN</td><td data-zh>智慧城市投资优先级</td><td data-en>Smart-city investment prioritisation</td></tr>
- <tr><td data-zh>监管</td><td data-en>Regulatory</td><td data-zh>合规框架</td><td data-en>Compliance framework</td><td data-zh>数据治理与公共空间</td><td data-en>Data governance &amp; public space</td></tr>
+ <tr><td data-zh>监管</td><td data-en>Regulatory</td><td data-zh>合规框架</td><td data-en>Compliance checks</td><td data-zh>数据治理与公共空间</td><td data-en>Data governance &amp; public space</td></tr>
  </tbody>
  </table>
  </div>
@@ -1777,7 +1772,7 @@ footer{
  <tr><td data-zh>实证研究能力</td><td data-en>Empirical capacity</td><td data-zh>SUMO+QGIS+财务模型</td><td data-en>SUMO+QGIS+Model</td><td data-zh>数量化准备</td><td data-en>Quant ready</td></tr>
  <tr><td data-zh>清晰研究问题</td><td data-en>Research question</td><td data-zh>位置价值+ROI框架</td><td data-en>Location value+ROI</td><td data-zh>问题导向</td><td data-en>Problem-oriented</td></tr>
  <tr><td data-zh>中国场景迁移</td><td data-en>China relevance</td><td data-zh>重庆/广东直接应用</td><td data-en>Chongqing/GD direct</td><td data-zh>应用相关性</td><td data-en>Applied relevance</td></tr>
- <tr><td data-zh>学术规范尊重</td><td data-en>Academic integrity</td><td data-zh>明确标注可验证信息</td><td data-en>Verified vs. pending</td><td data-zh>低风险材料</td><td data-en>Low-risk docs</td></tr>
+ <tr><td data-zh>学术规范尊重</td><td data-en>Academic integrity</td><td data-zh>明确标注可验证信息</td><td data-en>Verified vs. pending</td><td data-zh>低风险材料</td><td data-en>Careful documentation</td></tr>
  </tbody>
  </table>
  </div>
@@ -1824,64 +1819,64 @@ footer{
  <div class="panel fi" id="pfe-casablanca-roi-lab">
  <div class="ph" style="background:linear-gradient(90deg,#8B0000,#D0021B,#B8860B)">
  <span class="ph-zh" data-zh>卡萨布兰卡城市ROI实验室 · 交通驱动的广告投资评分</span>
- <span class="ph-zh" data-en>Casablanca Urban ROI Lab · Traffic-Driven Advertising Investment Scoring</span>
+ <span class="ph-zh" data-en>Casablanca Urban ROI Study · Traffic, Billboards and ROI</span>
  <span class="ph-en">PFE · SUMO · QGIS · IRP · DOOH</span>
  </div>
  <div class="pb">
  <div class="pfe-lab-card">
  <div class="pfe-title" data-zh>《基于道路交通的户外广告载体财务盈利性评估：卡萨布兰卡案例》</div>
- <div class="pfe-title" data-en>Financial Profitability of Outdoor Advertising Supports Based on Road Traffic — Casablanca Case</div>
+ <div class="pfe-title" data-en>How Road Traffic Changes the Profitability of Outdoor Advertising — Casablanca Case</div>
  <div class="pfe-sub" data-zh>我把传统“选一个好位置”的经验判断，转化为一个可解释的城市投资评分系统：交通流量决定曝光规模，社会经济变量决定受众价值，CAPEX/OPEX/TCO决定财务承压能力，监管约束决定实际可执行性。</div>
- <div class="pfe-sub" data-en>I converted the intuitive problem of “choosing a good billboard location” into an explainable urban investment-scoring system: traffic flows define exposure volume, socio-economic variables define audience value, CAPEX/OPEX/TCO define financial stress, and regulatory constraints define deployability.</div>
+ <div class="pfe-sub" data-en>I started from a simple field question: a billboard can be well placed, but can it really pay for itself? To answer it, I linked simulated traffic, neighbourhood value, CAPEX, OPEX, TCO, expected revenue and local rules into one scoring logic.</div>
 
  <div class="pfe-logic-grid" aria-label="PFE IRP scoring logic">
- <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 01</div><div class="pfe-node-v" data-zh>SUMO交通流<br>曝光数量</div><div class="pfe-node-v" data-en>SUMO Traffic<br>Exposure Volume</div></div>
- <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 02</div><div class="pfe-node-v" data-zh>RGPH/房价代理<br>受众质量</div><div class="pfe-node-v" data-en>RGPH / Real-estate Proxy<br>Audience Quality</div></div>
- <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 03</div><div class="pfe-node-v" data-zh>CAPEX/OPEX/TCO<br>成本结构</div><div class="pfe-node-v" data-en>CAPEX/OPEX/TCO<br>Cost Structure</div></div>
- <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 04</div><div class="pfe-node-v" data-zh>OOH/DOOH收入<br>货币化能力</div><div class="pfe-node-v" data-en>OOH/DOOH Revenue<br>Monetisation Capacity</div></div>
- <div class="pfe-logic-node"><div class="pfe-node-k">FILTER 05</div><div class="pfe-node-v" data-zh>监管/视觉污染<br>执行风险</div><div class="pfe-node-v" data-en>Regulation / Visual Saturation<br>Execution Risk</div></div>
+ <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 01</div><div class="pfe-node-v" data-zh>SUMO交通流<br>曝光数量</div><div class="pfe-node-v" data-en>SUMO Traffic<br>Who passes where</div></div>
+ <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 02</div><div class="pfe-node-v" data-zh>RGPH/房价代理<br>受众质量</div><div class="pfe-node-v" data-en>Population / Real-estate Proxy<br>Who the audience is</div></div>
+ <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 03</div><div class="pfe-node-v" data-zh>CAPEX/OPEX/TCO<br>成本结构</div><div class="pfe-node-v" data-en>CAPEX/OPEX/TCO<br>What it costs</div></div>
+ <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 04</div><div class="pfe-node-v" data-zh>OOH/DOOH收入<br>货币化能力</div><div class="pfe-node-v" data-en>OOH/DOOH Revenue<br>What it can earn</div></div>
+ <div class="pfe-logic-node"><div class="pfe-node-k">FILTER 05</div><div class="pfe-node-v" data-zh>监管/视觉污染<br>执行风险</div><div class="pfe-node-v" data-en>Rules / Visual Saturation<br>What can block it</div></div>
  </div>
 
  <div class="pfe-metrics">
- <div class="pfe-metric"><span class="pfe-metric-v">155p</span><div class="pfe-metric-l" data-zh>完整毕业项目<br>理论+实证</div><div class="pfe-metric-l" data-en>Full PFE thesis<br>theory + applied model</div></div>
+ <div class="pfe-metric"><span class="pfe-metric-v">155p</span><div class="pfe-metric-l" data-zh>完整毕业项目<br>理论+实证</div><div class="pfe-metric-l" data-en>Full PFE thesis<br>research + model</div></div>
  <div class="pfe-metric"><span class="pfe-metric-v">5</span><div class="pfe-metric-l" data-zh>卡萨布兰卡区域<br>交通仿真</div><div class="pfe-metric-l" data-en>Casablanca zones<br>traffic simulation</div></div>
- <div class="pfe-metric"><span class="pfe-metric-v">533%</span><div class="pfe-metric-l" data-zh>最高ROI情景<br>DOOH Premium</div><div class="pfe-metric-l" data-en>Peak ROI scenario<br>DOOH Premium</div></div>
+ <div class="pfe-metric"><span class="pfe-metric-v">533%</span><div class="pfe-metric-l" data-zh>最高ROI情景<br>DOOH Premium</div><div class="pfe-metric-l" data-en>Best ROI case<br>DOOH scenario</div></div>
  <div class="pfe-metric"><span class="pfe-metric-v">IRP</span><div class="pfe-metric-l" data-zh>潜在盈利指数<br>多准则评分</div><div class="pfe-metric-l" data-en>Potential Profitability Index<br>multi-criteria score</div></div>
  </div>
 
  <div class="pfe-hypo-board">
- <div class="pfe-hypo"><strong>H1/H2</strong> <span data-zh>高交通密度提升可见度；受众购买力提高广告位置价值。</span><span data-en>Higher traffic density raises visibility; higher audience purchasing power increases location value.</span></div>
- <div class="pfe-hypo"><strong>H3</strong> <span data-zh>DOOH初始成本更高，但通过时段共享、内容灵活性和受众数据货币化改善中期盈利性。</span><span data-en>DOOH has higher upfront cost but improves medium-term profitability through slot sharing, flexible content and audience-data monetisation.</span></div>
- <div class="pfe-hypo"><strong>H4</strong> <span data-zh>即使交通与人口指标优秀，本地监管、视觉饱和与城市和谐规则也会惩罚实际盈利性。</span><span data-en>Even when traffic and demographic indicators are strong, local regulation, visual saturation and urban-harmony rules can penalise effective profitability.</span></div>
- <div class="pfe-hypo"><strong>H5</strong> <span data-zh>SIG + SUMO + 经济变量可以形成用于广告点位投资决策的IRP评分。</span><span data-en>GIS + SUMO + economic variables can form an IRP score for advertising-location investment decisions.</span></div>
+ <div class="pfe-hypo"><strong>H1/H2</strong> <span data-zh>高交通密度提升可见度；受众购买力提高广告位置价值。</span><span data-en>More traffic usually means more visibility; neighbourhood purchasing power changes how valuable that visibility is.</span></div>
+ <div class="pfe-hypo"><strong>H3</strong> <span data-zh>DOOH初始成本更高，但通过时段共享、内容灵活性和受众数据货币化改善中期盈利性。</span><span data-en>DOOH costs more at the beginning, but it can become stronger when the screen is shared across time slots and content is changed more easily.</span></div>
+ <div class="pfe-hypo"><strong>H4</strong> <span data-zh>即使交通与人口指标优秀，本地监管、视觉饱和与城市和谐规则也会惩罚实际盈利性。</span><span data-en>A strong location is not enough. Regulation, visual saturation and urban design rules can still reduce the real business value.</span></div>
+ <div class="pfe-hypo"><strong>H5</strong> <span data-zh>SIG + SUMO + 经济变量可以形成用于广告点位投资决策的IRP评分。</span><span data-en>GIS, SUMO and basic economic variables can be combined into a practical IRP score for choosing advertising locations.</span></div>
  </div>
 
  <div style="overflow-x:auto">
  <table class="pfe-mini-table">
  <thead>
- <tr><th data-zh>作品集证据</th><th data-en>Portfolio Evidence</th><th data-zh>技术含义</th><th data-en>Technical Signal</th><th data-zh>中国申请价值</th><th data-en>China-Application Value</th></tr>
+ <tr><th data-zh>作品集证据</th><th data-en>What I Can Show</th><th data-zh>技术含义</th><th data-en>Skill Shown</th><th data-zh>中国申请价值</th><th data-en>Why It Fits China</th></tr>
  </thead>
  <tbody>
- <tr><td>SUMO + OpenStreetMap</td><td>SUMO + OpenStreetMap</td><td data-zh>把道路网络转化为可模拟交通系统</td><td data-en>Converts road networks into a traffic-simulation system</td><td data-zh>可迁移到超大城市交通、物流节点与城市更新研究</td><td data-en>Transferable to megacity mobility, logistics nodes and urban-renewal studies</td></tr>
- <tr><td>IRP Score</td><td>IRP Score</td><td data-zh>把曝光、成本、收入与监管风险合成投资指标</td><td data-en>Synthesises exposure, cost, revenue and regulatory risk into an investment indicator</td><td data-zh>显示从财务模型走向城市治理决策支持的能力</td><td data-en>Shows movement from financial modelling to urban-governance decision support</td></tr>
- <tr><td>OOH vs DOOH</td><td>OOH vs DOOH</td><td data-zh>比较传统资产与数字化媒体科技资产的现金流逻辑</td><td data-en>Compares cash-flow logic of traditional and digital media-tech assets</td><td data-zh>与数字基础设施、智慧城市和数据治理叙事相容</td><td data-en>Compatible with digital infrastructure, smart-city and data-governance narratives</td></tr>
+ <tr><td data-zh>SUMO + OpenStreetMap</td><td data-en>SUMO + OpenStreetMap</td><td data-zh>把道路网络转化为可模拟交通系统</td><td data-en>Uses real road geometry as the base for traffic simulation</td><td data-zh>可迁移到超大城市交通、物流节点与城市更新研究</td><td data-en>Relevant to dense mobility systems, logistics nodes and urban renewal</td></tr>
+ <tr><td data-zh>IRP Score</td><td data-en>IRP Score</td><td data-zh>把曝光、成本、收入与监管风险合成投资指标</td><td data-en>Combines exposure, cost, revenue and rules into one practical score</td><td data-zh>显示从财务模型走向城市治理决策支持的能力</td><td data-en>Shows how a finance model can support urban decisions</td></tr>
+ <tr><td data-zh>OOH vs DOOH</td><td data-en>OOH vs DOOH</td><td data-zh>比较传统资产与数字化媒体科技资产的现金流逻辑</td><td data-en>Compares traditional billboards with digital screens using cash-flow logic</td><td data-zh>与数字基础设施、智慧城市和数据治理叙事相容</td><td data-en>Useful for digital infrastructure and smart-city discussions</td></tr>
  </tbody>
  </table>
  </div>
 
  <div class="pfe-transfer-note">
  <span data-zh><strong>我新增的定位：</strong>这个PFE不只是“广告研究”。在中国申请材料中，它应被包装为一个<strong>城市数据金融化与公共空间投资优化</strong>案例：用交通仿真、空间数据和财务模型，解释数字基础设施在哪里、为什么、以什么风险水平值得部署。</span>
- <span data-en><strong>Added positioning:</strong> this PFE should not be presented as “advertising research” only. In the China portfolio, it becomes a case in <strong>urban data financialisation and public-space investment optimisation</strong>: using traffic simulation, spatial data and financial modelling to explain where, why and under what risk level digital infrastructure should be deployed.</span>
+ <span data-en><strong>How I present it:</strong> this is not only an advertising topic. I present it as an applied urban-economics project: using traffic simulation, spatial data and finance to decide where a digital asset makes economic sense.</span>
  </div>
  <div class="pfe-limit-note">
  <span data-zh><strong>诚实边界：</strong>研究依赖模拟交通、公开数据与代理变量；未声称拥有全市实时交通数据库。这个限制被保留，因为它展示可审计研究伦理，而不是过度包装。</span>
- <span data-en><strong>Honest boundary:</strong> the study relies on traffic simulation, public data and proxy variables; it does not claim access to a complete real-time citywide traffic database. Keeping this limitation visible signals auditability rather than overclaiming.</span>
+ <span data-en><strong>Limit:</strong> the project uses simulation, public data and proxies. It is not a live citywide traffic database, and I do not present it as one.</span>
  </div>
 
  <div class="chip-row" style="margin-top:8px">
  <span class="chip chip-r">Casablanca</span><span class="chip chip-r">SUMO</span><span class="chip chip-g">IRP</span>
  <span class="chip chip-g">533% ROI</span><span class="chip chip-n">DOOH</span><span class="chip chip-n">CAPEX/OPEX</span>
- <span class="chip chip-t">GIS</span><span class="chip chip-t">Urban Analytics</span><span class="chip chip-wc">Decision Support</span>
+ <span class="chip chip-t">GIS</span><span class="chip chip-t">Urban Analytics</span><span class="chip chip-wc">Decision Aid</span>
  </div>
  </div>
  </div>
@@ -1892,21 +1887,21 @@ footer{
  <div class="panel fi" id="aimcdm-scorecard">
  <div class="ph" style="background:linear-gradient(90deg,#2B0A3D,#003087,#00767A)">
  <span class="ph-zh" data-zh>AI-MCDM · 智慧城市投资评分</span>
- <span class="ph-zh" data-en>AI-MCDM · Smart-City Investment Scorecard</span>
- <span class="ph-en">XGBoost · AROMAN · Risk-adjusted Capital Allocation</span>
+ <span class="ph-zh" data-en>AI-MCDM · Comparing Smart-City Investments</span>
+ <span class="ph-en">XGBoost · AROMAN · Carbon & Energy Scenarios</span>
  </div>
  <div class="pb">
  <div class="aimcdm-card">
  <div class="aimcdm-title" data-zh>《AI-MCDM Investment Scoring for Smart Cities》——在碳成本、能源波动与地缘经济风险下的可审计投资排序框架</div>
- <div class="aimcdm-title" data-en>AI-MCDM Investment Scoring for Smart Cities — an auditable investment-ranking framework under carbon, energy and geoeconomic risk</div>
+ <div class="aimcdm-title" data-en>AI-MCDM Investment Scoring for Smart Cities — comparing projects when carbon prices, energy costs and risk change</div>
  <div class="aimcdm-sub" data-zh>该研究把城市基础设施评估从“单一NPV排序”升级为多风险资本配置问题：预测层、估值层、权重层与排序层分离，使每个结论可以被追踪、复核和压力测试。</div>
- <div class="aimcdm-sub" data-en>This research reframes smart-city infrastructure appraisal from a single NPV ranking into a multi-risk capital-allocation problem. The predictive, valuation, weighting and ranking layers are separated so that outputs remain traceable, auditable and stress-testable.</div>
+ <div class="aimcdm-sub" data-en>I built this paper after seeing the limit of simple NPV rankings. A project may look profitable on paper, but its position can change when energy prices, carbon costs or country risk are added. The model keeps forecasting, valuation, weighting and ranking separate so the reader can see where each result comes from.</div>
 
  <div class="aimcdm-flow" aria-label="AI-MCDM four-layer framework">
  <div class="aim-step">
  <div class="aim-step-k">LAYER 01</div>
  <div class="aim-step-v" data-zh>宏观风险输入<br>GPR · EU ETS · 能源情景</div>
- <div class="aim-step-v" data-en>Macro-risk Inputs<br>GPR · EU ETS · Energy Scenarios</div>
+ <div class="aim-step-v" data-en>Risk Inputs<br>GPR · EU ETS · Energy Scenarios</div>
  </div>
  <div class="aim-step">
  <div class="aim-step-k">LAYER 02</div>
@@ -1916,12 +1911,12 @@ footer{
  <div class="aim-step">
  <div class="aim-step-k">LAYER 03</div>
  <div class="aim-step-v" data-zh>准则权重<br>Fuzzy-AHP · MEREC</div>
- <div class="aim-step-v" data-en>Criteria Weighting<br>Fuzzy-AHP · MEREC</div>
+ <div class="aim-step-v" data-en>Weighting Choices<br>Fuzzy-AHP · MEREC</div>
  </div>
  <div class="aim-step">
  <div class="aim-step-k">LAYER 04</div>
  <div class="aim-step-v" data-zh>项目排序<br>AROMAN · TOPSIS · COPRAS</div>
- <div class="aim-step-v" data-en>Project Ranking<br>AROMAN · TOPSIS · COPRAS</div>
+ <div class="aim-step-v" data-en>Ranking Check<br>AROMAN · TOPSIS · COPRAS</div>
  </div>
  </div>
 
@@ -1929,7 +1924,7 @@ footer{
  <div class="aim-metric">
  <span class="aim-metric-v">25</span>
  <div class="aim-metric-l" data-zh>智慧城市项目<br>五类基础设施</div>
- <div class="aim-metric-l" data-en>Smart-city projects<br>five infrastructure domains</div>
+ <div class="aim-metric-l" data-en>Projects compared<br>five infrastructure types</div>
  </div>
  <div class="aim-metric">
  <span class="aim-metric-v">45.8%</span>
@@ -1939,12 +1934,12 @@ footer{
  <div class="aim-metric">
  <span class="aim-metric-v">3,547</span>
  <div class="aim-metric-l" data-zh>WDI/ESG外部验证<br>可用观测值</div>
- <div class="aim-metric-l" data-en>WDI/ESG external<br>usable observations</div>
+ <div class="aim-metric-l" data-en>WDI/ESG checks<br>usable observations</div>
  </div>
  <div class="aim-metric">
  <span class="aim-metric-v">€150</span>
  <div class="aim-metric-l" data-zh>净零碳价情景<br>排序压力测试</div>
- <div class="aim-metric-l" data-en>Net Zero carbon-price<br>ranking stress test</div>
+ <div class="aim-metric-l" data-en>Net Zero carbon-price<br>scenario check</div>
  </div>
  </div>
 
@@ -1954,24 +1949,24 @@ footer{
  <tr>
  <th data-zh>研究问题</th><th data-en>Question</th>
  <th data-zh>方法</th><th data-en>Method</th>
- <th data-zh>可展示结果</th><th data-en>Portfolio Evidence</th>
+ <th data-zh>可展示结果</th><th data-en>What I Can Show</th>
  </tr>
  </thead>
  <tbody>
  <tr>
- <td data-zh>AI是否改善基础设施需求预测？</td><td data-en>Can AI improve infrastructure-demand forecasting?</td>
+ <td data-zh>AI是否改善基础设施需求预测？</td><td data-en>Does XGBoost forecast demand better than linear models?</td>
  <td>XGBoost vs Ridge/Lasso · Wilcoxon</td>
- <td data-zh>MAE降低45.8%，p = 0.0039；预测贡献≠因果解释</td><td data-en>45.8% MAE reduction, p = 0.0039; predictive contribution ≠ causal proof</td>
+ <td data-zh>MAE降低45.8%，p = 0.0039；预测贡献≠因果解释</td><td data-en>45.8% lower MAE than Ridge in the test; I treat this as prediction evidence, not causality.</td>
  </tr>
  <tr>
- <td data-zh>碳价格是否改变项目排序？</td><td data-en>Do carbon prices change project rankings?</td>
+ <td data-zh>碳价格是否改变项目排序？</td><td data-en>Do carbon prices move the ranking?</td>
  <td>€0 / €30 / €85 / €150 CO₂ scenarios</td>
- <td data-zh>€30无变化；€85轻微变化；€150净零情景扰动更强</td><td data-en>€30 no change; €85 limited shift; €150 Net Zero scenario stronger disruption</td>
+ <td data-zh>€30无变化；€85轻微变化；€150净零情景扰动更强</td><td data-en>€30 changed little; €85 started to move results; €150 created the strongest ranking shift.</td>
  </tr>
  <tr>
- <td data-zh>如何让投资评分可审计？</td><td data-en>How can the scorecard remain auditable?</td>
+ <td data-zh>如何让投资评分可审计？</td><td data-en>How do I avoid a black-box ranking?</td>
  <td>Fuzzy-AHP/MEREC + AROMAN + TOPSIS/COPRAS</td>
- <td data-zh>权重、λ敏感性和跨方法一致性公开，避免“黑箱排序”</td><td data-en>Weights, λ sensitivity and cross-method concordance disclosed to avoid black-box ranking</td>
+ <td data-zh>权重、λ敏感性和跨方法一致性公开，避免“黑箱排序”</td><td data-en>I show weights, λ sensitivity and TOPSIS/COPRAS checks so the ranking is easier to question.</td>
  </tr>
  </tbody>
  </table>
@@ -1979,11 +1974,11 @@ footer{
 
  <div class="aim-note">
  <span data-zh><strong>中国迁移逻辑：</strong>该框架可被转化为重庆多层交通基础设施、粤港澳大湾区物流节点、新能源充电网络、智慧水务与城市数据中心的投资优先级模型。它不是声称给出“客观最优答案”，而是提供可复核的决策支持证据。</span>
- <span data-en><strong>China-transfer logic:</strong> the framework can be adapted to Chongqing multi-layer transport infrastructure, Greater Bay Area logistics nodes, EV charging networks, smart water systems and urban data-centre prioritisation. It does not claim to produce an objectively optimal answer; it produces auditable decision-support evidence.</span>
+ <span data-en><strong>China angle:</strong> I see this model as a starting point for comparing projects such as Chongqing transport nodes, Greater Bay Area logistics sites, EV charging networks, smart water systems or urban data centres. It is a decision aid, not an automatic answer.</span>
  </div>
  <div class="aim-warning">
  <span data-zh>边界条件：GPR假设在完整面板层面未被确认；埃及结果仅作为探索性国家案例。该限制被保留在作品集中，显示方法诚信与审慎解释。</span>
- <span data-en>Boundary condition: the GPR hypothesis was not confirmed at full-panel level; Egypt-specific evidence remains exploratory. Keeping this limitation visible strengthens methodological integrity.</span>
+ <span data-en>Limit: the GPR result was weak at the full-panel level. The Egypt result is useful, but I keep it as exploratory instead of overstating it.</span>
  </div>
 
  <div class="chip-row" style="margin-top:8px">
@@ -2000,23 +1995,23 @@ footer{
  <div class="panel fi" id="research-trajectory-china">
  <div class="ph teal">
  <span class="ph-zh" data-zh>研究轨迹 · 从卡萨布兰卡到中国智慧城市</span>
- <span class="ph-zh" data-en>Research Trajectory · From Casablanca to Chinese Smart Cities</span>
- <span class="ph-en">Narrative Architecture</span>
+ <span class="ph-zh" data-en>Research Direction · From Casablanca to Chinese Smart Cities</span>
+ <span class="ph-en">How the work connects</span>
  </div>
  <div class="pb">
  <div class="traj-card">
  <div class="pfe-title" style="color:var(--teal)" data-zh>一个连贯的研究身份：城市流量 → 投资评分 → 风险调整资本配置</div>
- <div class="pfe-title" style="color:var(--teal)" data-en>A coherent research identity: urban flows → investment scoring → risk-adjusted capital allocation</div>
+ <div class="pfe-title" style="color:var(--teal)" data-en>What connects my work: urban flows → project scoring → better investment choices</div>
  <div class="pfe-sub" data-zh>我新增这一层，是为了让评审看到你的项目不是零散经历，而是一条可读的研究路线：从一个城市广告资产的ROI问题，发展为智慧城市基础设施投资排序问题，并进一步迁移到中国超大城市和中非供应链走廊场景。</div>
- <div class="pfe-sub" data-en>This layer makes the portfolio read as a research trajectory rather than disconnected projects: from ROI of urban advertising assets, to smart-city infrastructure investment ranking, then to Chinese megacity and Sino-African corridor applications.</div>
+ <div class="pfe-sub" data-en>The projects are not identical, but they follow the same question: how can data help decide where money should be invested in a city? The Casablanca project starts with billboards and traffic; the AI-MCDM paper extends the same logic to smart-city infrastructure.</div>
 
- <div class="traj-row"><div class="traj-year">STAGE 01</div><div class="traj-body"><strong data-zh>卡萨布兰卡PFE：</strong><strong data-en>Casablanca PFE:</strong> <span data-zh>使用SUMO、SIG和ROI模型，把公共空间广告位置转化为可评分投资对象。</span><span data-en>uses SUMO, GIS and ROI modelling to turn public-space advertising locations into scorable investment objects.</span></div><div class="traj-tag">Urban ROI</div></div>
- <div class="traj-row"><div class="traj-year">STAGE 02</div><div class="traj-body"><strong data-zh>AI-MCDM论文：</strong><strong data-en>AI-MCDM paper:</strong> <span data-zh>把单一ROI逻辑扩展为XGBoost、DNPV、Real Options、Fuzzy-AHP/MEREC和AROMAN的多风险评分架构。</span><span data-en>expands single-ROI logic into a multi-risk framework using XGBoost, DNPV, Real Options, Fuzzy-AHP/MEREC and AROMAN.</span></div><div class="traj-tag">Risk MCDA</div></div>
- <div class="traj-row"><div class="traj-year">STAGE 03</div><div class="traj-body"><strong data-zh>中国迁移：</strong><strong data-en>China transfer:</strong> <span data-zh>将方法适配到智慧交通、物流节点、电动车充电网络、城市数据中心与城市更新投资组合。</span><span data-en>adapts the method to smart mobility, logistics nodes, EV charging networks, urban data centres and urban-renewal portfolios.</span></div><div class="traj-tag">China Fit</div></div>
+ <div class="traj-row"><div class="traj-year">STAGE 01</div><div class="traj-body"><strong data-zh>卡萨布兰卡PFE：</strong><strong data-en>Casablanca PFE:</strong> <span data-zh>使用SUMO、SIG和ROI模型，把公共空间广告位置转化为可评分投资对象。</span><span data-en>uses SUMO, GIS and ROI modelling to compare advertising locations with more discipline than intuition alone.</span></div><div class="traj-tag">Urban ROI</div></div>
+ <div class="traj-row"><div class="traj-year">STAGE 02</div><div class="traj-body"><strong data-zh>AI-MCDM论文：</strong><strong data-en>AI-MCDM paper:</strong> <span data-zh>把单一ROI逻辑扩展为XGBoost、DNPV、Real Options、Fuzzy-AHP/MEREC和AROMAN的多风险评分架构。</span><span data-en>takes the ROI logic further by adding forecasting, carbon scenarios, financial valuation and MCDM ranking.</span></div><div class="traj-tag">Risk MCDA</div></div>
+ <div class="traj-row"><div class="traj-year">STAGE 03</div><div class="traj-body"><strong data-zh>中国迁移：</strong><strong data-en>China transfer:</strong> <span data-zh>将方法适配到智慧交通、物流节点、电动车充电网络、城市数据中心与城市更新投资组合。</span><span data-en>is the direction I want to explore in China: mobility, logistics nodes, EV charging, data centres and urban-renewal investments.</span></div><div class="traj-tag">China Fit</div></div>
 
  <div class="pfe-transfer-note">
  <span data-zh><strong>评审阅读效果：</strong>你不是“会很多工具”的学生，而是能把工具组织成决策系统的人：数据获取 → 建模 → 财务化 → 多准则排序 → 风险披露 → 战略建议。</span>
- <span data-en><strong>Admissions reading effect:</strong> you are not framed as a student who merely knows many tools, but as someone who organises tools into a decision system: data acquisition → modelling → financialisation → multi-criteria ranking → risk disclosure → strategic recommendation.</span>
+ <span data-en><strong>How I want it to read:</strong> I am not only listing tools. I am showing a working chain: collect data → model the situation → translate it into money → compare options → state the limits.</span>
  </div>
  </div>
  </div>
@@ -2116,21 +2111,21 @@ footer{
  <div class="mwm n">甲骨文</div>
  <div class="mt n">🦴 <span data-zh>甲骨文 · 数据预测的起源</span><span data-en>Oracle Bones · The Origin of Data Prediction</span></div>
  <p data-zh>解读现代大数据，需要与商代<strong>甲骨文（Jiaguwen）</strong>占卜师同样的精准预测精神——从混沌的征兆中提取可预测的规律，将噪声转化为可解释信号，将复杂数据转化为可验证判断。</p>
- <p data-en>Reading modern big data requires the same spirit of precise prediction as Shang dynasty <strong>oracle bone (Jiaguwen)</strong> diviners — extracting predictable patterns from chaotic omens, transforming noise into interpretable signals and complex data into verifiable judgments.</p>
+ <p data-en>This is a cultural metaphor for the portfolio design. The practical idea is simple: before making a forecast, I first separate usable signals from noise and document the assumptions behind the model.</p>
  </div>
  <!-- : Pangu -->
  <div class="mb" style="margin-bottom:6px">
  <div class="mwm">盘古</div>
  <div class="mt">🌌 <span data-zh>盘古开天地 · 数据建模使命</span><span data-en>Pangu Separates Chaos · Data Modelling Mission</span></div>
  <p data-zh>如同<strong>盘古</strong>以神斧将混沌劈开——轻者升天，重者为地——建模工作的使命是：以数学框架为斧，将大数据的原始混沌分离为可解释的"天"（清晰信号）与可舍弃的"地"（统计噪声）。这正是每次建模工作的目标——为集体判断提供可信的分析地基。</p>
- <p data-en>As <strong>Pangu</strong> split primordial chaos — light upward into Heaven, heavy downward into Earth — the modelling mission is: using mathematical frameworks as the axe, separating big data's raw chaos into interpretable "Heaven" (clear signals) and discardable "Earth" (statistical noise). This is the purpose of each modelling effort — providing a reliable analytical foundation for collective judgment.</p>
+ <p data-en>I use the Pangu image as a visual metaphor for cleaning messy information. In my work, that means moving from raw files and scattered assumptions to a model that can be read, checked and improved.</p>
  </div>
  <!-- : Wei Chi -->
  <div class="mb" style="border-left-color:var(--bam);background:#F2FBF4">
  <div class="mwm b">围棋</div>
  <div class="mt" style="color:var(--bam)">♟ <span data-zh>围棋策略 · Wei Chi 建模哲学</span><span data-en>Wei Chi Strategy · Modelling Philosophy</span></div>
  <p data-zh>变量如围棋黑白子：不是只追求单步最优，而是通过全局布局、边际取舍与长期势能构建稳健的集体决策框架。复杂供应链系统的治理需要"布局"思维，而不是"将军"思维。</p>
- <p data-en>Variables are Go stones — black and white. Not optimising single moves, but building robust collective decision frameworks through global positioning, marginal trade-offs, and long-term potential. Complex supply chain systems require "positional" thinking, not "checkmate" thinking.</p>
+ <p data-en>Go is a useful metaphor for how I think about modelling. A good decision is rarely one variable alone; it comes from position, trade-offs, timing and the effect of one choice on the whole system.</p>
  </div>
  </div>
  </div>
