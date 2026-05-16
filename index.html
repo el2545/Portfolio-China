@@ -98,7 +98,7 @@ a{color:inherit;text-decoration:none}
 }
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 
-/* ═══ CAROUSEL (from ref — 3 slides, auto-play) ═══ */
+/* ═══ CAROUSEL (from ref — 4 slides, auto-play) ═══ */
 .carousel{position:relative;overflow:hidden;height:200px;background:#000}
 .cs-slides{display:flex;height:100%;transition:transform .5s ease}
 .cs-slide{
@@ -598,6 +598,330 @@ footer{
  padding:10px 14px 6px;font-size:.62rem;color:var(--g400);text-align:center;
 }
 
+
+
+/* ═══ PFE CASABLANCA URBAN ROI LAB — EXTRA CHINA PORTFOLIO LAYER ═══ */
+.pfe-lab-card{
+ background:linear-gradient(135deg,#fff 0%,var(--red-bg) 46%,var(--gold-bg) 100%);
+ border:1px solid rgba(208,2,27,.20);
+ border-left:4px solid var(--red);
+ border-radius:4px;
+ padding:10px;
+ position:relative;
+ overflow:hidden;
+}
+.pfe-lab-card::after{
+ content:'城投';
+ position:absolute;
+ right:8px;
+ top:2px;
+ font-family:var(--ffs);
+ font-size:4.4rem;
+ font-weight:900;
+ color:rgba(208,2,27,.055);
+ pointer-events:none;
+}
+.pfe-title{
+ font-family:var(--ffs);
+ font-size:.98rem;
+ font-weight:900;
+ color:var(--red-dk);
+ line-height:1.34;
+ margin-bottom:4px;
+ position:relative;
+ z-index:2;
+}
+.pfe-sub{
+ font-size:.63rem;
+ color:var(--g600);
+ line-height:1.55;
+ margin-bottom:8px;
+ position:relative;
+ z-index:2;
+}
+.pfe-logic-grid{
+ display:grid;
+ grid-template-columns:repeat(5,1fr);
+ gap:5px;
+ margin:8px 0;
+ position:relative;
+ z-index:2;
+}
+.pfe-logic-node{
+ background:rgba(255,255,255,.78);
+ border:1px solid rgba(208,2,27,.15);
+ border-top:3px solid var(--red);
+ border-radius:3px;
+ padding:7px 6px;
+ min-height:66px;
+}
+.pfe-logic-node:nth-child(2){border-top-color:var(--gold)}
+.pfe-logic-node:nth-child(3){border-top-color:var(--navy)}
+.pfe-logic-node:nth-child(4){border-top-color:var(--teal)}
+.pfe-logic-node:nth-child(5){border-top-color:#07C160}
+.pfe-node-k{
+ font-family:var(--ffm);
+ font-size:.50rem;
+ color:var(--g400);
+ letter-spacing:.06em;
+ margin-bottom:3px;
+}
+.pfe-node-v{
+ font-size:.66rem;
+ font-weight:800;
+ color:var(--blk);
+ line-height:1.25;
+}
+.pfe-metrics{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:5px;
+ margin:8px 0;
+ position:relative;
+ z-index:2;
+}
+.pfe-metric{
+ background:#fff;
+ border:1px solid var(--g200);
+ border-radius:3px;
+ padding:7px 6px;
+ text-align:center;
+}
+.pfe-metric-v{
+ font-family:var(--ffm);
+ font-size:1.12rem;
+ font-weight:900;
+ color:var(--red);
+ display:block;
+ line-height:1.05;
+}
+.pfe-metric:nth-child(2) .pfe-metric-v{color:var(--gold)}
+.pfe-metric:nth-child(3) .pfe-metric-v{color:var(--navy)}
+.pfe-metric:nth-child(4) .pfe-metric-v{color:#007A40}
+.pfe-metric-l{font-size:.54rem;color:var(--g600);line-height:1.2;margin-top:3px}
+.pfe-hypo-board{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:6px;
+ margin:8px 0;
+ position:relative;
+ z-index:2;
+}
+.pfe-hypo{
+ background:#fff;
+ border:1px solid rgba(184,134,11,.28);
+ border-left:3px solid var(--gold);
+ border-radius:3px;
+ padding:7px 8px;
+ font-size:.60rem;
+ color:var(--g600);
+ line-height:1.45;
+}
+.pfe-hypo strong{color:var(--red-dk)}
+.pfe-mini-table{width:100%;border-collapse:collapse;font-size:.61rem;margin-top:8px;position:relative;z-index:2}
+.pfe-mini-table th{background:var(--red);color:#fff;padding:5px 6px;text-align:left;font-family:var(--ffm);font-size:.51rem;letter-spacing:.05em}
+.pfe-mini-table td{background:rgba(255,255,255,.80);border-bottom:1px solid var(--g200);padding:5px 6px;color:var(--g600);vertical-align:top}
+.pfe-transfer-note{
+ margin-top:7px;
+ background:rgba(184,134,11,.08);
+ border:1px dashed rgba(184,134,11,.35);
+ border-radius:3px;
+ padding:7px 8px;
+ font-size:.62rem;
+ line-height:1.55;
+ color:var(--g600);
+ position:relative;
+ z-index:2;
+}
+.pfe-limit-note{
+ margin-top:6px;
+ background:#fff;
+ border-left:3px solid var(--navy);
+ padding:6px 8px;
+ font-size:.58rem;
+ color:var(--g600);
+ line-height:1.45;
+ position:relative;
+ z-index:2;
+}
+/* research trajectory */
+.traj-card{
+ background:linear-gradient(135deg,#fff 0%,#f7fbff 48%,#fffbe6 100%);
+ border:1px solid rgba(0,48,135,.18);
+ border-left:4px solid var(--teal);
+ border-radius:4px;
+ padding:10px;
+ position:relative;
+ overflow:hidden;
+}
+.traj-card::after{content:'一带一路';position:absolute;right:6px;bottom:-8px;font-family:var(--ffs);font-size:3rem;font-weight:900;color:rgba(0,118,122,.06);pointer-events:none}
+.traj-row{display:grid;grid-template-columns:90px 1fr 84px;gap:7px;align-items:stretch;margin:6px 0;position:relative;z-index:2}
+.traj-year{background:var(--navy);color:#fff;border-radius:3px;padding:7px 5px;text-align:center;font-family:var(--ffm);font-size:.62rem;font-weight:900;display:flex;align-items:center;justify-content:center}
+.traj-body{background:#fff;border:1px solid var(--g200);border-radius:3px;padding:7px 8px;font-size:.62rem;color:var(--g600);line-height:1.45}
+.traj-tag{background:var(--teal-bg);border:1px solid rgba(0,118,122,.25);border-radius:3px;color:var(--teal);font-size:.54rem;font-weight:900;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px}
+@media(max-width:760px){
+ .pfe-logic-grid{grid-template-columns:1fr 1fr}
+ .pfe-logic-node:last-child{grid-column:1/-1}
+ .pfe-metrics,.pfe-hypo-board{grid-template-columns:1fr 1fr}
+ .pfe-lab-card::after{font-size:3rem}
+ .traj-row{grid-template-columns:1fr}
+}
+
+/* ═══ AI-MCDM SMART CITY INVESTMENT SCORECARD ═══ */
+.aimcdm-card{
+ background:linear-gradient(135deg,#fff 0%,var(--navy-bg) 54%,var(--gold-bg) 100%);
+ border:1px solid rgba(0,48,135,.18);
+ border-left:4px solid var(--navy);
+ border-radius:4px;
+ padding:10px;
+ position:relative;
+ overflow:hidden;
+}
+.aimcdm-card::after{
+ content:'智投';
+ position:absolute;
+ right:8px;
+ top:4px;
+ font-family:var(--ffs);
+ font-size:4rem;
+ font-weight:900;
+ color:rgba(0,48,135,.055);
+ pointer-events:none;
+}
+.aimcdm-title{
+ font-family:var(--ffs);
+ font-size:.95rem;
+ font-weight:900;
+ color:var(--navy);
+ line-height:1.35;
+ margin-bottom:4px;
+ position:relative;
+ z-index:2;
+}
+.aimcdm-sub{
+ font-size:.62rem;
+ color:var(--g600);
+ line-height:1.45;
+ margin-bottom:8px;
+ position:relative;
+ z-index:2;
+}
+.aimcdm-flow{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:5px;
+ margin:8px 0;
+ position:relative;
+ z-index:2;
+}
+.aim-step{
+ background:rgba(255,255,255,.75);
+ border:1px solid rgba(0,48,135,.16);
+ border-top:3px solid var(--red);
+ border-radius:3px;
+ padding:7px 6px;
+ min-height:64px;
+}
+.aim-step:nth-child(2){border-top-color:var(--gold)}
+.aim-step:nth-child(3){border-top-color:var(--teal)}
+.aim-step:nth-child(4){border-top-color:#07C160}
+.aim-step-k{
+ font-family:var(--ffm);
+ font-size:.52rem;
+ color:var(--g400);
+ letter-spacing:.06em;
+ margin-bottom:3px;
+}
+.aim-step-v{
+ font-size:.68rem;
+ font-weight:800;
+ color:var(--blk);
+ line-height:1.28;
+}
+.aim-metrics{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:5px;
+ margin:8px 0;
+ position:relative;
+ z-index:2;
+}
+.aim-metric{
+ background:#fff;
+ border:1px solid var(--g200);
+ border-radius:3px;
+ padding:7px 6px;
+ text-align:center;
+}
+.aim-metric-v{
+ font-family:var(--ffm);
+ font-size:1.18rem;
+ font-weight:900;
+ color:var(--red);
+ display:block;
+ line-height:1.05;
+}
+.aim-metric:nth-child(2) .aim-metric-v{color:var(--gold)}
+.aim-metric:nth-child(3) .aim-metric-v{color:var(--navy)}
+.aim-metric:nth-child(4) .aim-metric-v{color:#007A40}
+.aim-metric-l{
+ font-size:.54rem;
+ color:var(--g600);
+ line-height:1.2;
+ margin-top:3px;
+}
+.aim-note{
+ background:rgba(0,48,135,.06);
+ border:1px dashed rgba(0,48,135,.24);
+ border-radius:3px;
+ padding:7px 8px;
+ font-size:.62rem;
+ line-height:1.55;
+ color:var(--g600);
+ position:relative;
+ z-index:2;
+}
+.aim-warning{
+ margin-top:6px;
+ background:#fff8e6;
+ border-left:3px solid var(--gold);
+ padding:6px 8px;
+ font-size:.58rem;
+ color:#7a5b00;
+ line-height:1.45;
+ position:relative;
+ z-index:2;
+}
+.aim-mini-table{
+ width:100%;
+ border-collapse:collapse;
+ font-size:.62rem;
+ margin-top:8px;
+ position:relative;
+ z-index:2;
+}
+.aim-mini-table th{
+ background:var(--navy);
+ color:#fff;
+ padding:5px 6px;
+ text-align:left;
+ font-family:var(--ffm);
+ font-size:.52rem;
+ letter-spacing:.05em;
+}
+.aim-mini-table td{
+ background:rgba(255,255,255,.78);
+ border-bottom:1px solid var(--g200);
+ padding:5px 6px;
+ color:var(--g600);
+ vertical-align:top;
+}
+@media(max-width:760px){
+ .aimcdm-flow,.aim-metrics{grid-template-columns:1fr 1fr}
+ .aimcdm-card::after{font-size:2.8rem}
+}
+
+
 /* ── SUMO Simulation Dashboard ── */
 .egs-sumo-shell {
  background: #050505;
@@ -1082,12 +1406,14 @@ footer{
  533% ROI · <span data-zh>实证商业案例</span><span data-en>Proven Business Case</span> &nbsp;｜&nbsp;
  <span data-zh>法语C2 TCF 693/699 · 阿拉伯语母语 · 英语专业水平</span><span data-en>French C2 TCF 693/699 · Arabic Native · English Professional</span> &nbsp;｜&nbsp;
  Python · SQL · SUMO · QGIS · Power BI · Excel VBA &nbsp;｜&nbsp;
+ PFE Casablanca · IRP · DOOH Revenue Model &nbsp;｜&nbsp;
+ AI-MCDM · XGBoost · AROMAN · Carbon/GPR Risk &nbsp;｜&nbsp;
  <span data-zh>摩洛哥 → 中国 · 清华/北大 硕士/博士 2026</span><span data-en>Morocco → China · Tsinghua/PKU Master/PhD 2026</span> &nbsp;｜&nbsp;
  <span data-zh>CSC Agency 10001 · 北京大学 · CSCA备考中</span><span data-en>CSC Agency 10001 · PKU · CSCA Preparation Active</span>
  </div>
 </div>
 
-<!-- CAROUSEL (3 slides, auto-play, dots, prev/next) -->
+<!-- CAROUSEL (5 slides, auto-play, dots, prev/next) -->
 <div class="carousel" id="carousel" role="region" aria-label="主要内容轮播">
  <div class="cs-slides" id="csSlides">
 
@@ -1166,6 +1492,57 @@ footer{
  </div>
  </div>
 
+ <!-- Slide 4: AI-MCDM — investment scorecard -->
+ <div class="cs-slide cs-4" style="background:linear-gradient(135deg,#2B0A3D 0%,#003087 45%,#00767A 100%)">
+ <div class="cs-content">
+ <div class="cs-zh">
+ <span data-zh>AI-MCDM 智慧城市投资评分<br>碳、能源与地缘经济风险</span>
+ <span data-en>AI-MCDM Smart City Investment Scoring<br>Carbon, Energy & Geoeconomic Risk</span>
+ </div>
+ <div class="cs-en" data-zh>XGBoost · DNPV · Real Options · Fuzzy-AHP/MEREC · AROMAN</div>
+ <div class="cs-en" data-en>XGBoost · DNPV · Real Options · Fuzzy-AHP/MEREC · AROMAN</div>
+ <div class="cs-stats">
+ <div class="cs-stat"><span class="cs-sv">25</span><div class="cs-sl" data-zh>项目矩阵</div><div class="cs-sl" data-en>Projects</div></div>
+ <div class="cs-stat"><span class="cs-sv">45.8%</span><div class="cs-sl" data-zh>MAE降低</div><div class="cs-sl" data-en>MAE Reduction</div></div>
+ <div class="cs-stat"><span class="cs-sv">€150</span><div class="cs-sl" data-zh>净零压力</div><div class="cs-sl" data-en>Net Zero Stress</div></div>
+ </div>
+ </div>
+ <div class="cs-badges">
+ <div class="cs-badge" data-zh>🧠 AI预测</div>
+ <div class="cs-badge" data-en>🧠 AI Forecasting</div>
+ <div class="cs-badge" data-zh>🏙️ 智慧城市</div>
+ <div class="cs-badge" data-en>🏙️ Smart Cities</div>
+ <div class="cs-badge" data-zh>📉 风险评分</div>
+ <div class="cs-badge" data-en>📉 Risk Scoring</div>
+ </div>
+ </div>
+
+
+ <!-- Slide 5: Casablanca PFE — Urban ROI Lab -->
+ <div class="cs-slide cs-5" style="background:linear-gradient(135deg,#5A0008 0%,#D0021B 45%,#B8860B 100%)">
+ <div class="cs-content">
+ <div class="cs-zh">
+ <span data-zh>卡萨布兰卡城市ROI实验室<br>SUMO交通 × DOOH投资决策</span>
+ <span data-en>Casablanca Urban ROI Lab<br>SUMO Traffic × DOOH Investment Decisions</span>
+ </div>
+ <div class="cs-en" data-zh>IRP潜在盈利指数 · CAPEX/OPEX/TCO · 5个城市区域 · 最高533% ROI情景</div>
+ <div class="cs-en" data-en>IRP Profitability Index · CAPEX/OPEX/TCO · 5 urban zones · peak 533% ROI scenario</div>
+ <div class="cs-stats">
+ <div class="cs-stat"><span class="cs-sv">155p</span><div class="cs-sl" data-zh>毕业项目</div><div class="cs-sl" data-en>PFE Thesis</div></div>
+ <div class="cs-stat"><span class="cs-sv">5</span><div class="cs-sl" data-zh>卡萨布兰卡区域</div><div class="cs-sl" data-en>Casablanca Zones</div></div>
+ <div class="cs-stat"><span class="cs-sv">IRP</span><div class="cs-sl" data-zh>盈利指数</div><div class="cs-sl" data-en>Profitability Index</div></div>
+ </div>
+ </div>
+ <div class="cs-badges">
+ <div class="cs-badge" data-zh>🛰️ GIS/SUMO</div>
+ <div class="cs-badge" data-en>🛰️ GIS/SUMO</div>
+ <div class="cs-badge" data-zh>💹 ROI模型</div>
+ <div class="cs-badge" data-en>💹 ROI Model</div>
+ <div class="cs-badge" data-zh>🏙️ 城市媒体科技</div>
+ <div class="cs-badge" data-en>🏙️ Urban Media-Tech</div>
+ </div>
+ </div>
+
  </div>
  <button class="cs-prev" onclick="csPrev()" aria-label="上一张">‹</button>
  <button class="cs-next" onclick="csNext()" aria-label="下一张">›</button>
@@ -1173,6 +1550,8 @@ footer{
  <button class="cs-dot act" onclick="csGo(0)" aria-label="Slide 1"></button>
  <button class="cs-dot" onclick="csGo(1)" aria-label="Slide 2"></button>
  <button class="cs-dot" onclick="csGo(2)" aria-label="Slide 3"></button>
+ <button class="cs-dot" onclick="csGo(3)" aria-label="Slide 4"></button>
+ <button class="cs-dot" onclick="csGo(4)" aria-label="Slide 5"></button>
  </div>
 </div>
 
@@ -1181,6 +1560,8 @@ footer{
  <span class="kpi-lbl">KPIs</span>
  <div class="kpib"><span class="kpiv">533%</span><span class="kpil" data-zh>ROI实证<br>最高场景</span><span class="kpil" data-en>Proven ROI<br>Peak Scenario</span></div>
  <div class="kpib g"><span class="kpiv">155p</span><span class="kpil" data-zh>PFE研究<br>页数</span><span class="kpil" data-en>PFE Research<br>Pages</span></div>
+ <div class="kpib g"><span class="kpiv">5</span><span class="kpil" data-zh>Casablanca<br>ROI区域</span><span class="kpil" data-en>Casablanca<br>ROI Zones</span></div>
+ <div class="kpib n"><span class="kpiv">45.8%</span><span class="kpil" data-zh>AI预测<br>MAE降低</span><span class="kpil" data-en>AI Forecast<br>MAE Reduction</span></div>
  <div class="kpib n"><span class="kpiv">TCF</span><span class="kpil">693/699<br>C2 法语</span></div>
  <div class="kpib wc"><span class="kpiv">DET</span><span class="kpil">110/160<br>B2 英语</span></div>
  <div class="kpib t"><span class="kpiv">Bac+5</span><span class="kpil" data-zh>学历水平<br>MSc</span><span class="kpil" data-en>Degree Level<br>MSc</span></div>
@@ -1376,6 +1757,7 @@ footer{
  <tr><td data-zh>交通</td><td data-en>Traffic</td><td>SUMO</td><td data-zh>重庆立体交通网络</td><td data-en>Chongqing 3D transport network</td></tr>
  <tr><td data-zh>空间</td><td data-en>Spatial</td><td>QGIS/OSM</td><td data-zh>粤港澳大湾区物流</td><td data-en>Greater Bay Area logistics</td></tr>
  <tr><td data-zh>财务</td><td data-en>Financial</td><td>ROI/TCO/CAPEX</td><td data-zh>基础设施投资评估</td><td data-en>Infrastructure investment ROI</td></tr>
+ <tr><td data-zh>AI-MCDM</td><td data-en>AI-MCDM</td><td>XGBoost/DNPV/AROMAN</td><td data-zh>智慧城市投资优先级</td><td data-en>Smart-city investment prioritisation</td></tr>
  <tr><td data-zh>监管</td><td data-en>Regulatory</td><td data-zh>合规框架</td><td data-en>Compliance framework</td><td data-zh>数据治理与公共空间</td><td data-en>Data governance &amp; public space</td></tr>
  </tbody>
  </table>
@@ -1436,6 +1818,210 @@ footer{
  </div>
  </div>
  </div>
+
+
+ <!-- PFE Casablanca Urban ROI Lab — added strategic layer -->
+ <div class="panel fi" id="pfe-casablanca-roi-lab">
+ <div class="ph" style="background:linear-gradient(90deg,#8B0000,#D0021B,#B8860B)">
+ <span class="ph-zh" data-zh>卡萨布兰卡城市ROI实验室 · 交通驱动的广告投资评分</span>
+ <span class="ph-zh" data-en>Casablanca Urban ROI Lab · Traffic-Driven Advertising Investment Scoring</span>
+ <span class="ph-en">PFE · SUMO · QGIS · IRP · DOOH</span>
+ </div>
+ <div class="pb">
+ <div class="pfe-lab-card">
+ <div class="pfe-title" data-zh>《基于道路交通的户外广告载体财务盈利性评估：卡萨布兰卡案例》</div>
+ <div class="pfe-title" data-en>Financial Profitability of Outdoor Advertising Supports Based on Road Traffic — Casablanca Case</div>
+ <div class="pfe-sub" data-zh>我把传统“选一个好位置”的经验判断，转化为一个可解释的城市投资评分系统：交通流量决定曝光规模，社会经济变量决定受众价值，CAPEX/OPEX/TCO决定财务承压能力，监管约束决定实际可执行性。</div>
+ <div class="pfe-sub" data-en>I converted the intuitive problem of “choosing a good billboard location” into an explainable urban investment-scoring system: traffic flows define exposure volume, socio-economic variables define audience value, CAPEX/OPEX/TCO define financial stress, and regulatory constraints define deployability.</div>
+
+ <div class="pfe-logic-grid" aria-label="PFE IRP scoring logic">
+ <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 01</div><div class="pfe-node-v" data-zh>SUMO交通流<br>曝光数量</div><div class="pfe-node-v" data-en>SUMO Traffic<br>Exposure Volume</div></div>
+ <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 02</div><div class="pfe-node-v" data-zh>RGPH/房价代理<br>受众质量</div><div class="pfe-node-v" data-en>RGPH / Real-estate Proxy<br>Audience Quality</div></div>
+ <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 03</div><div class="pfe-node-v" data-zh>CAPEX/OPEX/TCO<br>成本结构</div><div class="pfe-node-v" data-en>CAPEX/OPEX/TCO<br>Cost Structure</div></div>
+ <div class="pfe-logic-node"><div class="pfe-node-k">INPUT 04</div><div class="pfe-node-v" data-zh>OOH/DOOH收入<br>货币化能力</div><div class="pfe-node-v" data-en>OOH/DOOH Revenue<br>Monetisation Capacity</div></div>
+ <div class="pfe-logic-node"><div class="pfe-node-k">FILTER 05</div><div class="pfe-node-v" data-zh>监管/视觉污染<br>执行风险</div><div class="pfe-node-v" data-en>Regulation / Visual Saturation<br>Execution Risk</div></div>
+ </div>
+
+ <div class="pfe-metrics">
+ <div class="pfe-metric"><span class="pfe-metric-v">155p</span><div class="pfe-metric-l" data-zh>完整毕业项目<br>理论+实证</div><div class="pfe-metric-l" data-en>Full PFE thesis<br>theory + applied model</div></div>
+ <div class="pfe-metric"><span class="pfe-metric-v">5</span><div class="pfe-metric-l" data-zh>卡萨布兰卡区域<br>交通仿真</div><div class="pfe-metric-l" data-en>Casablanca zones<br>traffic simulation</div></div>
+ <div class="pfe-metric"><span class="pfe-metric-v">533%</span><div class="pfe-metric-l" data-zh>最高ROI情景<br>DOOH Premium</div><div class="pfe-metric-l" data-en>Peak ROI scenario<br>DOOH Premium</div></div>
+ <div class="pfe-metric"><span class="pfe-metric-v">IRP</span><div class="pfe-metric-l" data-zh>潜在盈利指数<br>多准则评分</div><div class="pfe-metric-l" data-en>Potential Profitability Index<br>multi-criteria score</div></div>
+ </div>
+
+ <div class="pfe-hypo-board">
+ <div class="pfe-hypo"><strong>H1/H2</strong> <span data-zh>高交通密度提升可见度；受众购买力提高广告位置价值。</span><span data-en>Higher traffic density raises visibility; higher audience purchasing power increases location value.</span></div>
+ <div class="pfe-hypo"><strong>H3</strong> <span data-zh>DOOH初始成本更高，但通过时段共享、内容灵活性和受众数据货币化改善中期盈利性。</span><span data-en>DOOH has higher upfront cost but improves medium-term profitability through slot sharing, flexible content and audience-data monetisation.</span></div>
+ <div class="pfe-hypo"><strong>H4</strong> <span data-zh>即使交通与人口指标优秀，本地监管、视觉饱和与城市和谐规则也会惩罚实际盈利性。</span><span data-en>Even when traffic and demographic indicators are strong, local regulation, visual saturation and urban-harmony rules can penalise effective profitability.</span></div>
+ <div class="pfe-hypo"><strong>H5</strong> <span data-zh>SIG + SUMO + 经济变量可以形成用于广告点位投资决策的IRP评分。</span><span data-en>GIS + SUMO + economic variables can form an IRP score for advertising-location investment decisions.</span></div>
+ </div>
+
+ <div style="overflow-x:auto">
+ <table class="pfe-mini-table">
+ <thead>
+ <tr><th data-zh>作品集证据</th><th data-en>Portfolio Evidence</th><th data-zh>技术含义</th><th data-en>Technical Signal</th><th data-zh>中国申请价值</th><th data-en>China-Application Value</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>SUMO + OpenStreetMap</td><td>SUMO + OpenStreetMap</td><td data-zh>把道路网络转化为可模拟交通系统</td><td data-en>Converts road networks into a traffic-simulation system</td><td data-zh>可迁移到超大城市交通、物流节点与城市更新研究</td><td data-en>Transferable to megacity mobility, logistics nodes and urban-renewal studies</td></tr>
+ <tr><td>IRP Score</td><td>IRP Score</td><td data-zh>把曝光、成本、收入与监管风险合成投资指标</td><td data-en>Synthesises exposure, cost, revenue and regulatory risk into an investment indicator</td><td data-zh>显示从财务模型走向城市治理决策支持的能力</td><td data-en>Shows movement from financial modelling to urban-governance decision support</td></tr>
+ <tr><td>OOH vs DOOH</td><td>OOH vs DOOH</td><td data-zh>比较传统资产与数字化媒体科技资产的现金流逻辑</td><td data-en>Compares cash-flow logic of traditional and digital media-tech assets</td><td data-zh>与数字基础设施、智慧城市和数据治理叙事相容</td><td data-en>Compatible with digital infrastructure, smart-city and data-governance narratives</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+ <div class="pfe-transfer-note">
+ <span data-zh><strong>我新增的定位：</strong>这个PFE不只是“广告研究”。在中国申请材料中，它应被包装为一个<strong>城市数据金融化与公共空间投资优化</strong>案例：用交通仿真、空间数据和财务模型，解释数字基础设施在哪里、为什么、以什么风险水平值得部署。</span>
+ <span data-en><strong>Added positioning:</strong> this PFE should not be presented as “advertising research” only. In the China portfolio, it becomes a case in <strong>urban data financialisation and public-space investment optimisation</strong>: using traffic simulation, spatial data and financial modelling to explain where, why and under what risk level digital infrastructure should be deployed.</span>
+ </div>
+ <div class="pfe-limit-note">
+ <span data-zh><strong>诚实边界：</strong>研究依赖模拟交通、公开数据与代理变量；未声称拥有全市实时交通数据库。这个限制被保留，因为它展示可审计研究伦理，而不是过度包装。</span>
+ <span data-en><strong>Honest boundary:</strong> the study relies on traffic simulation, public data and proxy variables; it does not claim access to a complete real-time citywide traffic database. Keeping this limitation visible signals auditability rather than overclaiming.</span>
+ </div>
+
+ <div class="chip-row" style="margin-top:8px">
+ <span class="chip chip-r">Casablanca</span><span class="chip chip-r">SUMO</span><span class="chip chip-g">IRP</span>
+ <span class="chip chip-g">533% ROI</span><span class="chip chip-n">DOOH</span><span class="chip chip-n">CAPEX/OPEX</span>
+ <span class="chip chip-t">GIS</span><span class="chip chip-t">Urban Analytics</span><span class="chip chip-wc">Decision Support</span>
+ </div>
+ </div>
+ </div>
+ </div>
+
+
+ <!-- AI-MCDM Integrated Investment Scorecard -->
+ <div class="panel fi" id="aimcdm-scorecard">
+ <div class="ph" style="background:linear-gradient(90deg,#2B0A3D,#003087,#00767A)">
+ <span class="ph-zh" data-zh>AI-MCDM · 智慧城市投资评分</span>
+ <span class="ph-zh" data-en>AI-MCDM · Smart-City Investment Scorecard</span>
+ <span class="ph-en">XGBoost · AROMAN · Risk-adjusted Capital Allocation</span>
+ </div>
+ <div class="pb">
+ <div class="aimcdm-card">
+ <div class="aimcdm-title" data-zh>《AI-MCDM Investment Scoring for Smart Cities》——在碳成本、能源波动与地缘经济风险下的可审计投资排序框架</div>
+ <div class="aimcdm-title" data-en>AI-MCDM Investment Scoring for Smart Cities — an auditable investment-ranking framework under carbon, energy and geoeconomic risk</div>
+ <div class="aimcdm-sub" data-zh>该研究把城市基础设施评估从“单一NPV排序”升级为多风险资本配置问题：预测层、估值层、权重层与排序层分离，使每个结论可以被追踪、复核和压力测试。</div>
+ <div class="aimcdm-sub" data-en>This research reframes smart-city infrastructure appraisal from a single NPV ranking into a multi-risk capital-allocation problem. The predictive, valuation, weighting and ranking layers are separated so that outputs remain traceable, auditable and stress-testable.</div>
+
+ <div class="aimcdm-flow" aria-label="AI-MCDM four-layer framework">
+ <div class="aim-step">
+ <div class="aim-step-k">LAYER 01</div>
+ <div class="aim-step-v" data-zh>宏观风险输入<br>GPR · EU ETS · 能源情景</div>
+ <div class="aim-step-v" data-en>Macro-risk Inputs<br>GPR · EU ETS · Energy Scenarios</div>
+ </div>
+ <div class="aim-step">
+ <div class="aim-step-k">LAYER 02</div>
+ <div class="aim-step-v" data-zh>财务估值<br>DNPV · Real Options · CVaR</div>
+ <div class="aim-step-v" data-en>Financial Valuation<br>DNPV · Real Options · CVaR</div>
+ </div>
+ <div class="aim-step">
+ <div class="aim-step-k">LAYER 03</div>
+ <div class="aim-step-v" data-zh>准则权重<br>Fuzzy-AHP · MEREC</div>
+ <div class="aim-step-v" data-en>Criteria Weighting<br>Fuzzy-AHP · MEREC</div>
+ </div>
+ <div class="aim-step">
+ <div class="aim-step-k">LAYER 04</div>
+ <div class="aim-step-v" data-zh>项目排序<br>AROMAN · TOPSIS · COPRAS</div>
+ <div class="aim-step-v" data-en>Project Ranking<br>AROMAN · TOPSIS · COPRAS</div>
+ </div>
+ </div>
+
+ <div class="aim-metrics">
+ <div class="aim-metric">
+ <span class="aim-metric-v">25</span>
+ <div class="aim-metric-l" data-zh>智慧城市项目<br>五类基础设施</div>
+ <div class="aim-metric-l" data-en>Smart-city projects<br>five infrastructure domains</div>
+ </div>
+ <div class="aim-metric">
+ <span class="aim-metric-v">45.8%</span>
+ <div class="aim-metric-l" data-zh>XGBoost相对Ridge<br>MAE降低</div>
+ <div class="aim-metric-l" data-en>XGBoost vs Ridge<br>MAE reduction</div>
+ </div>
+ <div class="aim-metric">
+ <span class="aim-metric-v">3,547</span>
+ <div class="aim-metric-l" data-zh>WDI/ESG外部验证<br>可用观测值</div>
+ <div class="aim-metric-l" data-en>WDI/ESG external<br>usable observations</div>
+ </div>
+ <div class="aim-metric">
+ <span class="aim-metric-v">€150</span>
+ <div class="aim-metric-l" data-zh>净零碳价情景<br>排序压力测试</div>
+ <div class="aim-metric-l" data-en>Net Zero carbon-price<br>ranking stress test</div>
+ </div>
+ </div>
+
+ <div style="overflow-x:auto">
+ <table class="aim-mini-table">
+ <thead>
+ <tr>
+ <th data-zh>研究问题</th><th data-en>Question</th>
+ <th data-zh>方法</th><th data-en>Method</th>
+ <th data-zh>可展示结果</th><th data-en>Portfolio Evidence</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td data-zh>AI是否改善基础设施需求预测？</td><td data-en>Can AI improve infrastructure-demand forecasting?</td>
+ <td>XGBoost vs Ridge/Lasso · Wilcoxon</td>
+ <td data-zh>MAE降低45.8%，p = 0.0039；预测贡献≠因果解释</td><td data-en>45.8% MAE reduction, p = 0.0039; predictive contribution ≠ causal proof</td>
+ </tr>
+ <tr>
+ <td data-zh>碳价格是否改变项目排序？</td><td data-en>Do carbon prices change project rankings?</td>
+ <td>€0 / €30 / €85 / €150 CO₂ scenarios</td>
+ <td data-zh>€30无变化；€85轻微变化；€150净零情景扰动更强</td><td data-en>€30 no change; €85 limited shift; €150 Net Zero scenario stronger disruption</td>
+ </tr>
+ <tr>
+ <td data-zh>如何让投资评分可审计？</td><td data-en>How can the scorecard remain auditable?</td>
+ <td>Fuzzy-AHP/MEREC + AROMAN + TOPSIS/COPRAS</td>
+ <td data-zh>权重、λ敏感性和跨方法一致性公开，避免“黑箱排序”</td><td data-en>Weights, λ sensitivity and cross-method concordance disclosed to avoid black-box ranking</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+
+ <div class="aim-note">
+ <span data-zh><strong>中国迁移逻辑：</strong>该框架可被转化为重庆多层交通基础设施、粤港澳大湾区物流节点、新能源充电网络、智慧水务与城市数据中心的投资优先级模型。它不是声称给出“客观最优答案”，而是提供可复核的决策支持证据。</span>
+ <span data-en><strong>China-transfer logic:</strong> the framework can be adapted to Chongqing multi-layer transport infrastructure, Greater Bay Area logistics nodes, EV charging networks, smart water systems and urban data-centre prioritisation. It does not claim to produce an objectively optimal answer; it produces auditable decision-support evidence.</span>
+ </div>
+ <div class="aim-warning">
+ <span data-zh>边界条件：GPR假设在完整面板层面未被确认；埃及结果仅作为探索性国家案例。该限制被保留在作品集中，显示方法诚信与审慎解释。</span>
+ <span data-en>Boundary condition: the GPR hypothesis was not confirmed at full-panel level; Egypt-specific evidence remains exploratory. Keeping this limitation visible strengthens methodological integrity.</span>
+ </div>
+
+ <div class="chip-row" style="margin-top:8px">
+ <span class="chip chip-n">AI-MCDM</span><span class="chip chip-n">XGBoost</span><span class="chip chip-g">DNPV</span>
+ <span class="chip chip-g">Real Options</span><span class="chip chip-r">EU ETS</span><span class="chip chip-r">GPR</span>
+ <span class="chip chip-t">Fuzzy-AHP</span><span class="chip chip-t">MEREC</span><span class="chip chip-wc">AROMAN</span>
+ </div>
+ </div>
+ </div>
+ </div>
+
+
+ <!-- Research Trajectory — Casablanca to China -->
+ <div class="panel fi" id="research-trajectory-china">
+ <div class="ph teal">
+ <span class="ph-zh" data-zh>研究轨迹 · 从卡萨布兰卡到中国智慧城市</span>
+ <span class="ph-zh" data-en>Research Trajectory · From Casablanca to Chinese Smart Cities</span>
+ <span class="ph-en">Narrative Architecture</span>
+ </div>
+ <div class="pb">
+ <div class="traj-card">
+ <div class="pfe-title" style="color:var(--teal)" data-zh>一个连贯的研究身份：城市流量 → 投资评分 → 风险调整资本配置</div>
+ <div class="pfe-title" style="color:var(--teal)" data-en>A coherent research identity: urban flows → investment scoring → risk-adjusted capital allocation</div>
+ <div class="pfe-sub" data-zh>我新增这一层，是为了让评审看到你的项目不是零散经历，而是一条可读的研究路线：从一个城市广告资产的ROI问题，发展为智慧城市基础设施投资排序问题，并进一步迁移到中国超大城市和中非供应链走廊场景。</div>
+ <div class="pfe-sub" data-en>This layer makes the portfolio read as a research trajectory rather than disconnected projects: from ROI of urban advertising assets, to smart-city infrastructure investment ranking, then to Chinese megacity and Sino-African corridor applications.</div>
+
+ <div class="traj-row"><div class="traj-year">STAGE 01</div><div class="traj-body"><strong data-zh>卡萨布兰卡PFE：</strong><strong data-en>Casablanca PFE:</strong> <span data-zh>使用SUMO、SIG和ROI模型，把公共空间广告位置转化为可评分投资对象。</span><span data-en>uses SUMO, GIS and ROI modelling to turn public-space advertising locations into scorable investment objects.</span></div><div class="traj-tag">Urban ROI</div></div>
+ <div class="traj-row"><div class="traj-year">STAGE 02</div><div class="traj-body"><strong data-zh>AI-MCDM论文：</strong><strong data-en>AI-MCDM paper:</strong> <span data-zh>把单一ROI逻辑扩展为XGBoost、DNPV、Real Options、Fuzzy-AHP/MEREC和AROMAN的多风险评分架构。</span><span data-en>expands single-ROI logic into a multi-risk framework using XGBoost, DNPV, Real Options, Fuzzy-AHP/MEREC and AROMAN.</span></div><div class="traj-tag">Risk MCDA</div></div>
+ <div class="traj-row"><div class="traj-year">STAGE 03</div><div class="traj-body"><strong data-zh>中国迁移：</strong><strong data-en>China transfer:</strong> <span data-zh>将方法适配到智慧交通、物流节点、电动车充电网络、城市数据中心与城市更新投资组合。</span><span data-en>adapts the method to smart mobility, logistics nodes, EV charging networks, urban data centres and urban-renewal portfolios.</span></div><div class="traj-tag">China Fit</div></div>
+
+ <div class="pfe-transfer-note">
+ <span data-zh><strong>评审阅读效果：</strong>你不是“会很多工具”的学生，而是能把工具组织成决策系统的人：数据获取 → 建模 → 财务化 → 多准则排序 → 风险披露 → 战略建议。</span>
+ <span data-en><strong>Admissions reading effect:</strong> you are not framed as a student who merely knows many tools, but as someone who organises tools into a decision system: data acquisition → modelling → financialisation → multi-criteria ranking → risk disclosure → strategic recommendation.</span>
+ </div>
+ </div>
+ </div>
+ </div>
+
 
  <!-- SUMO Integrated Dashboard — Heatmap + Real Vehicle Simulation -->
  <div class="panel fi" id="sumo-dashboard">
@@ -1681,7 +2267,7 @@ footer{
  <svg class="fsvg" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="4" height="4" rx="1"/><rect x="9" y="1" width="4" height="4" rx="1"/><rect x="1" y="9" width="4" height="4" rx="1"/><circle cx="7" cy="6" r="1.2"/><path d="M5 10.5c.5 1 3.5 1 4 0"/></svg>
  <span data-zh>研究计划书</span><span data-en>Research Proposal</span>
  </a>
- <a href="pfe%20Elghali%20sany%20.pdf" class="btn btn-n" target="_blank">
+ <a href="PFE_Casablanca_Advertising_ROI_ElGhali_Sany.pdf" class="btn btn-n" target="_blank">
  <svg class="fsvg" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="4" height="4" rx="1"/><rect x="9" y="1" width="4" height="4" rx="1"/><rect x="1" y="9" width="4" height="4" rx="1"/><circle cx="7" cy="6" r="1.2"/><path d="M5 10.5c.5 1 3.5 1 4 0"/></svg>
  <span data-zh>PFE PDF</span><span data-en>PFE PDF</span>
  </a>
@@ -1743,7 +2329,7 @@ footer{
 <script>
 // ── CAROUSEL ──
 let csIdx=0;
-const csTotal=3;
+const csTotal=5;
 function csRender(){
  document.getElementById('csSlides').style.transform=`translateX(-${csIdx*100}%)`;
  document.querySelectorAll('.cs-dot').forEach((d,i)=>d.classList.toggle('act',i===csIdx));
